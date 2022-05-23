@@ -2,7 +2,7 @@ import PySimpleGUI as sg
 
 def build():
     """Construye la ventana del juego"""
-    sg.theme("DarkPurple1")
+    sg.theme("LightBlue")
 
     layout = [
         [sg.Button("Volver", key="-MENU-")]

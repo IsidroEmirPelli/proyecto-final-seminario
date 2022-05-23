@@ -3,7 +3,7 @@ import PySimpleGUI as sg
 def build():
     """Crea la ventana de configuración del juego"""
 
-    sg.theme("DarkPurple1")
+    sg.theme("LightBlue")
 
     layout = [
         [sg.Text("Tiempo límite por ronda: "), sg.InputText()],

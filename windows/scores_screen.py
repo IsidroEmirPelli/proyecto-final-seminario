@@ -2,7 +2,7 @@ import PySimpleGUI as sg
 
 def build():
     """Construye la ventana de las puntuaciones"""
-    sg.theme("DarkPurple1")
+    sg.theme("LightBlue")
 
     layout = [
         [sg.Button("Volver", key="-MENU-")]

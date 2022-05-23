@@ -1,31 +1,29 @@
-# create a menu with 4 buttons : play ,configuration, scores and profile in PySimpleGUI and a new window for each button empty
-#also create a dropdow menu called difficulty with 3 buttons : easy, medium and hard
-
 import PySimpleGUI as sg
 from windows import profile_screen, config_screen, game_screen, scores_screen
+
 
 def build():
     """"Construye la ventana del menú principal"""
 
-    sg.theme("DarkPurple1")
+    sg.theme("LightBlue")
 
-    layout_center = [
-        [sg.Text("FiguRace")],
-        [sg.Button("Play", key="-GAME-")],
-        [sg.Button("Configuration", key="-CONFIG-")],
-        [sg.Button("Scores", key="-SCORES-")],
-        [sg.Button("Profile", key="-PROFILE-")]
+    col = [
+        [sg.OptionMenu(values=["Fácil", "Normal", "Difícil", "Experto"],
+                       default_value="Dificultad", key="-DIFFICULTY-")],
+        [sg.OptionMenu(values=["Jose", "Maria", "Pepe", "Ana"], default_value="Usuario", key="-USER-")]
     ]
 
-    layout_right = [
-        [sg.OptionMenu(["Easy", "Medium", "Hard"], key="-DIFFICULTY-")],
-        [sg.OptionMenu(["Jose", "Maria", "Pepe", "Ana"], key="-USER-")]
+    layout = [
+        [sg.Push(), sg.Column(col, element_justification="right")],
+        [sg.Push(), sg.Image(filename="logo.png"), sg.Push()],
+        [sg.Push(), sg.Button("Jugar", font="Verdana 12", border_width=2, key="-GAME-"), sg.Push()],
+        [sg.Push(), sg.Button("Configuración", font="Verdana 12", border_width=2, key="-CONFIG-"), sg.Push()],
+        [sg.Push(), sg.Button("Puntajes", font="Verdana 12", border_width=2, key="-SCORES-"), sg.Push()],
+        [sg.Push(), sg.Button("Perfiles", font="Verdana 12", border_width=2, key="-PROFILE-"), sg.Push()],
     ]
 
-    layout = [[layout_right], [layout_center]]
-
-    window = sg.Window("FiguRace *-* Inicio", layout, resizable=True, size=(500, 500), auto_size_buttons=True,
-                   keep_on_top=False, finalize=True)
+    window = sg.Window("FiguRace", layout, resizable=True, size=(500, 600), auto_size_buttons=True,
+                       keep_on_top=False, finalize=True)
     return window
 
 
@@ -51,5 +49,5 @@ while True:
         profile_screen.build()
         current_window.close()
     elif event == "-SCORES-":
-        profile_screen.build()
+        scores_screen.build()
         current_window.close()
