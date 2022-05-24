@@ -1,5 +1,5 @@
 import PySimpleGUI as sg
-from windows import profile_screen, config_screen, game_screen, scores_screen
+import profile_screen, config_screen, game_screen, scores_screen
 
 
 def build():
@@ -9,17 +9,17 @@ def build():
 
     col = [
         [sg.OptionMenu(values=["Fácil", "Normal", "Difícil", "Experto"],
-                       default_value="Dificultad", key="-DIFFICULTY-")],
-        [sg.OptionMenu(values=["Jose", "Maria", "Pepe", "Ana"], default_value="Usuario", key="-USER-")]
+                       default_value="Dificultad", size=(8,3), key="-DIFFICULTY-")],
+        [sg.OptionMenu(values=["Jose", "Maria", "Pepe", "Ana"], default_value="Usuario", size=(8,3), key="-USER-")]
     ]
 
     layout = [
         [sg.Push(), sg.Column(col, element_justification="right")],
         [sg.Push(), sg.Image(filename="logo.png"), sg.Push()],
-        [sg.Push(), sg.Button("Jugar", font="Verdana 12", border_width=2, key="-GAME-"), sg.Push()],
-        [sg.Push(), sg.Button("Configuración", font="Verdana 12", border_width=2, key="-CONFIG-"), sg.Push()],
-        [sg.Push(), sg.Button("Puntajes", font="Verdana 12", border_width=2, key="-SCORES-"), sg.Push()],
-        [sg.Push(), sg.Button("Perfiles", font="Verdana 12", border_width=2, key="-PROFILE-"), sg.Push()],
+        [sg.Push(), sg.Button("Jugar", font="Verdana 12", border_width=2, size=(13,1), key="-GAME-"), sg.Push()],
+        [sg.Push(), sg.Button("Configuración", font="Verdana 12", border_width=2, size=(13,1), key="-CONFIG-"), sg.Push()],
+        [sg.Push(), sg.Button("Puntajes", font="Verdana 12", border_width=2, size=(13,1), key="-SCORES-"), sg.Push()],
+        [sg.Push(), sg.Button("Perfiles", font="Verdana 12", border_width=2, size=(13,1), key="-PROFILE"), sg.Push()],
     ]
 
     window = sg.Window("FiguRace", layout, resizable=True, size=(500, 600), auto_size_buttons=True,
