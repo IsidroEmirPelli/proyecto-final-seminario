@@ -1,5 +1,6 @@
 import PySimpleGUI as sg
 
+
 def build():
     """Construye la ventana del juego"""
     sg.theme("LightBlue")

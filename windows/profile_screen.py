@@ -1,5 +1,6 @@
 import PySimpleGUI as sg
 
+
 def build():
     """Construye la ventana de las perfiles"""
     sg.theme("LightBlue")
