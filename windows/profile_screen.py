@@ -50,6 +50,7 @@ def check_profile(values):
         else:
             create_new_user(values)
 
+
 def build():
     """Construye la ventana de las perfiles"""
     #Variables utilizadas para tamaños
