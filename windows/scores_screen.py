@@ -3,10 +3,7 @@ import string
 import PySimpleGUI as sg
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dad62d5f285a7afca38c1384952cd33cea33f2ad
 def build():
     """Construye la ventana de las puntuaciones"""
     sg.theme("LightBlue")
@@ -35,12 +32,9 @@ def build():
         ["pepe 400","pepe 400","pepe 400","pepe 10"]
     ]
 
-<<<<<<< HEAD
+
     headings_array = ["facil", "normal", "dificil", "experto"]
-=======
-    window = sg.Window("FiguRace *-* Puntajes", layout, resizable=True, size=(500, 600), auto_size_buttons=True,
-                       keep_on_top=False, finalize=True)
->>>>>>> dad62d5f285a7afca38c1384952cd33cea33f2ad
+
 
    
 
