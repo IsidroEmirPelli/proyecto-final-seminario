@@ -18,7 +18,7 @@ def build():
     ]
 
     layout = [
-        [sg.Push(), sg.Column(col, element_justification="right")],
+        [sg.Push(), sg.Column(col_options, element_justification="right")],
         [sg.Push(), sg.Image(filename=os.path.join(os.getcwd(), 'assets', 'logo.png')), sg.Push()],
         [sg.Push(), sg.Button("Jugar", font="Verdana 12", border_width=2, size=(13,1), key="-GAME-"), sg.Push()],
         [sg.Push(), sg.Button("Configuración", font="Verdana 12", border_width=2, size=(13,1), key="-CONFIG-"), sg.Push()],
