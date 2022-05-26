@@ -19,11 +19,12 @@ def build():
 
     layout = [
         [sg.Push(), sg.Column(col_options, element_justification="right")],
-        [sg.Push(), sg.Image(filename=os.path.join(os.getcwd(), 'assets', 'logo.png')), sg.Push()],
-        [sg.Push(), sg.Button("Jugar", font="Verdana 12", border_width=2, size=(13,1), key="-GAME-"), sg.Push()],
-        [sg.Push(), sg.Button("Configuración", font="Verdana 12", border_width=2, size=(13,1), key="-CONFIG-"), sg.Push()],
-        [sg.Push(), sg.Button("Puntajes", font="Verdana 12", border_width=2, size=(13,1), key="-SCORES-"), sg.Push()],
-        [sg.Push(), sg.Button("Perfiles", font="Verdana 12", border_width=2, size=(13,1), key="-PROFILE-"), sg.Push()],
+        [sg.Image(path_logo)],
+        [sg.Button("Jugar", font=("Verdana", 12), border_width=2, size=(20, 2), key="-GAME-")],
+        [sg.Button("Configuración", font=("Verdana", 12), border_width=2, size=(20, 2), key="-CONFIG-")],
+        [sg.Button("Puntajes", font=("Verdana", 12), border_width=2, size=(20, 2), key="-SCORES-")],
+        [sg.Button("Perfiles", font=("Verdana", 12), border_width=2, size=(20, 2), key="-PROFILE-")],
+        [sg.Button("Salir", font=("Verdana", 12), border_width=2, size=(20, 2), key="-EXIT-")]
     ]
 
     window = sg.Window("FiguRace", layout, resizable=True, size=(500, 700), auto_size_buttons=True,
