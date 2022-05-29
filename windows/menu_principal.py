@@ -3,9 +3,10 @@ import json
 import os
 from windows import profile_screen, config_screen, game_screen, scores_screen
 
+
 def check_user(user):
     return user == "Usuarios"
-            
+
 
 def generate_option_menu():
     """"Genera el menu de opciones desde el json"""
@@ -15,6 +16,7 @@ def generate_option_menu():
         return [user['Nickname'] for user in users_list]
     except FileNotFoundError:
         return []
+
 
 def build():
     """"Construye la ventana del menú principal"""
@@ -44,18 +46,18 @@ def build():
 
     while True:
         event, values = window.read()
-        if event == sg.WIN_CLOSED or event == '-EXIT-':
+        if event in (sg.WIN_CLOSED, '-EXIT-'):
             break
         elif event == "-GAME-":
             if check_user(values['-USER-']):
-              sg.popup("No hay usuarios registrados/seleccionados", title="FiguRace")  
+                sg.popup("No hay usuarios registrados/seleccionados", title="FiguRace")
             else:
                 window.hide()
                 game_screen.build(values)
                 window.un_hide()
         elif event == "-CONFIG-":
             if check_user(values['-USER-']):
-              sg.popup("Primero crea o seleccona un usuario.", title="FiguRace")  
+                sg.popup("Primero crea o seleccona un usuario.", title="FiguRace")
             else:
                 window.hide()
                 config_screen.build(values)
