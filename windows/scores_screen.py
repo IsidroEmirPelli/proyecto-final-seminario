@@ -1,12 +1,8 @@
 
-import pandas as pd
 from csv import reader
-
-
-
-
 import PySimpleGUI as sg
 import os
+import numpy as np
 
 
 
@@ -38,18 +34,22 @@ def build():
     # convert all the tuples in the dictionary to a list of strings
     def convert_touple_to_string():
         for key in scores_dicctionary:
-            scores_dicctionary[key] = [str(tup[0]) + ": " + str(tup[1]) for tup in scores_dicctionary[key]]
+            scores_dicctionary[key] = [str(tup[0]) + " : " + str(tup[1]) for tup in scores_dicctionary[key]]
         return scores_dicctionary
     
     convert_touple_to_string()
-   
-    df = pd.DataFrame(scores_dicctionary)
+
+    nl1 = list(scores_dicctionary.values())
     
+    
+    
+
+
 
     layout = [
         [sg.Push(),sg.Button("Volver", font="Verdana 12", border_width=2, size=(10,1), key="-MENU-")],
        
-        [sg.Push(),sg.Table(values=df, headings=headings_array,
+        [sg.Push(),sg.Table(values=nl1, headings=headings_array,
                     # background_color='light blue',
                     auto_size_columns=False,
                     
