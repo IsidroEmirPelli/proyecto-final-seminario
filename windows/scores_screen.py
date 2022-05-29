@@ -1,14 +1,7 @@
 import pandas as pd
 from csv import reader
-
-
-
-
 import PySimpleGUI as sg
 import os
-
-
-
 
 def build():
     """Construye la ventana de las puntuaciones"""
