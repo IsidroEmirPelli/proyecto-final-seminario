@@ -6,7 +6,7 @@ from random import randrange
 
 
 
-def build():
+def build(valores):
 
     #Futuros parametros
 
@@ -69,7 +69,7 @@ def build():
         [sg.Image(tema_a_jugar[1], size=(220, 100))],        #->crear funcion para determinar que imagen poner
         [sg.Frame(f'{"Resultado Parcial"}', [[sg.Column(layout=col_resultado_parcial)]],
             font=("Verdana", 12))],
-        [sg.Button("Abandonar Partida", font=("Verdana", 12), border_width=2, size=(20, 1), key="-MENU-")]
+        [sg.Button("Abandonar Partida", font=("Verdana", 12), border_width=2, size=(20, 1), key="-VOLVER-")]
 
     ]
 
@@ -111,9 +111,13 @@ def build():
         [sg.Push(), sg.Column(col_left), sg.Push(), sg.Column(col_right), sg.Push()],
         [sg.VPush()]
     ]
-
     window = sg.Window("FiguRace *-* ¡A jugar!", layout, resizable=True, size=(500, 500), auto_size_buttons=True,
                        keep_on_top=False, finalize=True)
-
-    return window
+    while True:
+        event , values = window.read()
+        if event == sg.WIN_CLOSED:
+            break
+        elif event == '-VOLVER-':
+            window.close()
+        
 

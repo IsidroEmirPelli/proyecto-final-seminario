@@ -54,6 +54,7 @@ def check_profile(values):
 def build():
     """Construye la ventana de las perfiles"""
     #Variables utilizadas para tamaños
+    generos= ['Masculino', 'Femenino', 'Otro']
     size_button = (8,1)
     size_input=(38,1)
     spc_btw_button=(40,2)
@@ -64,28 +65,36 @@ def build():
     layout = [
         [sg.Text('Creacion/Edicion de perfil', pad=(41,0) ,font=('Any 25'))],
         [sg.Text("Nickname",pad=padding_text), sg.Input(key = '-NICK-', size=size_input)],
-        [sg.Text("Género",pad=padding_text), sg.Combo(['Masculino', 'Femenino', 'Otro'],pad=(21,0) ,key = '-GENERO-')],
+        [sg.Text("Género",pad=padding_text), sg.Combo(generos,pad=(21,0) ,key = '-GENERO-')],
         [sg.Text("Edad",pad=padding_text), sg.Spin([i for i in range(1,110)], initial_value=0,size= (3,1), key = '-EDAD-', pad=(32,0))],
         [sg.Button('Aceptar', size = size_button,pad=spc_btw_button, key = '-ACEPTAR-'),
         sg.Button('Borrar', size = size_button,pad=spc_btw_button, key = '-BORRAR-'),
-        sg.Button('Volver',size = size_button,pad=spc_btw_button, key = '-MENU-')]
+        sg.Button('Volver',size = size_button,pad=spc_btw_button, key = '-VOLVER-')]
     ]
-    """Inicio la ventana"""
-    window = sg.Window("FiguRace *-* Perfiles", layout, resizable=True, margins=(20,20) ,size=(500, 200), auto_size_buttons=True,
-                       keep_on_top=False, finalize=True)
+    window = sg.Window("FiguRace *-* Perfiles", layout, resizable=False, margins=(20,20) ,size=(500, 200), auto_size_buttons=True, keep_on_top=False, finalize=True)
     while True:
+        """Inicio la ventana"""
         event, values = window.read()
-        if event == sg.WIN_CLOSED:
-            window.close()
-            break
         if event == '-ACEPTAR-':
-            check_profile(values)
-            sg.popup('Perfil creado/modificado con exito')
+            if(values['-NICK-'] == '' or values['-EDAD-'] == 0 or values['-GENERO-'] == ''):
+                sg.popup('Por favor complete todos los campos', title='Error')
+            else:
+                if(values['-NICK-'] == 'Usuarios'):
+                    sg.popup('Nickname invalido', title='Error')
+                    window['-NICK-'].update('')
+                else:
+                    if values['-GENERO-'] in generos:
+                        check_profile(values)
+                        sg.popup('Perfil creado/modificado con exito')
+                    else:
+                        sg.popup('Por favor seleccione un genero valido', title='Error')
+                        window['-GENERO-'].update('')
         elif event == '-BORRAR-':
             window['-NICK-'].update('')
             window['-EDAD-'].update(0)
             window['-GENERO-'].update('')
         elif event == '-VOLVER-':
+            window.close()
             break
-
-    return window
+        elif event == sg.WIN_CLOSED:
+            break

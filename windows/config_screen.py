@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
 
-def build():
+def build(valores):
     """Crea la ventana de configuración del juego"""
 
     sg.theme("LightBlue")
@@ -54,10 +54,16 @@ def build():
         [sg.Column(level, element_justification="c")],
         [sg.VPush()],
         [sg.Button("Aceptar", font=("Verdana", 12), border_width=2, size=(10, 1), key="-OK-")],
-        [sg.Button("Volver", font=("Verdana", 12), border_width=2, size=(10, 1), key="-MENU-")]
+        [sg.Button("Volver", font=("Verdana", 12), border_width=2, size=(10, 1), key="-VOLVER-")]
     ]
 
     window = sg.Window("FiguRace *-* Configuración", layout, resizable=True, size=(800, 600), auto_size_buttons=True,
                        keep_on_top=False, finalize=True, element_justification="center")
+    while True:
+        event, values = window.read()
 
-    return window
+        if event == "-OK-":
+            sg.popup("Configuración guardada con éxito", title="FiguRace *-* Configuración", keep_on_top=True)
+        elif event == "-VOLVER-":
+            window.close()
+            break

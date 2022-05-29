@@ -47,7 +47,7 @@ def build():
     
 
     layout = [
-        [sg.Push(),sg.Button("Volver", font="Verdana 12", border_width=2, size=(10,1), key="-MENU-")],
+        [sg.Push(),sg.Button("Volver", font="Verdana 12", border_width=2, size=(10,1), key="-VOLVER-")],
        
         [sg.Push(),sg.Table(values=df, headings=headings_array,
                     # background_color='light blue',
@@ -70,7 +70,13 @@ def build():
     
     window = sg.Window("FiguRace *-* Puntajes", layout, resizable=True, size=(500, 600), auto_size_text=True,
                         keep_on_top=False, finalize=True)
-
+    while True:
+        event, values = window.read()
+        if event == sg.WIN_CLOSED:
+            break
+        elif event == "-VOLVER-":
+            window.hide()
+            break
     return window
                 
         
