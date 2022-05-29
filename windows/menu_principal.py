@@ -1,7 +1,7 @@
 import PySimpleGUI as sg
 import json
 import os
-import profile_screen, config_screen, game_screen, scores_screen
+from windows import profile_screen, config_screen, game_screen, scores_screen
 
 def check_user(user):
     return user == "Usuarios"
@@ -44,7 +44,7 @@ def build():
 
     while True:
         event, values = window.read()
-        if event == sg.WIN_CLOSED:
+        if event == sg.WIN_CLOSED or event == '-EXIT-':
             break
         elif event == "-GAME-":
             if check_user(values['-USER-']):
@@ -68,4 +68,3 @@ def build():
             window.hide()
             scores_screen.build()
             window.un_hide()
-build()
