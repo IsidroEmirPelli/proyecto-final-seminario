@@ -1,7 +1,7 @@
 import PySimpleGUI as sg
 import json
 import os
-from windows import profile_screen, config_screen, game_screen, scores_screen
+import profile_screen, config_screen, game_screen, scores_screen
 
 
 def check_user(user):
@@ -18,6 +18,19 @@ def generate_option_menu():
         return []
 
 
+def generate_dificulty_menu():
+    """"Genera el menu de dificultad desde el json"""
+    try:
+        arch = open(os.path.join(os.path.dirname(__file__), '..', 'users', 'config.json'), 'r')
+    except FileNotFoundError:
+        config_screen.crear_arch_config()
+        arch = open(os.path.join(os.path.dirname(__file__), '..', 'users', 'config.json'), 'r')
+    finally:
+        config = json.load(arch)
+        arch.close()
+        return config["Cant_pistas"].keys()
+
+
 def build():
     """"Construye la ventana del menú principal"""
 
@@ -27,7 +40,7 @@ def build():
     path_logo = os.path.join(path_images, 'logo.png')
 
     col_options = [
-        [sg.OptionMenu(values=["Fácil", "Normal", "Difícil", "Experto"],
+        [sg.OptionMenu(values=generate_dificulty_menu(),
                        default_value="Dificultad", size=(10, 3), key="-DIFFICULTY-")],
         [sg.OptionMenu(values=generate_option_menu(), default_value="Usuarios", size=(10, 3), key="-USER-")]
     ]
@@ -46,7 +59,7 @@ def build():
 
     while True:
         event, values = window.read()
-        if event in (sg.WIN_CLOSED, '-EXIT-'):
+        if event in (sg.WIN_CLOSED, "-EXIT-"):
             break
         elif event == "-GAME-":
             if check_user(values['-USER-']):
@@ -57,10 +70,10 @@ def build():
                 window.un_hide()
         elif event == "-CONFIG-":
             if check_user(values['-USER-']):
-                sg.popup("Primero crea o seleccona un usuario.", title="FiguRace")
+                sg.popup("Primero crea o selecciona un usuario.", title="FiguRace")
             else:
                 window.hide()
-                config_screen.build(values)
+                config_screen.build()
                 window.un_hide()
         elif event == "-PROFILE-":
             window.close()
@@ -70,3 +83,6 @@ def build():
             window.hide()
             scores_screen.build()
             window.un_hide()
+
+
+build()

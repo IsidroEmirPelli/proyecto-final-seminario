@@ -1,0 +1,11 @@
+{
+    "Tiempo": 90,
+    "Rondas": 10,
+    "Puntaje_sumar": 15,
+    "Puntaje_restar": 5,
+    "Cant_pistas": {
+        "Facil": 5,
+        "Normal": 2,
+        "Dificil": 1
+    }
+}
