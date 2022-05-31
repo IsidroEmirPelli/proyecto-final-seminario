@@ -41,6 +41,14 @@ def actualizar_config(values):
         json.dump(config, arch, indent=4)
 
 
+def verificar_config():
+    with open(os.path.join(os.path.dirname(__file__), '..', 'users', 'config.json'), 'r') as arch:
+        config = json.load(arch)
+        if 0 in (config['Tiempo'], config['Rondas']) or True not in (list(config['Datasets'].values())):
+            return False
+    return True
+
+
 def build():
     """Crea la ventana de configuración del juego"""
 
@@ -49,7 +57,7 @@ def build():
         config = json.load(arch)
 
     gen_txt = [
-        [sg.Text('Tiempo límite por ronda', font=('Verdana', 12), pad=(10, 10))],
+        [sg.Text('Tiempo límite por ronda (en segundos)', font=('Verdana', 12), pad=(10, 10))],
         [sg.Text('Cantidad de rondas por juego', font=('Verdana', 12), pad=(10, 10))],
         [sg.Text('Puntaje sumado por cada respuesta correcta', font=('Verdana', 12), pad=(10, 10))],
         [sg.Text('Puntaje restado por cada respuesta incorrecta', font=('Verdana', 12), pad=(10, 10))],
@@ -65,13 +73,17 @@ def build():
     ]
 
     general = [
-        [sg.Frame('Configuraciones generales', [[
+        [sg.Frame('Configuración general', [[
+            sg.VPush(),
             sg.Column(layout=gen_txt, element_justification='l'),
-            sg.Column(layout=gen_opt, element_justification='r')
-        ]], font=('Verdana', 12))]
+            sg.Push(),
+            sg.Column(layout=gen_opt, element_justification='r'),
+            sg.VPush()
+        ]], font=('Verdana', 14), size=(550, 200))]
     ]
 
     datasets_opt = [
+        [sg.Text('Elige al menos una', font=('Verdana', 11))],
         [sg.Checkbox('Erupciones volcanicas', default=config['Datasets']['Volcanes'],
                      enable_events=True, font=('Verdana', 12), pad=(10, 10), key='-VOLCANES-')],
         [sg.Checkbox('Spotify Top 100 2010-2019', default=config['Datasets']['Spotify'],
@@ -81,7 +93,8 @@ def build():
     ]
 
     datasets = [
-        [sg.Frame('Categorías para jugar', layout=datasets_opt, font=('Verdana', 12), pad=(10, 10))]
+        [sg.Frame('Categorías para jugar', layout=datasets_opt, font=('Verdana', 14),
+                  pad=(10, 10), size=(550, 200))]
     ]
 
     level_txt = [
@@ -104,7 +117,7 @@ def build():
             sg.Column(layout=level_txt, element_justification='l'),
             sg.Push(),
             sg.Column(layout=level_opt, element_justification='r')
-        ]], font=('Verdana', 12))]
+        ]], font=('Verdana', 14), size=(550, 180))]
     ]
 
     layout = [
@@ -117,17 +130,22 @@ def build():
         [sg.Button('Volver', font=('Verdana', 12), border_width=2, size=(10, 1), key='-VOLVER-')]
     ]
 
-    window = sg.Window('FiguRace *-* Configuración', layout, resizable=True, size=(800, 600), auto_size_buttons=True,
+    window = sg.Window('FiguRace *-* Configuración', layout, resizable=True, size=(800, 800), auto_size_buttons=True,
                        keep_on_top=False, finalize=True, element_justification='c')
     while True:
         event, values = window.read()
 
+        if event == sg.WIN_CLOSED:
+            window.close()
+            break
         if event == '-OK-':
             actualizar_config(values)
-            #verificar_config(values) --- TO DO verificar los datos ingresados
-            sg.popup('Configuración guardada con éxito', title='FiguRace *-* Configuración', keep_on_top=True)
-        if event == '-VOLCANES-':
-            print(values)
+            if verificar_config():
+                sg.popup('Configuración guardada con éxito', title='¡Hecho!', keep_on_top=True,
+                         font=('Verdana', 12))
+            else:
+                sg.popup('Por favor verifica tus opciones', title='¡Cuidado!', keep_on_top=True,
+                         font=('Verdana', 12))
         elif event == '-VOLVER-':
             window.close()
             break

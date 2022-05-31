@@ -9,8 +9,8 @@
         "Dificil": 2
     },
     "Datasets": {
-        "Volcanes": false,
-        "Spotify": false,
+        "Volcanes": true,
+        "Spotify": true,
         "FIFA": false
     }
 }
