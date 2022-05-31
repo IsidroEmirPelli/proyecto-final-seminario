@@ -40,11 +40,7 @@ def build():
     path_logo = os.path.join(path_images, 'logo.png')
 
     col_options = [
-<<<<<<< HEAD
         [sg.OptionMenu(values=["Fácil", "Normal", "Difícil"],
-=======
-        [sg.OptionMenu(values=generate_dificulty_menu(),
->>>>>>> b16d1997ffcc2348dad35bdb806b18d306d14222
                        default_value="Dificultad", size=(10, 3), key="-DIFFICULTY-")],
         [sg.OptionMenu(values=generate_option_menu(), default_value="Usuarios", size=(10, 3), key="-USER-")]
     ]
