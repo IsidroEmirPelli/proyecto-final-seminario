@@ -12,7 +12,7 @@ def build():
     path_logo = os.path.join(path_images, 'logo.png')
 
     col_options = [
-        [sg.OptionMenu(values=["Fácil", "Normal", "Difícil", "Experto"],
+        [sg.OptionMenu(values=["Fácil", "Normal", "Difícil"],
                        default_value="Dificultad", size=(10, 3), key="-DIFFICULTY-")],
         [sg.OptionMenu(values=["Jose", "Maria", "Pepe", "Ana"], default_value="Usuario", size=(10, 3), key="-USER-")]
     ]
