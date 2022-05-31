@@ -1,0 +1,32 @@
+[
+    {
+        "Nickname": "admin",
+        "Edad": 78,
+        "Genero": "Masculino"
+    },
+    {
+        "Nickname": "Isidro",
+        "Edad": 5,
+        "Genero": "Masculino"
+    },
+    {
+        "Nickname": "ddasdasd",
+        "Edad": 4,
+        "Genero": "Femenino"
+    },
+    {
+        "Nickname": "Grllo",
+        "Edad": 67,
+        "Genero": "Femenino"
+    },
+    {
+        "Nickname": "Nahuel",
+        "Edad": 78,
+        "Genero": "Femenino"
+    },
+    {
+        "Nickname": "sddasdas",
+        "Edad": "0323",
+        "Genero": "Femenino"
+    }
+]

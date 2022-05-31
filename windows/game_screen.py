@@ -5,10 +5,8 @@ import os
 from random import randrange
 
 
-
-def build():
-
-    #Futuros parametros
+def build(valores):
+    # Futuros parametros
 
     path_images = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'assets'))
     path_fifapng = os.path.join(path_images, 'FIFA21.png')
@@ -16,8 +14,6 @@ def build():
     path_spotifypng = os.path.join(path_images, 'Spotify_2.png')
     path_checkpng = os.path.join(path_images, 'check.png')
     path_notcheckpng = os.path.join(path_images, 'not_check.png')
-
-
 
     path_csv = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data_sets'))
     path_spotifycsv = os.path.join(path_csv, 'New-Spotify-2010-2019-Top-100.csv')
@@ -29,16 +25,15 @@ def build():
 
     tema_a_jugar = list_paths[randrange(len(list_paths))]
 
-    #randrange(len(list_paths))
+    # randrange(len(list_paths))
 
     reader = csv.reader(open(tema_a_jugar[0], 'r', encoding='utf-8'), delimiter=',')
     header, data = next(reader), list(reader)
 
+    num_carta = randrange(len(data))  # obento carta a jugar aleatoriamente
 
-    num_carta = randrange(len(data))    #obento carta a jugar aleatoriamente
-
-    #retorna "cartas" aleatoria que no sea la que se esta jugando
-    def otras_cartas(num_car) -> int: #------------------------------------> pasa como parametro??
+    # retorna "cartas" aleatoria que no sea la que se esta jugando
+    def otras_cartas(num_car) -> int:  # ------------------------------------> pasa como parametro??
         num = randrange(len(data))
         while num == num_car:
             randrange(len(data))
@@ -47,10 +42,10 @@ def build():
     """Funcion que construye la ventana del juego"""
     sg.theme("LightBlue")
 
-    #********************* cracion de columna izquierda(categoria, resultado parcial y abandonar partida) **********
-    col_resultado_parcial= [
-        [sg.Text("[nombre Usuario]")],        #->vincular con el json
-        [sg.Text("1- "), sg.Image(path_notcheckpng, size=(15, 15))],          #-> crear box por tamaño en la configuracion
+    # ********************* cracion de columna izquierda(categoria, resultado parcial y abandonar partida) **********
+    col_resultado_parcial = [
+        [sg.Text("[nombre Usuario]")],  # ->vincular con el json
+        [sg.Text("1- "), sg.Image(path_notcheckpng, size=(15, 15))],  # -> crear box por tamaño en la configuracion
         [sg.Text("2- "), sg.Image(path_notcheckpng, size=(15, 15))],
         [sg.Text("3- "), sg.Image(path_checkpng, size=(15, 15))],
         [sg.Text("4- "), sg.Image(path_notcheckpng, size=(15, 15))],
@@ -66,16 +61,14 @@ def build():
     col_left = [
 
         [sg.Push(), sg.Text('-Catergoria-'), sg.Push()],
-        [sg.Image(tema_a_jugar[1], size=(220, 100))],        #->crear funcion para determinar que imagen poner
+        [sg.Image(tema_a_jugar[1], size=(220, 100))],  # ->crear funcion para determinar que imagen poner
         [sg.Frame(f'{"Resultado Parcial"}', [[sg.Column(layout=col_resultado_parcial)]],
-            font=("Verdana", 12))],
-        [sg.Button("Abandonar Partida", font=("Verdana", 12), border_width=2, size=(20, 1), key="-MENU-")]
+                  font=("Verdana", 12))],
+        [sg.Button("Abandonar Partida", font=("Verdana", 12), border_width=2, size=(20, 1), key="-VOLVER-")]
 
     ]
 
-    #*************** Creacion columna derecha(dificultad, tiempo, box de tarjeta) *********************
-
-
+    # *************** Creacion columna derecha(dificultad, tiempo, box de tarjeta) *********************
 
     box_tarjeta = [
 
@@ -85,11 +78,16 @@ def build():
         [sg.Text(f"{header[3]}: {data[num_carta][3]}")],
         [sg.Text(f"{header[4]}: {data[num_carta][4]}")],
         [sg.Text(f"{header[5]}: {data[num_carta][5]}-Adivine Doc-")],
-        [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=("Verdana", 12), border_width=2, size=(20, 0), key="-OP1-"), sg.Push()],
-        [sg.Push(), sg.Button(f'{data[num_carta][5]}', font=("Verdana", 12), border_width=2, size=(20, 0), key="-OP2-"), sg.Push()],
-        [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=("Verdana", 12), border_width=2, size=(20, 0), key="-OP3-"), sg.Push()],
-        [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=("Verdana", 12), border_width=2, size=(20, 0), key="-OP4-"), sg.Push()],
-        [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=("Verdana", 12), border_width=2, size=(20, 0), key="-OP5-"), sg.Push()],
+        [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=("Verdana", 12), border_width=2, size=(20, 0),
+                              key="-OP1-"), sg.Push()],
+        [sg.Push(), sg.Button(f'{data[num_carta][5]}', font=("Verdana", 12), border_width=2, size=(20, 0), key="-OP2-"),
+         sg.Push()],
+        [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=("Verdana", 12), border_width=2, size=(20, 0),
+                              key="-OP3-"), sg.Push()],
+        [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=("Verdana", 12), border_width=2, size=(20, 0),
+                              key="-OP4-"), sg.Push()],
+        [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=("Verdana", 12), border_width=2, size=(20, 0),
+                              key="-OP5-"), sg.Push()],
         [sg.Push(), sg.Button("OK", font=("Verdana", 12), border_width=2, size=(8, 0), key="-OP5-"),
          sg.Button("Pasar >", font=("Verdana", 12), border_width=2, size=(8, 0), key="-OP5-"), sg.Push()]
 
@@ -97,11 +95,11 @@ def build():
 
     col_right = [
 
-        [sg.Text(f'Nivel: {"facil"}')],   #-> determinar la dificultad
+        [sg.Text(f'Nivel: {"facil"}')],  # -> determinar la dificultad
         [sg.Text(f'Tiempo total: {10}min', justification="right", font=("Verdana", 12))],
-        #-> determinar el tiempo segun la dificultad o configuracion
-        [sg.Push(), sg.Text("00:00", justification="center", key="-Timer-", text_color='#ff0055',font=("Verdana", 12)),
-            sg.Push()],
+        # -> determinar el tiempo segun la dificultad o configuracion
+        [sg.Push(), sg.Text("00:00", justification="center", key="-Timer-", text_color='#ff0055', font=("Verdana", 12)),
+         sg.Push()],
         [sg.Frame(f'trajeta {"1"}', [[sg.Column(layout=box_tarjeta)]], font=("Verdana", 12))]
 
     ]
@@ -111,9 +109,11 @@ def build():
         [sg.Push(), sg.Column(col_left), sg.Push(), sg.Column(col_right), sg.Push()],
         [sg.VPush()]
     ]
-
     window = sg.Window("FiguRace *-* ¡A jugar!", layout, resizable=True, size=(500, 500), auto_size_buttons=True,
                        keep_on_top=False, finalize=True)
-
-    return window
-
+    while True:
+        event, values = window.read()
+        if event == sg.WIN_CLOSED:
+            break
+        elif event == '-VOLVER-':
+            window.close()
