@@ -1,7 +1,7 @@
 import PySimpleGUI as sg
 import json
 import os
-import profile_screen, config_screen, game_screen, scores_screen
+from windows import profile_screen, config_screen, game_screen, scores_screen
 
 
 def check_user(user):
@@ -83,6 +83,3 @@ def build():
             window.hide()
             scores_screen.build()
             window.un_hide()
-
-
-build()

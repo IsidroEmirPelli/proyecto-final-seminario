@@ -56,7 +56,7 @@ def build():
 
     
     layout = [
-        [sg.Push(),sg.Button("Volver", font="Verdana 12", border_width=2, size=(10,1), key="-MENU-")],
+        [sg.Push(),sg.Button("Volver", font="Verdana 12", border_width=2, size=(10,1), key="-VOLVER-")],
        
         [sg.Push(),sg.Table(values=result2, headings=headings_array,
                     # background_color='light blue',
@@ -80,6 +80,5 @@ def build():
         if event == sg.WIN_CLOSED:
             break
         elif event == "-VOLVER-":
-            window.hide()
+            window.close()
             break
-    return window

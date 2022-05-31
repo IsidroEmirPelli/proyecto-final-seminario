@@ -143,6 +143,7 @@ def build():
             if verificar_config():
                 sg.popup('Configuración guardada con éxito', title='¡Hecho!', keep_on_top=True,
                          font=('Verdana', 12))
+                window.close()
             else:
                 sg.popup('Por favor verifica tus opciones', title='¡Cuidado!', keep_on_top=True,
                          font=('Verdana', 12))
