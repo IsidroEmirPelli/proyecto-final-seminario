@@ -40,7 +40,7 @@ def build():
     path_logo = os.path.join(path_images, 'logo.png')
 
     col_options = [
-        [sg.OptionMenu(values=["Fácil", "Normal", "Difícil"],
+        [sg.OptionMenu(values=generate_dificulty_menu(),
                        default_value="Dificultad", size=(10, 3), key="-DIFFICULTY-")],
         [sg.OptionMenu(values=generate_option_menu(), default_value="Usuarios", size=(10, 3), key="-USER-")]
     ]
@@ -66,7 +66,7 @@ def build():
                 sg.popup("No hay usuarios registrados/seleccionados", title="FiguRace")
             else:
                 window.hide()
-                game_screen.build(values)
+                game_screen.build(values["-USER-"], values["-DIFFICULTY-"])
                 window.un_hide()
         elif event == "-CONFIG-":
             if check_user(values['-USER-']):
