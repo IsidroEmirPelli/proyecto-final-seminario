@@ -45,6 +45,7 @@ def build(user, dificultad):
 
     num_carta = randrange(len(data))  # obento carta a jugar aleatoriamente
 
+
     def otras_cartas(num_car) -> int:
         """retorna "cartas" aleatoria que no sea la que se esta jugando"""
         num = randrange(len(data))
@@ -52,7 +53,9 @@ def build(user, dificultad):
             randrange(len(data))
         return num
 
-    """Funcion que construye la ventana del juego"""
+
+    #Construccion de la ventana del juego
+
     sg.theme("LightBlue")
 
     # ********************* cracion de columna izquierda(categoria, resultado parcial y abandonar partida) **********
@@ -107,6 +110,7 @@ def build(user, dificultad):
                         [sg.Text(f"{header[2]}: {data[num_carta][2]}")],
                         [sg.Text(f"{header[3]}: {data[num_carta][3]}")],
                         [sg.Text(f"{header[4]}: {data[num_carta][4]}")]]
+
 
     box_tarjeta = [
 
