@@ -4,6 +4,8 @@ import json
 
 
 def crear_arch_config():
+    """Crea el json de configuración con una configuración estándar inicial"""
+
     config = {'Tiempo': 60, 'Rondas': 5, 'Puntaje_sumar': 10, 'Puntaje_restar': 5,
               'Cant_pistas': {'Facil': 5, 'Normal': 3, 'Dificil': 2},
               'Datasets': {'Volcanes': True, 'Spotify': True, 'FIFA': True}
@@ -13,6 +15,8 @@ def crear_arch_config():
 
 
 def actualizar_config(values):
+    """Actualiza la configuración en el json"""
+
     with open(os.path.join(os.path.dirname(__file__), '..', 'users', 'config.json'), 'r') as arch:
         config = json.load(arch)
 
@@ -42,6 +46,8 @@ def actualizar_config(values):
 
 
 def verificar_config():
+    """Verifica que la configuracion ingresada por el usuario no sea ilógica para el juego"""
+
     with open(os.path.join(os.path.dirname(__file__), '..', 'users', 'config.json'), 'r') as arch:
         config = json.load(arch)
         if 0 in (config['Tiempo'], config['Rondas']) or True not in (list(config['Datasets'].values())):
@@ -56,6 +62,7 @@ def build():
     with open(os.path.join(os.path.dirname(__file__), '..', 'users', 'config.json'), 'r') as arch:
         config = json.load(arch)
 
+    #construcción del área de configuraciones generales
     gen_txt = [
         [sg.Text('Tiempo límite por ronda (en segundos)', font=('Verdana', 12), pad=(10, 10))],
         [sg.Text('Cantidad de rondas por juego', font=('Verdana', 12), pad=(10, 10))],
@@ -82,6 +89,7 @@ def build():
         ]], font=('Verdana', 14), size=(550, 200))]
     ]
 
+    #construcción del área de selección de datasets
     datasets_opt = [
         [sg.Text('Elige al menos una', font=('Verdana', 11))],
         [sg.Checkbox('Erupciones volcanicas', default=config['Datasets']['Volcanes'],
@@ -97,6 +105,7 @@ def build():
                   pad=(10, 10), size=(550, 200))]
     ]
 
+    #construcción del área de configuraciones por nivel
     level_txt = [
         [sg.Text('Fácil', font=('Verdana', 12), pad=(10, 10))],
         [sg.Text('Normal', font=('Verdana', 12), pad=(10, 10))],
@@ -120,6 +129,7 @@ def build():
         ]], font=('Verdana', 14), size=(550, 180))]
     ]
 
+    #construcción del layout
     layout = [
         [sg.VPush()],
         [sg.Column(general, element_justification='c')],
@@ -132,6 +142,7 @@ def build():
 
     window = sg.Window('FiguRace *-* Configuración', layout, resizable=True, size=(800, 800), auto_size_buttons=True,
                        keep_on_top=False, finalize=True, element_justification='c')
+
     while True:
         event, values = window.read()
 
