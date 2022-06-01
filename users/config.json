@@ -11,6 +11,6 @@
     "Datasets": {
         "Volcanes": true,
         "Spotify": false,
-        "FIFA": false
+        "FIFA": true
     }
 }

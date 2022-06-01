@@ -30,6 +30,8 @@ def generate_dificulty_menu():
         arch.close()
         return config["Cant_pistas"].keys()
 
+def check_difficulty(dificultad):
+    return dificultad == "Dificultad"
 
 def build():
     """"Construye la ventana del menú principal"""
@@ -64,6 +66,8 @@ def build():
         elif event == "-GAME-":
             if check_user(values['-USER-']):
                 sg.popup("No hay usuarios registrados/seleccionados", title="FiguRace")
+            elif check_difficulty(values['-DIFFICULTY-']):
+                sg.popup("No selecciono una dificultad", title="Error")
             else:
                 window.hide()
                 game_screen.build(values["-USER-"], values["-DIFFICULTY-"])
