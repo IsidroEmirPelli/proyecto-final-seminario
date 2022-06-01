@@ -59,15 +59,17 @@ def build():
     """Crea la ventana de configuración del juego"""
 
     sg.theme('LightBlue')
+    gen_font = 'Verdana 12'
+
     with open(os.path.join(os.path.dirname(__file__), '..', 'users', 'config.json'), 'r') as arch:
         config = json.load(arch)
 
-    #construcción del área de configuraciones generales
+    # construcción del área de configuraciones generales
     gen_txt = [
-        [sg.Text('Tiempo límite por ronda (en segundos)', font=('Verdana', 12), pad=(10, 10))],
-        [sg.Text('Cantidad de rondas por juego', font=('Verdana', 12), pad=(10, 10))],
-        [sg.Text('Puntaje sumado por cada respuesta correcta', font=('Verdana', 12), pad=(10, 10))],
-        [sg.Text('Puntaje restado por cada respuesta incorrecta', font=('Verdana', 12), pad=(10, 10))],
+        [sg.Text('Tiempo límite por ronda (en segundos)', font=gen_font, pad=(10, 10))],
+        [sg.Text('Cantidad de rondas por juego', font=gen_font, pad=(10, 10))],
+        [sg.Text('Puntaje sumado por cada respuesta correcta', font=gen_font, pad=(10, 10))],
+        [sg.Text('Puntaje restado por cada respuesta incorrecta', font=gen_font, pad=(10, 10))],
     ]
 
     gen_opt = [
@@ -89,15 +91,15 @@ def build():
         ]], font=('Verdana', 14), size=(550, 200))]
     ]
 
-    #construcción del área de selección de datasets
+    # construcción del área de selección de datasets
     datasets_opt = [
-        [sg.Text('Elige al menos una', font=('Verdana', 11))],
+        [sg.Text('Elige al menos una', font=gen_font)],
         [sg.Checkbox('Erupciones volcanicas', default=config['Datasets']['Volcanes'],
-                     enable_events=True, font=('Verdana', 12), pad=(10, 10), key='-VOLCANES-')],
+                     enable_events=True, font=gen_font, pad=(10, 10), key='-VOLCANES-')],
         [sg.Checkbox('Spotify Top 100 2010-2019', default=config['Datasets']['Spotify'],
-                     enable_events=True, font=('Verdana', 12), pad=(10, 10), key='-SPOTIFY-')],
+                     enable_events=True, font=gen_font, pad=(10, 10), key='-SPOTIFY-')],
         [sg.Checkbox('Jugadores FIFA 2021', default=config['Datasets']['FIFA'],
-                     enable_events=True, font=('Verdana', 12), pad=(10, 10), key='-FIFA-')]
+                     enable_events=True, font=gen_font, pad=(10, 10), key='-FIFA-')]
     ]
 
     datasets = [
@@ -105,11 +107,11 @@ def build():
                   pad=(10, 10), size=(550, 200))]
     ]
 
-    #construcción del área de configuraciones por nivel
+    # construcción del área de configuraciones por nivel
     level_txt = [
-        [sg.Text('Fácil', font=('Verdana', 12), pad=(10, 10))],
-        [sg.Text('Normal', font=('Verdana', 12), pad=(10, 10))],
-        [sg.Text('Difícil', font=('Verdana', 12), pad=(10, 10))]
+        [sg.Text('Fácil', font=gen_font, pad=(10, 10))],
+        [sg.Text('Normal', font=gen_font, pad=(10, 10))],
+        [sg.Text('Difícil', font=gen_font, pad=(10, 10))]
     ]
 
     level_opt = [
@@ -129,19 +131,20 @@ def build():
         ]], font=('Verdana', 14), size=(550, 180))]
     ]
 
-    #construcción del layout
+    # construcción del layout
     layout = [
         [sg.VPush()],
         [sg.Column(general, element_justification='c')],
         [sg.Column(level, element_justification='c')],
         [sg.Column(datasets, element_justification='c')],
         [sg.VPush()],
-        [sg.Button('Aceptar', font=('Verdana', 12), border_width=2, size=(10, 1), key='-OK-')],
-        [sg.Button('Volver', font=('Verdana', 12), border_width=2, size=(10, 1), key='-VOLVER-')]
+        [sg.Button('Volver', font=gen_font, border_width=2, size=(10, 1), button_color=('black', 'white'),
+                   key='-VOLVER-'),
+         sg.Button('Aceptar', font=gen_font, border_width=2, size=(10, 1), key='-OK-')]
     ]
 
-    window = sg.Window('FiguRace *-* Configuración', layout, resizable=True, size=(800, 800), auto_size_buttons=True,
-                       keep_on_top=False, finalize=True, element_justification='c')
+    window = sg.Window('FiguRace *-* Configuración', layout, resizable=True, size=(600, 800), auto_size_buttons=True,
+                       element_justification='c')
 
     while True:
         event, values = window.read()

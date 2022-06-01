@@ -28,15 +28,14 @@ def build(user, dificultad):
     with open(path_config, 'r') as j:
         config = json.load(j)
 
-    #eligo csv a jugar aleatoriamente
+    # elijo csv a jugar aleatoriamente
 
     dicc_paths = {"Volcanes": (path_erupcionescsv, path_erupcionespng), "FIFA": (path_fifacsv, path_fifapng),
                   "Spotify": (path_spotifycsv, path_spotifypng)}
 
     clave_al = choice(["Volcanes", "Spotify", "FIFA"])
-    while not config["Datasets"][clave_al]:     #itera hasta encontrar un dataset en true
+    while not config["Datasets"][clave_al]:  # itera hasta encontrar un dataset en true
         clave_al = choice(["Volcanes", "Spotify", "FIFA"])
-
 
     # apretura de csv
     with open(dicc_paths[clave_al][0], 'r', encoding='utf-8') as reader:
@@ -45,7 +44,6 @@ def build(user, dificultad):
 
     num_carta = randrange(len(data))  # obento carta a jugar aleatoriamente
 
-
     def otras_cartas(num_car) -> int:
         """retorna "cartas" aleatoria que no sea la que se esta jugando"""
         num = randrange(len(data))
@@ -53,10 +51,10 @@ def build(user, dificultad):
             randrange(len(data))
         return num
 
-
-    #Construccion de la ventana del juego
+    # Construccion de la ventana del juego
 
     sg.theme("LightBlue")
+    gen_font = 'Verdana', 12
 
     # ********************* cracion de columna izquierda(categoria, resultado parcial y abandonar partida) **********
     col_resultado_parcial = [
@@ -80,54 +78,51 @@ def build(user, dificultad):
         [sg.Image(dicc_paths[clave_al][1], size=(220, 100))],
         [sg.Frame(f'{"Resultado Parcial"}', [[sg.Column(layout=col_resultado_parcial)]],
                   font=("Verdana", 12))],
-        [sg.Button("Abandonar Partida", font=("Verdana", 12), border_width=2, size=(20, 1), key="-VOLVER-")]
+        [sg.Button("Abandonar Partida", font=gen_font, border_width=2, size=(20, 1), key="-VOLVER-")]
 
     ]
 
     # *************** Creacion columna derecha(dificultad, tiempo, box de tarjeta) *********************
 
-
     def datos_tarjeta():
         """retorna la cantidad de pistas con las que se haya configurado"""
         match (config['Cant_pistas'][dificultad]):
             case 1:
-                return [[sg.Text(f"{header[0]}: {data[num_carta][0]}")]]
+                return [[sg.Text(f"{header[0]}: {data[num_carta][0]}", font=gen_font)]]
             case 2:
-                return [[sg.Text(f"{header[0]}: {data[num_carta][0]}")],
-                        [sg.Text(f"{header[1]}: {data[num_carta][1]}")]]
+                return [[sg.Text(f"{header[0]}: {data[num_carta][0]}", font=gen_font)],
+                        [sg.Text(f"{header[1]}: {data[num_carta][1]}", font=gen_font)]]
             case 3:
-                return [[sg.Text(f"{header[0]}: {data[num_carta][0]}")],
-                        [sg.Text(f"{header[1]}: {data[num_carta][1]}")],
-                        [sg.Text(f"{header[2]}: {data[num_carta][2]}")]]
+                return [[sg.Text(f"{header[0]}: {data[num_carta][0]}", font=gen_font)],
+                        [sg.Text(f"{header[1]}: {data[num_carta][1]}", font=gen_font)],
+                        [sg.Text(f"{header[2]}: {data[num_carta][2]}", font=gen_font)]]
             case 4:
-                return [[sg.Text(f"{header[0]}: {data[num_carta][0]}")],
-                        [sg.Text(f"{header[1]}: {data[num_carta][1]}")],
-                        [sg.Text(f"{header[2]}: {data[num_carta][2]}")],
-                        [sg.Text(f"{header[3]}: {data[num_carta][3]}")]]
+                return [[sg.Text(f"{header[0]}: {data[num_carta][0]}", font=gen_font)],
+                        [sg.Text(f"{header[1]}: {data[num_carta][1]}", font=gen_font)],
+                        [sg.Text(f"{header[2]}: {data[num_carta][2]}", font=gen_font)],
+                        [sg.Text(f"{header[3]}: {data[num_carta][3]}", font=gen_font)]]
             case 5:
-                return [[sg.Text(f"{header[0]}: {data[num_carta][0]}")],
-                        [sg.Text(f"{header[1]}: {data[num_carta][1]}")],
-                        [sg.Text(f"{header[2]}: {data[num_carta][2]}")],
-                        [sg.Text(f"{header[3]}: {data[num_carta][3]}")],
-                        [sg.Text(f"{header[4]}: {data[num_carta][4]}")]]
-
+                return [[sg.Text(f"{header[0]}: {data[num_carta][0]}", font=gen_font)],
+                        [sg.Text(f"{header[1]}: {data[num_carta][1]}", font=gen_font)],
+                        [sg.Text(f"{header[2]}: {data[num_carta][2]}", font=gen_font)],
+                        [sg.Text(f"{header[3]}: {data[num_carta][3]}", font=gen_font)],
+                        [sg.Text(f"{header[4]}: {data[num_carta][4]}", font=gen_font)]]
 
     box_tarjeta = [
 
-        [sg.Column(layout=datos_tarjeta())],    #box de cantidad de pistas
+        [sg.Column(layout=datos_tarjeta())],  # box de cantidad de pistas
         [sg.Text(f"{header[5]}: ")],
-        [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=("Verdana", 12), border_width=2, size=(20, 0),
+        [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=gen_font, border_width=2, size=(20, 0),
                               key="-OP1-"), sg.Push()],
-        [sg.Push(), sg.Button(f'{data[num_carta][5]}', font=("Verdana", 12), border_width=2, size=(20, 0), key="-OP2-"),
-            sg.Push()],
-        [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=("Verdana", 12), border_width=2, size=(20, 0),
+        [sg.Push(), sg.Button(f'{data[num_carta][5]}', font=gen_font, border_width=2, size=(20, 0), key="-OP2-"),
+         sg.Push()],
+        [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=gen_font, border_width=2, size=(20, 0),
                               key="-OP3-"), sg.Push()],
-        [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=("Verdana", 12), border_width=2, size=(20, 0),
+        [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=gen_font, border_width=2, size=(20, 0),
                               key="-OP4-"), sg.Push()],
-        [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=("Verdana", 12), border_width=2, size=(20, 0),
+        [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=gen_font, border_width=2, size=(20, 0),
                               key="-OP5-"), sg.Push()],
-        [sg.Push(), sg.Button("OK", font=("Verdana", 12), border_width=2, size=(8, 0), key="-OK-"),
-            sg.Button("Pasar >", font=("Verdana", 12), border_width=2, size=(8, 0), key="-PASAR-"), sg.Push()]
+        [sg.Push(), sg.Button("Pasar >", font=gen_font, border_width=2, size=(10, 0), key="-PASAR-")]
 
     ]
 
@@ -138,7 +133,7 @@ def build(user, dificultad):
         # -> determinar el tiempo segun la dificultad o configuracion
         [sg.Push(), sg.Text("00:00", justification="center", key="-Timer-", text_color='#ff0055', font=("Verdana", 12)),
          sg.Push()],
-        [sg.Frame(f'tarjeta {"1"}', [[sg.Column(layout=box_tarjeta)]], font=("Verdana", 12))]
+        [sg.Frame(f'Tarjeta {"1"}', [[sg.Column(layout=box_tarjeta)]], font=("Verdana", 12))]
 
     ]
 
@@ -147,8 +142,7 @@ def build(user, dificultad):
         [sg.Push(), sg.Column(col_left), sg.Push(), sg.Column(col_right), sg.Push()],
         [sg.VPush()]
     ]
-    window = sg.Window("FiguRace *-* ¡A jugar!", layout, resizable=True, size=(500, 500), auto_size_buttons=True,
-                       keep_on_top=False, finalize=True)
+    window = sg.Window("FiguRace *-* ¡A jugar!", layout, resizable=True, size=(600, 800), auto_size_buttons=True)
     while True:
         event, values = window.read()
         if event == sg.WIN_CLOSED:

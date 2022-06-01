@@ -5,7 +5,7 @@ from windows import profile_screen, config_screen, game_screen, scores_screen
 
 
 def check_user(user):
-    return user == "Usuarios"
+    return user == "USUARIO"
 
 
 def generate_option_menu():
@@ -32,7 +32,7 @@ def generate_dificulty_menu():
 
 
 def check_difficulty(dificultad):
-    return dificultad == "Dificultad"
+    return dificultad == "DIFICULTAD"
 
 
 def build():
@@ -45,21 +45,24 @@ def build():
 
     col_options = [
         [sg.OptionMenu(values=generate_dificulty_menu(),
-                       default_value="Dificultad", size=(10, 3), key="-DIFFICULTY-")],
-        [sg.OptionMenu(values=generate_option_menu(), default_value="Usuarios", size=(10, 3), key="-USER-")]
+                       default_value="DIFICULTAD", size=(13, 3), key="-DIFFICULTY-")],
+        [sg.OptionMenu(values=generate_option_menu(), default_value="USUARIO", size=(13, 3), key="-USER-")]
     ]
 
     layout = [
-        [sg.Push(), sg.Column(col_options, element_justification="right")],
+        [sg.Push(), sg.Column(col_options, element_justification="r")],
+        [sg.VPush()],
         [sg.Image(path_logo)],
-        [sg.Button("Jugar", font=("Verdana", 12), border_width=2, size=(20, 2), key="-GAME-")],
-        [sg.Button("Configuración", font=("Verdana", 12), border_width=2, size=(20, 2), key="-CONFIG-")],
-        [sg.Button("Puntajes", font=("Verdana", 12), border_width=2, size=(20, 2), key="-SCORES-")],
-        [sg.Button("Perfiles", font=("Verdana", 12), border_width=2, size=(20, 2), key="-PROFILE-")],
-        [sg.Button("Salir", font=("Verdana", 12), border_width=2, size=(20, 2), key="-EXIT-")]
+        [sg.Text('')],
+        [sg.Button("JUGAR", font=("Verdana", 12), border_width=2, size=(22, 2), key="-GAME-")],
+        [sg.Button("PERFILES", font=("Verdana", 12), border_width=2, size=(22, 2), key="-PROFILE-")],
+        [sg.Button("PUNTAJES", font=("Verdana", 12), border_width=2, size=(22, 2), key="-SCORES-")],
+        [sg.Button("CONFIGURACION", font=("Verdana", 12), border_width=2, size=(22, 2), key="-CONFIG-")],
+        [sg.Button("SALIR", font=("Verdana", 12), border_width=2, size=(22, 2), key="-EXIT-")],
+        [sg.VPush()]
     ]
-    window = sg.Window("FiguRace", layout, resizable=True, size=(500, 700), auto_size_buttons=True,
-                       keep_on_top=False, finalize=True, element_justification="center")
+    window = sg.Window("FiguRace", layout, resizable=True, size=(600, 800), auto_size_buttons=True,
+                       element_justification="c")
 
     while True:
         event, values = window.read()
@@ -67,20 +70,17 @@ def build():
             break
         elif event == "-GAME-":
             if check_user(values['-USER-']):
-                sg.popup("No hay usuarios registrados/seleccionados", title="FiguRace")
+                sg.popup("Seleccione un usuario o regístrese", title="¡Ups!")
             elif check_difficulty(values['-DIFFICULTY-']):
-                sg.popup("No selecciono una dificultad", title="Error")
+                sg.popup("Seleccione una dificultad para jugar", title="¡Ups!")
             else:
                 window.hide()
                 game_screen.build(values["-USER-"], values["-DIFFICULTY-"])
                 window.un_hide()
         elif event == "-CONFIG-":
-            if check_user(values['-USER-']):
-                sg.popup("Primero crea o selecciona un usuario.", title="FiguRace")
-            else:
-                window.hide()
-                config_screen.build()
-                window.un_hide()
+            window.hide()
+            config_screen.build()
+            window.un_hide()
         elif event == "-PROFILE-":
             window.close()
             profile_screen.build()
