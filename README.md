@@ -1,11 +1,11 @@
 # Figurace -By Grupo 20
 
-<p align="center">
+<p align="center" width="100%">
     <img  src="assets/logo.png" width="180" height="180">
 </p>
 
 Figurace es un proyecto desarrollado para la materia Seminario de Lenguajes de la Facultad de Informatica opcion Python de la Universidad Nacional de La Plata.
-Este proyecto funciona tanto en Windows como en GNU/Linux y consiste en un juego de tarjetas, en el cual se debe adivinar el nombre de la misma entre varias opciones. Cuenta con tres dificultades diferentes, con tres temas distintos  estos siendo volcanes, musica y futbol.
+Este proyecto funciona tanto en Windows como en GNU/Linux y consiste en un juego de tarjetas, en el cual se debe adivinar el nombre de la misma entre varias opciones. Cuenta con tres dificultades y tres temas distintos estos siendo volcanes, musica y futbol.
 
 ## Integrantes del grupo 20
 
@@ -23,7 +23,7 @@ Pelli Isidro Emir
 -Para instalar todas las librerias necesarias se debe ejecutar el siguiente comando en la terminal:
 
 ```python
-    pip install requeriments.txt
+    pip install requirements.txt
 ```
 
 -Para comenzar a jugar se debe ejecutar el siguiente comando en la terminal:
