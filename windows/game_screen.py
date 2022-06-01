@@ -24,24 +24,16 @@ def build(user, dificultad):
     # path json
     path_json = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'users'))
     path_config = os.path.join(path_json, 'config.json')
+
     with open(path_config, 'r') as j:
         config = json.load(j)
 
     #eligo csv a jugar aleatoriamente
-    def obtener_clave(num_al) -> str:
-        match (num_al):
-            case 1:
-                return "Volcanes"
-            case 2:
-                return "Spotify"
-            case 3:
-                return "FIFA"
 
     dicc_paths = {"Volcanes": (path_erupcionescsv, path_erupcionespng), "FIFA": (path_fifacsv, path_fifapng),
                   "Spotify": (path_spotifycsv, path_spotifypng)}
 
     clave_al = choice(["Volcanes", "Spotify", "FIFA"])
-
     while not config["Datasets"][clave_al]:     #itera hasta encontrar un dataset en true
         clave_al = choice(["Volcanes", "Spotify", "FIFA"])
 
@@ -53,8 +45,8 @@ def build(user, dificultad):
 
     num_carta = randrange(len(data))  # obento carta a jugar aleatoriamente
 
-    # retorna "cartas" aleatoria que no sea la que se esta jugando
     def otras_cartas(num_car) -> int:
+        """retorna "cartas" aleatoria que no sea la que se esta jugando"""
         num = randrange(len(data))
         while num == num_car:
             randrange(len(data))
@@ -91,8 +83,9 @@ def build(user, dificultad):
 
     # *************** Creacion columna derecha(dificultad, tiempo, box de tarjeta) *********************
 
-    #retorna la cantidad de pistas con las que se haya configurado
+
     def datos_tarjeta():
+        """retorna la cantidad de pistas con las que se haya configurado"""
         match (config['Cant_pistas'][dificultad]):
             case 1:
                 return [[sg.Text(f"{header[0]}: {data[num_carta][0]}")]]
@@ -117,7 +110,7 @@ def build(user, dificultad):
 
     box_tarjeta = [
 
-        [sg.Column(layout=datos_tarjeta())],
+        [sg.Column(layout=datos_tarjeta())],    #box de cantidad de pistas
         [sg.Text(f"{header[5]}: ")],
         [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=("Verdana", 12), border_width=2, size=(20, 0),
                               key="-OP1-"), sg.Push()],
@@ -129,8 +122,8 @@ def build(user, dificultad):
                               key="-OP4-"), sg.Push()],
         [sg.Push(), sg.Button(f'{data[otras_cartas(num_carta)][5]}', font=("Verdana", 12), border_width=2, size=(20, 0),
                               key="-OP5-"), sg.Push()],
-        [sg.Push(), sg.Button("OK", font=("Verdana", 12), border_width=2, size=(8, 0), key="-OP5-"),
-            sg.Button("Pasar >", font=("Verdana", 12), border_width=2, size=(8, 0), key="-OP5-"), sg.Push()]
+        [sg.Push(), sg.Button("OK", font=("Verdana", 12), border_width=2, size=(8, 0), key="-OK-"),
+            sg.Button("Pasar >", font=("Verdana", 12), border_width=2, size=(8, 0), key="-PASAR-"), sg.Push()]
 
     ]
 

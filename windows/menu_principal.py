@@ -30,8 +30,10 @@ def generate_dificulty_menu():
         arch.close()
         return config["Cant_pistas"].keys()
 
+
 def check_difficulty(dificultad):
     return dificultad == "Dificultad"
+
 
 def build():
     """"Construye la ventana del menú principal"""

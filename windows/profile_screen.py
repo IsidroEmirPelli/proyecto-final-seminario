@@ -27,15 +27,15 @@ def create_new_user(values):
 
 
 def modify_user(values):
-    new_user = {"Nickname": values['-NICK-'], "Edad": values['-EDAD-'], "Genero": values['-GENERO-']}
     with open(getting_path(), 'r') as users:
         """Abro el json"""
         users_list = json.load(users)
-    for i in range(len(users_list)):
+    for elem in users_list:
         """Obtengo la ubicaion de la lista del usuario que deseo modificar"""
-        if users_list[i]['Nickname'] == values['-NICK-']:
+        if elem['Nickname'] == values['-NICK-']:
             """Una vez que lo encuentro reemplazo el contenido con el nuevo"""
-            users_list[i] = new_user
+            elem['Edad'] = values['-EDAD-']
+            elem['Genero'] = values['-GENERO-']
             break
     with open(getting_path(), 'w') as users:
         """Actualizo el contenido del json con la lista modificada"""
