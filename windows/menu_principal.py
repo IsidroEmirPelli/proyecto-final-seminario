@@ -1,3 +1,5 @@
+from email.policy import default
+from types import NoneType
 import PySimpleGUI as sg
 import json
 import os
@@ -5,18 +7,33 @@ from windows import profile_screen, config_screen, game_screen, scores_screen
 
 
 def check_user(user):
-    return user == "USUARIO"
+    return user == "USUARIO" or user == ""
+
+
+def getting_users():
+    with open(os.path.join(os.path.dirname(__file__), '..', 'users', 'users.json'), 'r') as users:
+        users_list = json.load(users)
+    return [user['Nickname'] for user in users_list]
+
+
+def create_user_file():
+    """"Crea el archivo de usuarios"""
+    default_user = {
+        'Nickname':"User",
+        'Edad':0,
+        'Genero':'Otro'}
+    with open(os.path.join(os.path.dirname(__file__), '..', 'users', 'users.json'), 'w') as users:
+        json.dump([default_user], users)
+    return getting_users()
+
 
 
 def generate_option_menu():
     """"Genera el menu de opciones desde el json"""
     try:
-        with open(os.path.join(os.path.dirname(__file__), '..', 'users', 'users.json'), 'r') as users:
-            users_list = json.load(users)
-        return [user['Nickname'] for user in users_list]
-    except FileNotFoundError:
-        return []
-
+        return getting_users()
+    except FileNotFoundError or NoneType:
+        return create_user_file() 
 
 def generate_dificulty_menu():
     """"Genera el menu de dificultad desde el json"""

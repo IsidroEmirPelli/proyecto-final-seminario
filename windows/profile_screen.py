@@ -5,15 +5,6 @@ import json, os
 def getting_path():
     return os.path.join(os.getcwd(), 'users', 'users.json')
 
-
-def creating_user_file(values):
-    """Genero un diccionario con los valores y lo pongo dentro de una lista"""
-    user_dict = [{"Nickname": values['-NICK-'], "Edad": values['-EDAD-'], "Genero": values['-GENERO-']}]
-    with open(getting_path(), 'w') as users:
-        # Agrego la lista al json
-        json.dump(user_dict, users, indent=4)
-
-
 def create_new_user(values):
     """Recibo los valores del usuario nuevo y lo almaceno en un diccionario"""
     new_user = {"Nickname": values['-NICK-'], "Edad": values['-EDAD-'], "Genero": values['-GENERO-']}
@@ -44,27 +35,19 @@ def modify_user(values):
 
 
 def check_profile(values):
-    """Verifico si existe el nickname
-    En caso de que no exista el archivo va a saltar la excepcion y va a crear el archivo con los datos ingresados"""
-    try:
-        archivo = open(getting_path(), 'r')
-        users = json.load(archivo)
-        archivo.close()
-    except FileNotFoundError:
-        creating_user_file(values)
+    with open(getting_path(), 'r') as user:
+        users = json.load(user)
+    found = False
+    for user in users:
+        if values['-NICK-'] == user['Nickname']:
+            found = True
+            break
+    if found:
+        # Si encuentro el usuario lo modifico
+        modify_user(values)
     else:
-        # Verifico si existe el usuario si no se cumple la excepcion anterior
-        found = False
-        for user in users:
-            if values['-NICK-'] == user['Nickname']:
-                found = True
-                break
-        if found:
-            # Si encuentro el usuario lo modifico
-            modify_user(values)
-        else:
-            # Sino lo genero y lo inserto en el json
-            create_new_user(values)
+        # Sino lo genero y lo inserto en el json
+        create_new_user(values)
 
 
 def build():
