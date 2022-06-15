@@ -1,12 +1,1 @@
-[
-    {
-        "Nickname": "User",
-        "Edad": 5,
-        "Genero": "Masculino"
-    },
-    {
-        "Nickname": "Isidro",
-        "Edad": 5,
-        "Genero": "Masculino"
-    }
-]
+[{"Nickname": "User", "Edad": 0, "Genero": "Otro"}]

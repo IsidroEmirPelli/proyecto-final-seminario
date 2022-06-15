@@ -78,7 +78,7 @@ def build():
         [sg.Button("SALIR", font=("Verdana", 12), border_width=2, size=(22, 2), key="-EXIT-")],
         [sg.VPush()]
     ]
-    window = sg.Window("FiguRace", layout, resizable=True, size=(600, 800), auto_size_buttons=True,
+    window = sg.Window("FiguRace", layout, resizable=True, size=(600, 600), auto_size_buttons=True,
                        element_justification="c")
 
     while True:

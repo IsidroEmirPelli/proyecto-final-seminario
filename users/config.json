@@ -5,11 +5,11 @@
     "Puntaje_restar": 25,
     "Cant_pistas": {
         "Facil": 5,
-        "Normal": 1,
+        "Normal": 3,
         "Dificil": 2
     },
     "Datasets": {
-        "Volcanes": true,
+        "Volcanes": false,
         "Spotify": true,
         "FIFA": true
     }
