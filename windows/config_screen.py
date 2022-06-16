@@ -50,7 +50,7 @@ def verificar_config():
 
     with open(os.path.join(os.path.dirname(__file__), '..', 'users', 'config.json'), 'r') as arch:
         config = json.load(arch)
-        if 0 in (config['Tiempo'], config['Rondas']) or True not in (list(config['Datasets'].values())):
+        if config['Tiempo'] == 0 or True not in (list(config['Datasets'].values())):
             return False
     return True
 
@@ -75,7 +75,8 @@ def build():
 
     gen_opt = [
         [sg.InputCombo((30, 60, 90), default_value=config['Tiempo'], size=(10, 1), pad=pad_st, key='-TIME-')],
-        [sg.InputCombo((5, 8, 10), default_value=config['Rondas'], size=(10, 1), pad=pad_st, key='-ROUNDS-')],
+        [sg.OptionMenu((1, 2, 3, 4, 5, 6, 7, 8, 9, 10), default_value=config['Rondas'], size=(7, 1), pad=pad_st,
+                       key='-ROUNDS-')],
         [sg.InputCombo([5, 10, 15], default_value=config['Puntaje_sumar'], size=(10, 1), pad=pad_st,
                        key='-WINSCORE-')],
         [sg.InputCombo([0, 5, 10], size=(10, 1), default_value=config['Puntaje_restar'], pad=pad_st,
@@ -144,7 +145,7 @@ def build():
          sg.Button('Aceptar', font=fuente, border_width=2, size=(10, 1), key='-OK-')]
     ]
 
-    window = sg.Window('FiguRace *-* Configuración', layout, resizable=True, size=(600, 630), auto_size_buttons=True,
+    window = sg.Window('FiguRace *-* Configuración', layout, resizable=True, size=(600, 640), auto_size_buttons=True,
                        element_justification='c')
 
     while True:

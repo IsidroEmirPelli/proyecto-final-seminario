@@ -24,7 +24,7 @@ def build(user, dificultad):
         [sg.VPush()]
     ]
 
-    window = sg.Window("FiguRace *-* ¡A jugar!", layout, resizable=True, size=(800, 600), auto_size_buttons=True)
+    window = sg.Window("FiguRace *-* ¡A jugar!", layout, resizable=True, size=(700, 640), auto_size_buttons=True)
     img_act = []
     carta_buena = data[num_carta][5]
     while True:

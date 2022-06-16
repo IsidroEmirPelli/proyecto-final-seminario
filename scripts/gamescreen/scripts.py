@@ -15,11 +15,13 @@ def get_config():
     except FileNotFoundError:
         sg.PopupError("No se encontró el archivo de configuración.")
 
+
 def select_csv():
     """ Selecciona un Data set aleatoriamente si esta en True"""
 
     config = get_config()
     return choice(list({key: value for key, value in config['Datasets'].items() if value}))
+
 
 def get_card_data():
     """ Obtiene los headers y data del CSV seleccionado. """
@@ -30,10 +32,12 @@ def get_card_data():
 
     return csv_selected, header, data
 
+
 def create_col_result(clave_al, user):
     """ Creacion de columna izquierda(categoria, resultado parcial y abandonar partida) """
-    
-    check = [[sg.Text(f'{index}- ', size=(4, 1)), sg.Image('', size=(15, 15), key=f'-IMG_{index}-')] for index in range(1, 11)]
+
+    check = [[sg.Text(f'{index}- ', size=(4, 1)), sg.Image('', size=(15, 15), key=f'-IMG_{index}-')] for index in
+             range(1, 11)]
     col_resultado_parcial = [
         [sg.Text(f"{user}")],
         [sg.Column(check)],
@@ -42,7 +46,8 @@ def create_col_result(clave_al, user):
     col_left = [
         [sg.Text(f"-{clave_al}-", key='-TEXTO_DATA-', pad=((65, 0), (0, 0)), font=GEN_FONT)],
         [sg.Image(PATHS[clave_al][1], key='-IMGDATA-')],
-        [sg.Frame(f'{"Resultado Parcial"}', [[sg.Column(col_resultado_parcial)]],pad=((22,0),(0,0)), font=GEN_FONT)],
+        [sg.Frame(f'{"Resultado Parcial"}', [[sg.Column(col_resultado_parcial)]], pad=((22, 0), (0, 0)),
+                  font=GEN_FONT)],
         [sg.Button("Abandonar", font=GEN_FONT, border_width=2, size=(18, 1), key="-VOLVER-")]
     ]
 
@@ -51,7 +56,7 @@ def create_col_result(clave_al, user):
 
 def otras_cartas(num_car, data) -> int:
     """retorna "cartas" aleatoria que no sea la que se esta jugando"""
-    
+
     act_cards = []
     while len(act_cards) != 5:
         num = randrange(len(data))
@@ -60,36 +65,38 @@ def otras_cartas(num_car, data) -> int:
 
     return act_cards
 
+
 def select_randomly(opciones):
     """ Mezcla las cartas de forma aleatoria """
 
-    rtas= []
+    rtas = []
     for i in range(5):
         index = choice(range(len(opciones)))
         rtas.append(opciones[index])
         del opciones[index]
     return rtas
 
+
 def create_right_col(header, data, dificultad, num_carta):
-
-
     def datos_tarjeta(header, data, dificultad, num_carta):
         """ Retorna la cantidad de pistas con las que se haya configurado """
 
         config = get_config()
         cant = config['Cant_pistas'][dificultad]
 
-        return [[sg.Text(f"{header[index]}: {data[num_carta][index]}", font=GEN_FONT, key=f'-HINT_{index}-')] for index in range(cant)]
-
+        return [[sg.Text(f"{header[index]}: {data[num_carta][index]}", font=GEN_FONT, key=f'-HINT_{index}-')] for index
+                in range(cant)]
 
     def generating_box(data, num_carta):
         """ Genero el box con las otras cartas """
 
         other_cards = otras_cartas(num_carta, data)
-        cards = [[sg.Push(), sg.Button(f'{data[other_cards[index]][5]}', font=GEN_FONT, border_width=2, size=(20, 0), key=f'-CARTA_{index}-'),
-            sg.Push()] for index in range(1, 5)] + [[sg.Push(), sg.Button(f'{data[num_carta][5]}', font=GEN_FONT, border_width=2, size=(20, 0), key='-CARTA_5-'), sg.Push()]]
+        cards = [[sg.Push(), sg.Button(f'{data[other_cards[index]][5]}', font=GEN_FONT, border_width=2, size=(20, 0),
+                                       key=f'-CARTA_{index}-'),
+                  sg.Push()] for index in range(1, 5)] + [[sg.Push(), sg.Button(f'{data[num_carta][5]}', font=GEN_FONT,
+                                                                                border_width=2, size=(20, 0),
+                                                                                key='-CARTA_5-'), sg.Push()]]
         return select_randomly(cards)
-
 
     box_tarjeta = [
         [sg.Column(datos_tarjeta(header, data, dificultad, num_carta), size=(800, 150))],  # box de cantidad de pistas
@@ -115,7 +122,7 @@ def window_update(window, dificultad):
 
     config = get_config()
     cant = config['Cant_pistas'][dificultad]
-    
+
     csv_selected, header, data = get_card_data()
     num_carta = randrange(len(data))  # obtengo carta a jugar aleatoriamente
     otras_cards = otras_cartas(num_carta, data)
@@ -124,13 +131,13 @@ def window_update(window, dificultad):
     cartas.append(f'{data[num_carta][5]}')
 
     cartas = select_randomly(cartas)
-    
+
     window['-TEXTO_DATA-'].update(f"-{csv_selected}-")
     window['-IMGDATA-'].update(PATHS[csv_selected][1])
     for index in range(cant):
         window[f'-HINT_{index}-'].update(f"{header[index]}: {data[num_carta][index]}")
-    
+
     for index in range(1, 6):
-        window[f'-CARTA_{index}-'].update(f'{cartas[index-1]}')
+        window[f'-CARTA_{index}-'].update(f'{cartas[index - 1]}')
 
     return num_carta
