@@ -23,7 +23,7 @@ Pelli Isidro Emir
 -Para instalar todas las librerias necesarias se debe ejecutar el siguiente comando en la terminal:
 
 ```python
-    pip install requirements.txt
+    pip install -r requirements.txt
 ```
 
 -Para comenzar a jugar se debe ejecutar el siguiente comando en la terminal:

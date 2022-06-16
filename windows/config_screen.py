@@ -59,25 +59,26 @@ def build():
     """Crea la ventana de configuración del juego"""
 
     sg.theme('LightBlue')
-    gen_font = 'Verdana 12'
+    fuente = 'Verdana', 11
+    pad_st = 10, 8
 
     with open(os.path.join(os.path.dirname(__file__), '..', 'users', 'config.json'), 'r') as arch:
         config = json.load(arch)
 
     # construcción del área de configuraciones generales
     gen_txt = [
-        [sg.Text('Tiempo límite por ronda (en segundos)', font=gen_font, pad=(10, 10))],
-        [sg.Text('Cantidad de rondas por juego', font=gen_font, pad=(10, 10))],
-        [sg.Text('Puntaje sumado por cada respuesta correcta', font=gen_font, pad=(10, 10))],
-        [sg.Text('Puntaje restado por cada respuesta incorrecta', font=gen_font, pad=(10, 10))],
+        [sg.Text('Tiempo límite por ronda (en segundos)', font=fuente, pad=pad_st)],
+        [sg.Text('Cantidad de rondas por juego', font=fuente, pad=pad_st)],
+        [sg.Text('Puntaje sumado por cada respuesta correcta', font=fuente, pad=pad_st)],
+        [sg.Text('Puntaje restado por cada respuesta incorrecta', font=fuente, pad=pad_st)],
     ]
 
     gen_opt = [
-        [sg.InputCombo((30, 60, 90), default_value=config['Tiempo'], size=(10, 1), pad=(10, 10), key='-TIME-')],
-        [sg.InputCombo((5, 8, 10), default_value=config['Rondas'], size=(10, 1), pad=(10, 10), key='-ROUNDS-')],
-        [sg.InputCombo([5, 10, 15], default_value=config['Puntaje_sumar'], size=(10, 1), pad=(10, 10),
+        [sg.InputCombo((30, 60, 90), default_value=config['Tiempo'], size=(10, 1), pad=pad_st, key='-TIME-')],
+        [sg.InputCombo((5, 8, 10), default_value=config['Rondas'], size=(10, 1), pad=pad_st, key='-ROUNDS-')],
+        [sg.InputCombo([5, 10, 15], default_value=config['Puntaje_sumar'], size=(10, 1), pad=pad_st,
                        key='-WINSCORE-')],
-        [sg.InputCombo([0, 5, 10], size=(10, 1), default_value=config['Puntaje_restar'], pad=(10, 10),
+        [sg.InputCombo([0, 5, 10], size=(10, 1), default_value=config['Puntaje_restar'], pad=pad_st,
                        key='-LOSESCORE-')]
     ]
 
@@ -88,38 +89,38 @@ def build():
             sg.Push(),
             sg.Column(layout=gen_opt, element_justification='r'),
             sg.VPush()
-        ]], font=('Verdana', 14), size=(550, 200))]
+        ]], font=('Verdana', 13), size=(550, 180))]
     ]
 
     # construcción del área de selección de datasets
     datasets_opt = [
-        [sg.Text('Elige al menos una', font=gen_font)],
+        [sg.Text('Elige al menos una', font=('Verdana', 10))],
         [sg.Checkbox('Erupciones volcanicas', default=config['Datasets']['Volcanes'],
-                     enable_events=True, font=gen_font, pad=(10, 10), key='-VOLCANES-')],
+                     enable_events=True, font=fuente, pad=pad_st, key='-VOLCANES-')],
         [sg.Checkbox('Spotify Top 100 2010-2019', default=config['Datasets']['Spotify'],
-                     enable_events=True, font=gen_font, pad=(10, 10), key='-SPOTIFY-')],
+                     enable_events=True, font=fuente, pad=pad_st, key='-SPOTIFY-')],
         [sg.Checkbox('Jugadores FIFA 2021', default=config['Datasets']['FIFA'],
-                     enable_events=True, font=gen_font, pad=(10, 10), key='-FIFA-')]
+                     enable_events=True, font=fuente, pad=pad_st, key='-FIFA-')]
     ]
 
     datasets = [
-        [sg.Frame('Categorías para jugar', layout=datasets_opt, font=('Verdana', 14),
-                  pad=(10, 10), size=(550, 200))]
+        [sg.Frame('Categorías para jugar', layout=datasets_opt, font=('Verdana', 13),
+                  pad=pad_st, size=(550, 180))]
     ]
 
     # construcción del área de configuraciones por nivel
     level_txt = [
-        [sg.Text('Fácil', font=gen_font, pad=(10, 10))],
-        [sg.Text('Normal', font=gen_font, pad=(10, 10))],
-        [sg.Text('Difícil', font=gen_font, pad=(10, 10))]
+        [sg.Text('Fácil', font=fuente, pad=pad_st)],
+        [sg.Text('Normal', font=fuente, pad=pad_st)],
+        [sg.Text('Difícil', font=fuente, pad=pad_st)]
     ]
 
     level_opt = [
-        [sg.OptionMenu((1, 2, 3, 4, 5), default_value=config['Cant_pistas']['Facil'], size=(10, 1), pad=(10, 10),
+        [sg.OptionMenu((1, 2, 3, 4, 5), default_value=config['Cant_pistas']['Facil'], size=(10, 1), pad=pad_st,
                        key='-EASYCAR-')],
-        [sg.OptionMenu((1, 2, 3, 4), default_value=config['Cant_pistas']['Normal'], size=(10, 1), pad=(10, 10),
+        [sg.OptionMenu((1, 2, 3, 4), default_value=config['Cant_pistas']['Normal'], size=(10, 1), pad=pad_st,
                        key='-NORMALCAR-')],
-        [sg.OptionMenu((1, 2, 3), default_value=config['Cant_pistas']['Dificil'], size=(10, 1), pad=(10, 10),
+        [sg.OptionMenu((1, 2, 3), default_value=config['Cant_pistas']['Dificil'], size=(10, 1), pad=pad_st,
                        key='-HARDCAR-')]
     ]
 
@@ -128,7 +129,7 @@ def build():
             sg.Column(layout=level_txt, element_justification='l'),
             sg.Push(),
             sg.Column(layout=level_opt, element_justification='r')
-        ]], font=('Verdana', 14), size=(550, 180))]
+        ]], font=('Verdana', 13), size=(550, 150))]
     ]
 
     # construcción del layout
@@ -138,12 +139,12 @@ def build():
         [sg.Column(level, element_justification='c')],
         [sg.Column(datasets, element_justification='c')],
         [sg.VPush()],
-        [sg.Button('Volver', font=gen_font, border_width=2, size=(10, 1), button_color=('black', 'white'),
+        [sg.Button('Volver', font=fuente, border_width=2, size=(10, 1), button_color=('black', 'white'),
                    key='-VOLVER-'),
-         sg.Button('Aceptar', font=gen_font, border_width=2, size=(10, 1), key='-OK-')]
+         sg.Button('Aceptar', font=fuente, border_width=2, size=(10, 1), key='-OK-')]
     ]
 
-    window = sg.Window('FiguRace *-* Configuración', layout, resizable=True, size=(600, 800), auto_size_buttons=True,
+    window = sg.Window('FiguRace *-* Configuración', layout, resizable=True, size=(600, 630), auto_size_buttons=True,
                        element_justification='c')
 
     while True:
@@ -153,15 +154,19 @@ def build():
             window.close()
             break
         if event == '-OK-':
-            actualizar_config(values)
-            if verificar_config():
-                sg.popup('Configuración guardada con éxito', title='¡Hecho!', keep_on_top=True,
-                         font=('Verdana', 12))
-                window.close()
-                break
-            else:
-                sg.popup('Por favor verifica tus opciones', title='¡Cuidado!', keep_on_top=True,
-                         font=('Verdana', 12))
+            try:
+                actualizar_config(values)
+                if verificar_config():
+                    sg.popup('Configuración guardada con éxito', title='¡Hecho!', keep_on_top=True,
+                             font=fuente)
+                    window.close()
+                    break
+                else:
+                    sg.popup('Por favor verifica tus opciones', title='¡Cuidado!', keep_on_top=True,
+                             font=fuente)
+            except ValueError:
+                sg.popup('Por favor ingresa solo números en los campos solicitados.', title='¡Cuidado!',
+                         keep_on_top=True, font=fuente)
         elif event == '-VOLVER-':
             window.close()
             break
