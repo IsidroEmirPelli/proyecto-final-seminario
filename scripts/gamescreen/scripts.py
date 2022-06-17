@@ -36,8 +36,9 @@ def get_card_data():
 def create_col_result(clave_al, user):
     """ Creacion de columna izquierda(categoria, resultado parcial y abandonar partida) """
 
+    config = get_config()
     check = [[sg.Text(f'{index}- ', size=(4, 1)), sg.Image('', size=(15, 15), key=f'-IMG_{index}-')] for index in
-             range(1, 11)]
+             range(1, (config['Rondas']+1))]
     col_resultado_parcial = [
         [sg.Text(f"{user}")],
         [sg.Column(check)],
@@ -58,7 +59,7 @@ def otras_cartas(num_car, data) -> int:
     """retorna "cartas" aleatoria que no sea la que se esta jugando"""
 
     act_cards = []
-    while len(act_cards) != 5:
+    while len(act_cards) != 4:
         num = randrange(len(data))
         if num not in act_cards and num != num_car:
             act_cards.append(num)
@@ -91,6 +92,7 @@ def create_right_col(header, data, dificultad, num_carta):
         """ Genero el box con las otras cartas """
 
         other_cards = otras_cartas(num_carta, data)
+        other_cards.append(num_carta)
         cards = [[sg.Push(), sg.Button(f'{data[other_cards[index]][5]}', font=GEN_FONT, border_width=2, size=(20, 0),
                                        key=f'-CARTA_{index}-'),
                   sg.Push()] for index in range(1, 5)] + [[sg.Push(), sg.Button(f'{data[num_carta][5]}', font=GEN_FONT,

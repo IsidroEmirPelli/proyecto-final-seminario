@@ -8,6 +8,7 @@ from scripts.gamescreen.constant import *
 def build(user, dificultad):
     """ Construyo la ventana de juego"""
 
+    config = get_config()
     csv_selected, header, data = get_card_data()
     num_carta = randrange(len(data))  # obtengo carta a jugar aleatoriamente
     
@@ -28,20 +29,21 @@ def build(user, dificultad):
     img_act = []
     carta_buena = data[num_carta][5]
     while True:
-        if len(img_act) != 10:
+        if len(img_act) != config['Rondas']:
             event, values = window.read()
             if event == sg.WIN_CLOSED:
                 break
             elif event == '-VOLVER-':
                 window.close()
-            elif window[event].get_text() == carta_buena:
-                window[f'-IMG_{len(img_act)+1}-'].update(PATH_CHECK_PNG)
-                img_act.append(True)
-                carta_buena = window_update(window, dificultad)
             else:
-                window[f'-IMG_{len(img_act)+1}-'].update(PATH_NOTCHECK_PNG)
-                img_act.append(False)
-                carta_buena = window_update(window, dificultad)
+                if window[event].get_text() == carta_buena:
+                    window[f'-IMG_{len(img_act)+1}-'].update(PATH_CHECK_PNG)
+                    img_act.append(True)
+                    carta_buena = data[window_update(window, dificultad)][5]
+                else:
+                    window[f'-IMG_{len(img_act)+1}-'].update(PATH_NOTCHECK_PNG)
+                    img_act.append(False)
+                    carta_buena = data[window_update(window, dificultad)][5]
         else:
             sg.popup("No puedes seguir jugando")
             window.close()
