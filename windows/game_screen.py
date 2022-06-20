@@ -31,6 +31,7 @@ def build(user, dificultad):
     img_act = []
     carta_buena = data[num_carta][5]
     start_time = time()
+    time_y_punt = [start_time, puntaje]
 
     while True:
         if len(img_act) != config['Rondas']:
@@ -42,25 +43,26 @@ def build(user, dificultad):
 
             # countdown
             elif event == '-TIMEOUT-':
-                countdown(window, start_time, config, data, dificultad, img_act, puntaje)
+                countdown(window, time_y_punt, config, data, dificultad, img_act)
             else:
                 if window[event].get_text() == carta_buena:
                     window[f'-IMG_{len(img_act) + 1}-'].update(PATH_CHECK_PNG)
                     img_act.append(True)
-                    puntaje += config['Puntaje_sumar']
+                    time_y_punt[1] += config['Puntaje_sumar']
                     carta_buena = data[window_update(window, dificultad)][5]
-                    start_time = time()
+                    time_y_punt[0] = time()
                 else:  # si llega aca carta perdida
                     window[f'-IMG_{len(img_act) + 1}-'].update(PATH_NOTCHECK_PNG)
                     img_act.append(False)
-                    puntaje -= config['Puntaje_restar']
+                    time_y_punt[1] -= config['Puntaje_restar']
                     carta_buena = data[window_update(window, dificultad)][5]
-                    start_time = time()
+                    time_y_punt[0] = time()
 
         else:
-            if puntaje <= 0:
-                puntaje = 0
-            sg.popup("No puedes seguir jugando", "Puntaje obtenido: ", f'{puntaje}')
-            guardar_info()
+            if time_y_punt[1] <= 0:
+                time_y_punt[1] = 0
+            sg.popup("No puedes seguir jugando", "Puntaje obtenido: ", f'{time_y_punt[1]}')
+            guardar_puntaje(user, time_y_punt[1])
+            guardar_info(user, dificultad)
             window.close()
             break

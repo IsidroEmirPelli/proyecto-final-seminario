@@ -64,7 +64,9 @@ def otras_cartas(num_car, data):
     while len(act_cards) < 4:
         num = randrange(len(data) - 1)
         # 3 -> para que no repita el nombre del artista
-        if num not in act_cards and num != num_car and data[num][5] != data[num_car][5]:
+        # 4 -> para que no se repita el nombre del artista en las opciones erradas
+        if num not in act_cards and num != num_car and data[num][5] != data[num_car][5]\
+                and data[num][5] not in [data[pos][5] for pos in act_cards]:
             act_cards.append(num)
 
     return act_cards
@@ -149,9 +151,10 @@ def window_update(window, dificultad):
     return num_carta
 
 
-def countdown(window, start_time, config, data, dificultad, img_act, puntaje):
+def countdown(window, time_y_punt, config, data, dificultad, img_act):
     """Controlador del countdown"""
-    current_time = int(time() - start_time)
+
+    current_time = int(time() - time_y_punt[0])
     elapsed_time = config['Tiempo'] - current_time  # tiempo restante = inicial -transcurrido
     if elapsed_time >= 10:
         window['-TIMER-'].update(value=f' {elapsed_time // 60}:{elapsed_time % 60}', font=('verdana', 13),
@@ -162,31 +165,35 @@ def countdown(window, start_time, config, data, dificultad, img_act, puntaje):
                                  text_color='#ff0055')
     else:
         # terminar ventana
-        puntaje -= config['Puntaje_restar']
+        time_y_punt[1] -= config['Puntaje_restar']
         sg.popup('Tiempo terminado', title='Game Over')
         window[f'-IMG_{len(img_act) + 1}-'].update(PATH_NOTCHECK_PNG)
         img_act.append(False)
         carta_buena = data[window_update(window, dificultad)][5]
-        start_time = time()
+        time_y_punt[0] = time()
 
 
 def guardar_info():
+    """Función que guarda la información de las partidas"""
     try:
-        with open(PATH_PARTIDAS, 'r') as file:
+        with open(PATH_PARTIDAS, 'r', newline='') as file:
             None
     except FileNotFoundError:
         crear_arch_partidas()
     finally:
         dic = {'timestamp': 0, 'id': 0, 'evento': 0, 'usuarie': 0, 'estado': 0, 'texto-ingresado': 0,
                'respuesta': 0, 'nivel': 0}
-        with open(PATH_PARTIDAS, 'a', newline='') as file:
-            dict_writer = DictWriter(file)
+        with open(PATH_PARTIDAS, 'a', newline='', encoding='utf-8') as file:
+            dict_writer = DictWriter(file, fieldnames=dic.keys())
             dict_writer.writerow(dic)
 
 
 def crear_arch_partidas():
-    with open(PATH_PARTIDAS, 'w') as file:
+    with open(PATH_PARTIDAS, 'w', encoding='utf-8', newline='') as file:
         fieldnames = ['timestamp', 'id', 'evento', 'usuarie', 'estado',
                       'texto-ingresado', 'respuesta', 'nivel']
         wr = csv.DictWriter(file, fieldnames=fieldnames)
         wr.writeheader()
+
+def guardar_puntaje():
+    return 0

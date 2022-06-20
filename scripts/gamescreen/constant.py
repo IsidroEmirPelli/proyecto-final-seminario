@@ -9,16 +9,16 @@ PATH_CHECK_PNG = os.path.join(PATH_IMAGES, 'check.png')
 PATH_NOTCHECK_PNG = os.path.join(PATH_IMAGES, 'not_check.png')
 
 # path csv
-PATH_CSV = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'data_sets'))
-PATH_SPOTIFTY_CSV = os.path.join(PATH_CSV, 'New-Spotify-2010-2019-Top-100.csv')
-PATH_ERUPCIONES_CSV = os.path.join(PATH_CSV, 'new-significant-volcanic-eruption-database.csv')
-PATH_FIFA_CSV = os.path.join(PATH_CSV, 'New-FIFA-21-Complete.csv')
+PATH_DATASETS = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'data_sets'))
+PATH_SPOTIFTY_CSV = os.path.join(PATH_DATASETS, 'New-Spotify-2010-2019-Top-100.csv')
+PATH_ERUPCIONES_CSV = os.path.join(PATH_DATASETS, 'new-significant-volcanic-eruption-database.csv')
+PATH_FIFA_CSV = os.path.join(PATH_DATASETS, 'New-FIFA-21-Complete.csv')
 
 # path json
-PATH_JSON = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'users'))
-PATH_CONFIG = os.path.join(PATH_JSON, 'config.json')
+PATH_USERS = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'users'))
+PATH_CONFIG = os.path.join(PATH_USERS, 'config.json')
 
-PATH_PARTIDAS = os.path.join(PATH_JSON, 'registro_partidas.csv')
+PATH_PARTIDAS = os.path.join(PATH_USERS, 'registro_partidas.csv')
 
 GEN_FONT = 'Verdana', 12
 
