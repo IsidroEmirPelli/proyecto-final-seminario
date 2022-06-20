@@ -1,7 +1,9 @@
 from csv import reader
+from itertools import count
 import pandas as pd
 import PySimpleGUI as sg
 import os
+import numpy as np
 
 
 def build():
@@ -32,19 +34,32 @@ def build():
 
     sort_scores(scores_dicctionary)
 
-    def convert_touple_to_string():
-        """ funcion que convierte todas las tuplas en strings en el diccionario"""
-        for key in scores_dicctionary:
-            scores_dicctionary[key] = [str(tup[0]) + " : " + str(tup[1]) for tup in scores_dicctionary[key]]
-        return scores_dicctionary
+    # sort the csv first by difficulty and then by user name
+    
 
-    convert_touple_to_string()
+        
+    
+    
+    
+    
+    
 
     # usando pandas se convierte el diccionario en un dataframe
-    df = pd.DataFrame(scores_dicctionary.values())
+    df = pd.DataFrame(scores_dicctionary.values()).fillna('-')
 
-    # se rotan solamente los primeros 20 elementos de cada lista
+    
+    
+    
+  
+
+
+
+
+
     result2 = [list(x) for x in zip(*df.values)][0:20]
+
+   
+
 
     layout = [
         [sg.Push(), sg.Button("Volver", font="Verdana 11", border_width=2, size=(10, 1), key="-VOLVER-")],
@@ -56,7 +71,10 @@ def build():
                              num_rows=20,
                              alternating_row_color='lightyellow',
                              key='-TABLE-',
-                             row_height=35), sg.Push()]
+                             row_height=35), sg.Push(),
+                             
+                             
+                              sg.Push()]
     ]
 
     window = sg.Window("FiguRace *-* Puntajes", layout, resizable=True, size=(600, 800), auto_size_text=True)
