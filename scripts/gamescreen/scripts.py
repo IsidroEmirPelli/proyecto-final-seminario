@@ -60,15 +60,11 @@ def create_col_result(clave_al, user):
 def otras_cartas(num_car, data):
     """retorna "cartas" aleatoria que no sea la que se esta jugando"""
 
-    act_cards = []
-    while len(act_cards) < 4:
+    act_cards = [num_car]
+    while len(act_cards) < 5:
         num = randrange(len(data) - 1)
-        # 3 -> para que no repita el nombre del artista
-        # 4 -> para que no se repita el nombre del artista en las opciones erradas
-        if num not in act_cards and num != num_car and data[num][5] != data[num_car][5] \
-                and data[num][5] not in [data[pos][5] for pos in act_cards]:
+        if data[num][5] not in [data[pos][5] for pos in act_cards]:
             act_cards.append(num)
-
     return act_cards
 
 
@@ -113,8 +109,7 @@ def create_right_col(header, data, dificultad, num_carta):
     ]
 
     col_right = [
-        [sg.Text(f'Nivel: {dificultad}')],  # -> determinar la dificultad
-        [sg.Text(f'Tiempo total: {10}min', justification="right", font=GEN_FONT)],
+        [sg.Text(f'Nivel: {dificultad}', font=GEN_FONT)],  # -> determinar la dificultad
         # -> determinar el tiempo segun la dificultad o configuracion
         [sg.Push(), sg.Text("00:00", justification="center", key="-TIMER-", text_color='#ff0055', font=("Verdana", 12)),
          sg.Push()],
@@ -136,8 +131,6 @@ def window_update(window, dificultad):
 
     # retorna lista con el dato a encontrar
     cartas = [f'{data[otras_cards[index]][5]}' for index in range(len(otras_cards))]
-    cartas.append(f'{data[num_carta][5]}')
-
     cartas = select_randomly(cartas)
 
     window['-TEXTO_DATA-'].update(f"-{csv_selected}-")

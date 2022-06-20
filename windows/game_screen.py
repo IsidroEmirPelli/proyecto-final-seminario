@@ -10,6 +10,13 @@ from uuid import uuid4
 def build(user, dificultad):
     """ Construyo la ventana de juego"""
 
+    sg.popup("¡Bienvenido!",
+             "El juego consiste en que encuentres la opción correcta entre las dadas en la botonera",
+             "Guíate por las pistas que te daremos.",
+             "Presta atención al tiempo. Cuando presiones 'Comenzar' el tiempo empezará a correr.",
+             "¡Que no se te acabe!",
+             "¡Mucha suerte!", custom_text='Comenzar')
+
     config = get_config()
     csv_selected, header, data = get_card_data()
     num_carta = randrange(len(data))  # obtengo carta a jugar aleatoriamente
@@ -66,8 +73,6 @@ def build(user, dificultad):
                     time_y_punt[1] -= config['Puntaje_restar']
                     carta_buena = data[window_update(window, dificultad)][5]
                     time_y_punt[0] = time()
-
-
 
         else:
             if time_y_punt[1] <= 0:
