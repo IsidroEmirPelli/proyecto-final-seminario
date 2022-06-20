@@ -17,6 +17,7 @@ PATH_FIFA_CSV = os.path.join(PATH_DATASETS, 'New-FIFA-21-Complete.csv')
 # path json
 PATH_USERS = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'users'))
 PATH_CONFIG = os.path.join(PATH_USERS, 'config.json')
+PATH_SCORES = os.path.join(PATH_USERS, 'scores.csv')
 
 PATH_PARTIDAS = os.path.join(PATH_USERS, 'registro_partidas.csv')
 

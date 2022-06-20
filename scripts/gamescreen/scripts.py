@@ -65,7 +65,7 @@ def otras_cartas(num_car, data):
         num = randrange(len(data) - 1)
         # 3 -> para que no repita el nombre del artista
         # 4 -> para que no se repita el nombre del artista en las opciones erradas
-        if num not in act_cards and num != num_car and data[num][5] != data[num_car][5]\
+        if num not in act_cards and num != num_car and data[num][5] != data[num_car][5] \
                 and data[num][5] not in [data[pos][5] for pos in act_cards]:
             act_cards.append(num)
 
@@ -151,7 +151,7 @@ def window_update(window, dificultad):
     return num_carta
 
 
-def countdown(window, time_y_punt, config, data, dificultad, img_act):
+def countdown(window, time_y_punt, config, data, dificultad, img_act, id_partida, user):
     """Controlador del countdown"""
 
     current_time = int(time() - time_y_punt[0])
@@ -169,11 +169,12 @@ def countdown(window, time_y_punt, config, data, dificultad, img_act):
         sg.popup('Tiempo terminado', title='Game Over')
         window[f'-IMG_{len(img_act) + 1}-'].update(PATH_NOTCHECK_PNG)
         img_act.append(False)
-        carta_buena = data[window_update(window, dificultad)][5]
+        time_y_punt[2] = data[window_update(window, dificultad)][5]
         time_y_punt[0] = time()
+        guardar_info(int(time()), id_partida, "intento", user, "timeout", "-", time_y_punt[2], dificultad)
 
 
-def guardar_info():
+def guardar_info(tiempo, id_partida, evento, user, estado, text, respuesta, nivel):
     """Función que guarda la información de las partidas"""
     try:
         with open(PATH_PARTIDAS, 'r', newline='') as file:
@@ -181,8 +182,8 @@ def guardar_info():
     except FileNotFoundError:
         crear_arch_partidas()
     finally:
-        dic = {'timestamp': 0, 'id': 0, 'evento': 0, 'usuarie': 0, 'estado': 0, 'texto-ingresado': 0,
-               'respuesta': 0, 'nivel': 0}
+        dic = {'timestamp': tiempo, 'id': id_partida, 'evento': evento, 'usuarie': user, 'estado': estado,
+               'texto-ingresado': text, 'respuesta': respuesta, 'nivel': nivel}
         with open(PATH_PARTIDAS, 'a', newline='', encoding='utf-8') as file:
             dict_writer = DictWriter(file, fieldnames=dic.keys())
             dict_writer.writerow(dic)
@@ -195,5 +196,26 @@ def crear_arch_partidas():
         wr = csv.DictWriter(file, fieldnames=fieldnames)
         wr.writeheader()
 
-def guardar_puntaje():
-    return 0
+
+def guardar_puntaje(user, dificultad, puntaje):
+    """Función que guarda el puntaje de las partidas"""
+    try:
+        with open(PATH_SCORES, 'r', newline='') as file:
+            None
+    except FileNotFoundError:
+        crear_archivo_scores()
+    finally:
+        dic = {'usuarie': user, 'dificultad': dificultad, 'puntaje': puntaje}
+        with open(PATH_SCORES, 'a', newline='', encoding='utf-8') as file:
+            dict_writer = DictWriter(file, fieldnames=dic.keys())
+            dict_writer.writerow(dic)
+
+
+def crear_archivo_scores():
+    """ crea el archivo scores"""
+
+    with open(PATH_SCORES, 'w', encoding='utf-8', newline='') as file:
+        fieldnames = ['usuarie', 'dificultad', 'puntaje']
+        wr = csv.DictWriter(file, fieldnames=fieldnames)
+        wr.writeheader()
+

@@ -1,8 +1,23 @@
 timestamp,id,evento,usuarie,estado,texto-ingresado,respuesta,nivel
-0,0,0,0,0,0,0,0
-0,0,0,0,0,0,0,0
-0,0,0,0,0,0,0,0
-0,0,0,0,0,0,0,0
-0,0,0,0,0,0,0,0
-0,0,0,0,0,0,0,0
-0,0,0,0,0,0,0,0
+1655700557,c5c0cba0-c11b-432a-b835-d68778a759ea,inicio_partida,User,,-,,Facil
+1655700591,84af9da5-ff2c-4178-965b-7ee1c5c9ff53,inicio_partida,User,,-,,Facil
+1655700598,84af9da5-ff2c-4178-965b-7ee1c5c9ff53,intento,User,timeout,-,Demi Lovato,Facil
+1655700600,84af9da5-ff2c-4178-965b-7ee1c5c9ff53,intento,User,error,Chris Brown,Rihanna,Facil
+1655700602,84af9da5-ff2c-4178-965b-7ee1c5c9ff53,intento,User,error,Disclosure,Luis Fonsi,Facil
+1655700604,84af9da5-ff2c-4178-965b-7ee1c5c9ff53,intento,User,error,Young Thug,Tinashe,Facil
+1655700607,84af9da5-ff2c-4178-965b-7ee1c5c9ff53,intento,User,error,Taylor Swift,Meghan Trainor,Facil
+1655700609,84af9da5-ff2c-4178-965b-7ee1c5c9ff53,intento,User,finalizada,,,Facil
+1655700610,7de0e7f7-50e5-4d6c-aafd-eb29aea93f59,inicio_partida,User,,-,,Facil
+1655700612,7de0e7f7-50e5-4d6c-aafd-eb29aea93f59,intento,User,error,X Ambassadors,Jason Derulo,Facil
+1655700616,7de0e7f7-50e5-4d6c-aafd-eb29aea93f59,intento,User,error,Jay Rock,French Montana,Facil
+1655700619,7de0e7f7-50e5-4d6c-aafd-eb29aea93f59,intento,User,error,G-Eazy,iann dior,Facil
+1655700623,7de0e7f7-50e5-4d6c-aafd-eb29aea93f59,intento,User,error,Flo Rida,Ariana Grande,Facil
+1655700626,7de0e7f7-50e5-4d6c-aafd-eb29aea93f59,intento,User,error,5 Seconds of Summer,Kanye West,Facil
+1655700629,7de0e7f7-50e5-4d6c-aafd-eb29aea93f59,intento,User,finalizada,,,Facil
+1655700630,5c2b07c4-d126-42ff-bdb4-adbaed69a29b,inicio_partida,User,,-,,Facil
+1655700632,5c2b07c4-d126-42ff-bdb4-adbaed69a29b,intento,User,ok,American Authors,American Authors,Facil
+1655700633,5c2b07c4-d126-42ff-bdb4-adbaed69a29b,intento,User,error,Noah And The Whale,Zedd,Facil
+1655700634,5c2b07c4-d126-42ff-bdb4-adbaed69a29b,intento,User,error,Adele,Macklemore & Ryan Lewis,Facil
+1655700634,5c2b07c4-d126-42ff-bdb4-adbaed69a29b,intento,User,error,Maroon 5,BLACKPINK,Facil
+1655700634,5c2b07c4-d126-42ff-bdb4-adbaed69a29b,intento,User,error,Wiley,Two Door Cinema Club,Facil
+1655700636,5c2b07c4-d126-42ff-bdb4-adbaed69a29b,intento,User,finalizada,,,Facil

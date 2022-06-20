@@ -4,6 +4,7 @@ from random import randrange
 from scripts.gamescreen.scripts import *
 from scripts.gamescreen.constant import *
 from time import time
+from uuid import uuid4
 
 
 def build(user, dificultad):
@@ -31,9 +32,12 @@ def build(user, dificultad):
     img_act = []
     carta_buena = data[num_carta][5]
     start_time = time()
-    time_y_punt = [start_time, puntaje]
+    time_y_punt = [start_time, puntaje, carta_buena]
+    id_partida = uuid4()
+    guardar_info(int(time()), id_partida, "inicio_partida", user, "", "-", "", dificultad)
 
     while True:
+
         if len(img_act) != config['Rondas']:
             event, values = window.read(timeout=250, timeout_key='-TIMEOUT-')
             if event == sg.WIN_CLOSED:
@@ -43,26 +47,33 @@ def build(user, dificultad):
 
             # countdown
             elif event == '-TIMEOUT-':
-                countdown(window, time_y_punt, config, data, dificultad, img_act)
+                countdown(window, time_y_punt, config, data, dificultad, img_act, id_partida, user)
             else:
                 if window[event].get_text() == carta_buena:
+                    guardar_info(int(time()), id_partida, "intento", user, "ok", window[event].get_text(), carta_buena,
+                                 dificultad)
                     window[f'-IMG_{len(img_act) + 1}-'].update(PATH_CHECK_PNG)
                     img_act.append(True)
                     time_y_punt[1] += config['Puntaje_sumar']
                     carta_buena = data[window_update(window, dificultad)][5]
                     time_y_punt[0] = time()
+
                 else:  # si llega aca carta perdida
+                    guardar_info(int(time()), id_partida, "intento", user, "error", window[event].get_text(),
+                                 carta_buena, dificultad)
                     window[f'-IMG_{len(img_act) + 1}-'].update(PATH_NOTCHECK_PNG)
                     img_act.append(False)
                     time_y_punt[1] -= config['Puntaje_restar']
                     carta_buena = data[window_update(window, dificultad)][5]
                     time_y_punt[0] = time()
 
+
+
         else:
             if time_y_punt[1] <= 0:
                 time_y_punt[1] = 0
             sg.popup("No puedes seguir jugando", "Puntaje obtenido: ", f'{time_y_punt[1]}')
-            guardar_puntaje(user, time_y_punt[1])
-            guardar_info(user, dificultad)
+            guardar_puntaje(user, dificultad, time_y_punt[1])
+            guardar_info(int(time()), id_partida, "intento", user, "finalizada", "", "", dificultad)
             window.close()
             break
