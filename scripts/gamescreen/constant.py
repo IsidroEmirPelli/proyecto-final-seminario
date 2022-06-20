@@ -18,6 +18,8 @@ PATH_FIFA_CSV = os.path.join(PATH_CSV, 'New-FIFA-21-Complete.csv')
 PATH_JSON = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'users'))
 PATH_CONFIG = os.path.join(PATH_JSON, 'config.json')
 
+PATH_PARTIDAS = os.path.join(PATH_JSON, 'registro_partidas.csv')
+
 GEN_FONT = 'Verdana', 12
 
 PATHS = {"Volcanes": (PATH_ERUPCIONES_CSV, PATH_ERUPCIONES_PNG), "FIFA": (PATH_FIFA_CSV, PATH_FIFA_PNG),

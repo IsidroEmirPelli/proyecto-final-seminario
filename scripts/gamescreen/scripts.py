@@ -1,5 +1,6 @@
 import json
 import csv
+from csv import DictWriter
 from random import choice, randrange
 import PySimpleGUI as sg
 from scripts.gamescreen.constant import *
@@ -56,12 +57,12 @@ def create_col_result(clave_al, user):
     return col_left
 
 
-def otras_cartas(num_car, data) -> int:
+def otras_cartas(num_car, data):
     """retorna "cartas" aleatoria que no sea la que se esta jugando"""
 
     act_cards = []
     while len(act_cards) < 4:
-        num = randrange(len(data))
+        num = randrange(len(data) - 1)
         # 3 -> para que no repita el nombre del artista
         if num not in act_cards and num != num_car and data[num][5] != data[num_car][5]:
             act_cards.append(num)
@@ -128,7 +129,7 @@ def window_update(window, dificultad):
     cant = config['Cant_pistas'][dificultad]
 
     csv_selected, header, data = get_card_data()
-    num_carta = randrange(len(data))  # obtengo carta a jugar aleatoriamente
+    num_carta = randrange(len(data) - 1)  # obtengo carta a jugar aleatoriamente
     otras_cards = otras_cartas(num_carta, data)
 
     # retorna lista con el dato a encontrar
@@ -148,21 +149,44 @@ def window_update(window, dificultad):
     return num_carta
 
 
-def countdown(window, start_time, config, data, dificultad, img_act):
+def countdown(window, start_time, config, data, dificultad, img_act, puntaje):
     """Controlador del countdown"""
     current_time = int(time() - start_time)
     elapsed_time = config['Tiempo'] - current_time  # tiempo restante = inicial -transcurrido
-    if elapsed_time > 10:
+    if elapsed_time >= 10:
         window['-TIMER-'].update(value=f' {elapsed_time // 60}:{elapsed_time % 60}', font=('verdana', 13),
                                  text_color='#35F64F')
     elif elapsed_time >= 0:
         # -> solo cambio de color
-        window['-TIMER-'].update(value=f' {elapsed_time // 60}:{elapsed_time % 60}', font=('verdana', 13),
+        window['-TIMER-'].update(value=f' {elapsed_time // 60}:0{elapsed_time % 60}', font=('verdana', 13),
                                  text_color='#ff0055')
     else:
         # terminar ventana
+        puntaje -= config['Puntaje_restar']
         sg.popup('Tiempo terminado', title='Game Over')
         window[f'-IMG_{len(img_act) + 1}-'].update(PATH_NOTCHECK_PNG)
         img_act.append(False)
         carta_buena = data[window_update(window, dificultad)][5]
         start_time = time()
+
+
+def guardar_info():
+    try:
+        with open(PATH_PARTIDAS, 'r') as file:
+            None
+    except FileNotFoundError:
+        crear_arch_partidas()
+    finally:
+        dic = {'timestamp': 0, 'id': 0, 'evento': 0, 'usuarie': 0, 'estado': 0, 'texto-ingresado': 0,
+               'respuesta': 0, 'nivel': 0}
+        with open(PATH_PARTIDAS, 'a', newline='') as file:
+            dict_writer = DictWriter(file)
+            dict_writer.writerow(dic)
+
+
+def crear_arch_partidas():
+    with open(PATH_PARTIDAS, 'w') as file:
+        fieldnames = ['timestamp', 'id', 'evento', 'usuarie', 'estado',
+                      'texto-ingresado', 'respuesta', 'nivel']
+        wr = csv.DictWriter(file, fieldnames=fieldnames)
+        wr.writeheader()

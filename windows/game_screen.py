@@ -12,6 +12,7 @@ def build(user, dificultad):
     config = get_config()
     csv_selected, header, data = get_card_data()
     num_carta = randrange(len(data))  # obtengo carta a jugar aleatoriamente
+    puntaje = 0
 
     # Construccion de la ventana del juego
     sg.theme("LightBlue")
@@ -41,20 +42,25 @@ def build(user, dificultad):
 
             # countdown
             elif event == '-TIMEOUT-':
-                countdown(window, start_time, config, data, dificultad, img_act)
+                countdown(window, start_time, config, data, dificultad, img_act, puntaje)
             else:
                 if window[event].get_text() == carta_buena:
                     window[f'-IMG_{len(img_act) + 1}-'].update(PATH_CHECK_PNG)
                     img_act.append(True)
+                    puntaje += config['Puntaje_sumar']
                     carta_buena = data[window_update(window, dificultad)][5]
                     start_time = time()
                 else:  # si llega aca carta perdida
                     window[f'-IMG_{len(img_act) + 1}-'].update(PATH_NOTCHECK_PNG)
                     img_act.append(False)
+                    puntaje -= config['Puntaje_restar']
                     carta_buena = data[window_update(window, dificultad)][5]
                     start_time = time()
 
         else:
-            sg.popup("No puedes seguir jugando")
+            if puntaje <= 0:
+                puntaje = 0
+            sg.popup("No puedes seguir jugando", "Puntaje obtenido: ", f'{puntaje}')
+            guardar_info()
             window.close()
             break
