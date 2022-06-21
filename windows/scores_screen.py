@@ -1,9 +1,10 @@
+
 from csv import reader
-from itertools import count
+
 import pandas as pd
 import PySimpleGUI as sg
 import os
-import numpy as np
+
 
 
 def build():
@@ -15,11 +16,13 @@ def build():
 
     scores_dicctionary = {'facil': [], 'normal': [], 'dificil': []}
     headings_array = ["FACIL", "NORMAL", "DIFICIL"]
+    headings_array2 = ["PROMEDIO FACIL", "PROMEDIO NORMAL", "PROMEDIO DIFICIL"]
    
     def load_score_dicctionary():
         """ funcion que lee el archivo csv y devuelve un diccionario con key: dificultad y value: lista de tuplas """
         with open(path_scores, 'r') as csv_file:
             csv_reader = reader(csv_file, delimiter=',')
+            next(csv_reader)
             for row in csv_reader:
                 scores_dicctionary[row[1]].append((row[0], row[2]))
         return scores_dicctionary
@@ -34,29 +37,42 @@ def build():
 
     sort_scores(scores_dicctionary)
 
-    # sort the csv first by difficulty and then by user name
     
 
+    averages = {}
+    def create_averages(dictionary):
+        for difficulty, scores in dictionary.items():
+            mapping = {}
+            for score in scores:
+                player = score[0]
+                points = score[1]
+                mapping.setdefault(player, {"total_points": 0, "games_played": 0})
+                mapping[player]["total_points"] += int(points)
+                mapping[player]["games_played"] += int(1)
+
+            for player, data in mapping.items():
+                averages.setdefault(difficulty, [])
+                averages[difficulty].append((player, round(data["total_points"] / data["games_played"], 2)))
         
-    
-    
-    
-    
+    create_averages(scores_dicctionary)
+
+   
+
     
 
+    
+    
     # usando pandas se convierte el diccionario en un dataframe
     df = pd.DataFrame(scores_dicctionary.values()).fillna('-')
 
-    
-    
-    
-  
+    df2 = pd.DataFrame(averages.values()).fillna('-')
 
-
-
+    
 
 
     result2 = [list(x) for x in zip(*df.values)][0:20]
+
+    result = [list(x) for x in zip(*df2.values)][0:20]
 
    
 
@@ -73,7 +89,15 @@ def build():
                              key='-TABLE-',
                              row_height=35), sg.Push(),
                              
-                             
+                             sg.Table(values=result, headings=headings_array2,
+                             # background_color='light blue',
+                             auto_size_columns=False,
+                             display_row_numbers=False,
+                             justification='center',
+                             num_rows=20,
+                             alternating_row_color='lightyellow',
+                             key='-TABLE-',
+                             row_height=35), sg.Push(),
                               sg.Push()]
     ]
 
