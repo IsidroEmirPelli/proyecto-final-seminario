@@ -72,3 +72,24 @@ timestamp,id,evento,usuarie,estado,texto-ingresado,respuesta,nivel
 1655702622,934fce22-69c6-4a5b-9978-129f54861079,intento,User,error,B.o.B,MK,Facil
 1655702624,934fce22-69c6-4a5b-9978-129f54861079,intento,User,error,Shawn Mendes,Katy Perry,Facil
 1655702625,934fce22-69c6-4a5b-9978-129f54861079,intento,User,finalizada,,,Facil
+1655856471,33278f44-76b6-4815-865d-d8b2aabb36b4,inicio_partida,User,,-,,Normal
+1655856473,33278f44-76b6-4815-865d-d8b2aabb36b4,intento,User,ok,Cheat Codes,Cheat Codes,Normal
+1655856474,33278f44-76b6-4815-865d-d8b2aabb36b4,intento,User,error,Justin Bieber,Chris Brown,Normal
+1655856476,33278f44-76b6-4815-865d-d8b2aabb36b4,intento,User,error,Post Malone,Playboi Carti,Normal
+1655856477,33278f44-76b6-4815-865d-d8b2aabb36b4,intento,User,error,Post Malone,Jay Sean,Normal
+1655856479,33278f44-76b6-4815-865d-d8b2aabb36b4,intento,User,error,OneRepublic,fun.,Normal
+1655856481,33278f44-76b6-4815-865d-d8b2aabb36b4,intento,User,finalizada,,,Normal
+1655856485,7efd9a47-332a-435b-856f-80e8b87b1320,inicio_partida,User,,-,,Normal
+1655856486,7efd9a47-332a-435b-856f-80e8b87b1320,intento,User,error,Olivia Holt,Katy Perry,Normal
+1655856487,7efd9a47-332a-435b-856f-80e8b87b1320,intento,User,error,Omarion,Lady Gaga,Normal
+1655856488,7efd9a47-332a-435b-856f-80e8b87b1320,intento,User,error,Britney Spears,Icona Pop,Normal
+1655856490,7efd9a47-332a-435b-856f-80e8b87b1320,intento,User,error,The 1975,Nico & Vinz,Normal
+1655856491,7efd9a47-332a-435b-856f-80e8b87b1320,intento,User,error,Bastille,Ed Sheeran,Normal
+1655856492,7efd9a47-332a-435b-856f-80e8b87b1320,intento,User,finalizada,,,Normal
+1655856498,d8f3d936-be9a-4266-85eb-899397278753,inicio_partida,User,,-,,Dificil
+1655856499,d8f3d936-be9a-4266-85eb-899397278753,intento,User,error,XXXTENTACION,Meghan Trainor,Dificil
+1655856500,d8f3d936-be9a-4266-85eb-899397278753,intento,User,ok,Selena Gomez,Selena Gomez,Dificil
+1655856502,d8f3d936-be9a-4266-85eb-899397278753,intento,User,error,Bruno Mars,Kendrick Lamar,Dificil
+1655856503,d8f3d936-be9a-4266-85eb-899397278753,intento,User,error,Bruno Mars,Taylor Swift,Dificil
+1655856504,d8f3d936-be9a-4266-85eb-899397278753,intento,User,error,OneRepublic,Beyoncé,Dificil
+1655856506,d8f3d936-be9a-4266-85eb-899397278753,intento,User,finalizada,,,Dificil
