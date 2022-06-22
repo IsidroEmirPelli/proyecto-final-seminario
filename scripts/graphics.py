@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
-car_path = os.path.abspath(os.path.join(os.path.dirname("__file__"), '..', 'users'))
+car_path = os.path.abspath(os.path.join(os.path.dirname("__file__"), 'users'))
 file_path = os.path.join(car_path, 'registro_partidas.csv')
 
 datos = pd.read_csv(file_path)
@@ -24,5 +24,3 @@ def level_graphic():
     plt.title('Porcentaje de partidas finalizadas por dificultad')
     plt.show()
 
-
-level_graphic()
