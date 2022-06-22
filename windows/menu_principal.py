@@ -3,7 +3,7 @@ from types import NoneType
 import PySimpleGUI as sg
 import json
 import os
-from windows import profile_screen, config_screen, game_screen, scores_screen, statistics_screen
+from windows import profile_screen, config_screen, game_screen, scores_screen
 
 
 def check_user(user):
@@ -72,12 +72,11 @@ def build():
         [sg.VPush()],
         [sg.Image(path_logo)],
         [sg.Text('')],
-        [sg.Button("JUGAR", font=fuente, border_width=2, size=(22, 1), key="-GAME-")],
-        [sg.Button("PERFILES", font=fuente, border_width=2, size=(22, 1), key="-PROFILE-")],
-        [sg.Button("PUNTAJES", font=fuente, border_width=2, size=(22, 1), key="-SCORES-")],
-        [sg.Button("CONFIGURACION", font=fuente, border_width=2, size=(22, 1), key="-CONFIG-")],
-        [sg.Button("ESTADISTICAS", font=fuente, border_width=2, size=(22, 1), key="-ESTAD-")],
-        [sg.Button("SALIR", font=fuente, border_width=2, size=(22, 1), key="-EXIT-")],
+        [sg.Button("JUGAR", font=fuente, border_width=2, size=(22, 2), key="-GAME-")],
+        [sg.Button("PERFILES", font=fuente, border_width=2, size=(22, 2), key="-PROFILE-")],
+        [sg.Button("PUNTAJES", font=fuente, border_width=2, size=(22, 2), key="-SCORES-")],
+        [sg.Button("CONFIGURACION", font=fuente, border_width=2, size=(22, 2), key="-CONFIG-")],
+        [sg.Button("SALIR", font=fuente, border_width=2, size=(22, 2), key="-EXIT-")],
         [sg.VPush()]
     ]
     window = sg.Window("FiguRace", layout, resizable=True, size=(600, 640), auto_size_buttons=True,
@@ -107,8 +106,4 @@ def build():
         elif event == "-SCORES-":
             window.hide()
             scores_screen.build()
-            window.un_hide()
-        elif event == "-ESTAD-":
-            window.hide()
-            statistics_screen.build()
             window.un_hide()

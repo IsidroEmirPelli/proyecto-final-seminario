@@ -1,95 +1,27 @@
-timestamp,id,evento,usuarie,estado,texto-ingresado,respuesta,nivel
-1655700557,c5c0cba0-c11b-432a-b835-d68778a759ea,inicio_partida,User,,-,,Facil
-1655700591,84af9da5-ff2c-4178-965b-7ee1c5c9ff53,inicio_partida,User,,-,,Facil
-1655700598,84af9da5-ff2c-4178-965b-7ee1c5c9ff53,intento,User,timeout,-,Demi Lovato,Facil
-1655700600,84af9da5-ff2c-4178-965b-7ee1c5c9ff53,intento,User,error,Chris Brown,Rihanna,Facil
-1655700602,84af9da5-ff2c-4178-965b-7ee1c5c9ff53,intento,User,error,Disclosure,Luis Fonsi,Facil
-1655700604,84af9da5-ff2c-4178-965b-7ee1c5c9ff53,intento,User,error,Young Thug,Tinashe,Facil
-1655700607,84af9da5-ff2c-4178-965b-7ee1c5c9ff53,intento,User,error,Taylor Swift,Meghan Trainor,Facil
-1655700609,84af9da5-ff2c-4178-965b-7ee1c5c9ff53,intento,User,finalizada,,,Facil
-1655700610,7de0e7f7-50e5-4d6c-aafd-eb29aea93f59,inicio_partida,User,,-,,Facil
-1655700612,7de0e7f7-50e5-4d6c-aafd-eb29aea93f59,intento,User,error,X Ambassadors,Jason Derulo,Facil
-1655700616,7de0e7f7-50e5-4d6c-aafd-eb29aea93f59,intento,User,error,Jay Rock,French Montana,Facil
-1655700619,7de0e7f7-50e5-4d6c-aafd-eb29aea93f59,intento,User,error,G-Eazy,iann dior,Facil
-1655700623,7de0e7f7-50e5-4d6c-aafd-eb29aea93f59,intento,User,error,Flo Rida,Ariana Grande,Facil
-1655700626,7de0e7f7-50e5-4d6c-aafd-eb29aea93f59,intento,User,error,5 Seconds of Summer,Kanye West,Facil
-1655700629,7de0e7f7-50e5-4d6c-aafd-eb29aea93f59,intento,User,finalizada,,,Facil
-1655700630,5c2b07c4-d126-42ff-bdb4-adbaed69a29b,inicio_partida,User,,-,,Facil
-1655700632,5c2b07c4-d126-42ff-bdb4-adbaed69a29b,intento,User,ok,American Authors,American Authors,Facil
-1655700633,5c2b07c4-d126-42ff-bdb4-adbaed69a29b,intento,User,error,Noah And The Whale,Zedd,Facil
-1655700634,5c2b07c4-d126-42ff-bdb4-adbaed69a29b,intento,User,error,Adele,Macklemore & Ryan Lewis,Facil
-1655700634,5c2b07c4-d126-42ff-bdb4-adbaed69a29b,intento,User,error,Maroon 5,BLACKPINK,Facil
-1655700634,5c2b07c4-d126-42ff-bdb4-adbaed69a29b,intento,User,error,Wiley,Two Door Cinema Club,Facil
-1655700636,5c2b07c4-d126-42ff-bdb4-adbaed69a29b,intento,User,finalizada,,,Facil
-1655701438,0d5e6827-bdb9-4422-8a83-7108648b9dc7,inicio_partida,User,,-,,Facil
-1655701448,0d5e6827-bdb9-4422-8a83-7108648b9dc7,intento,User,timeout,-,Skrillex,Facil
-1655702271,89c25fda-fb4d-4a20-a8b7-302c03d6ce46,inicio_partida,User,,-,,Facil
-1655702278,89c25fda-fb4d-4a20-a8b7-302c03d6ce46,intento,User,timeout,-,Rizzle Kicks,Facil
-1655702280,89c25fda-fb4d-4a20-a8b7-302c03d6ce46,intento,User,error,Cold War Kids,Jay Sean,Facil
-1655702284,89c25fda-fb4d-4a20-a8b7-302c03d6ce46,intento,User,error,Naughty Boy,The Weeknd,Facil
-1655702287,89c25fda-fb4d-4a20-a8b7-302c03d6ce46,intento,User,error,K'NAAN,Travis Scott,Facil
-1655702289,89c25fda-fb4d-4a20-a8b7-302c03d6ce46,intento,User,error,Duke Dumont,Beyoncé,Facil
-1655702290,89c25fda-fb4d-4a20-a8b7-302c03d6ce46,intento,User,finalizada,,,Facil
-1655702292,1000ab6e-a99b-4f57-ae2d-93e6045c7a82,inicio_partida,User,,-,,Facil
-1655702293,1000ab6e-a99b-4f57-ae2d-93e6045c7a82,intento,User,error,Nicki Minaj,Owl City,Facil
-1655702296,1000ab6e-a99b-4f57-ae2d-93e6045c7a82,intento,User,error,Clean Bandit,Marshmello,Facil
-1655702297,1000ab6e-a99b-4f57-ae2d-93e6045c7a82,intento,User,error,Lana Del Rey,Nick Jonas,Facil
-1655702299,1000ab6e-a99b-4f57-ae2d-93e6045c7a82,intento,User,error,Kesha,Taylor Swift,Facil
-1655702300,1000ab6e-a99b-4f57-ae2d-93e6045c7a82,intento,User,error,Billie Eilish,Cobra Starship,Facil
-1655702302,1000ab6e-a99b-4f57-ae2d-93e6045c7a82,intento,User,finalizada,,,Facil
-1655702339,d81fd4fe-8207-464b-a0e9-580cd3bc6aa3,inicio_partida,User,,-,,Facil
-1655702370,d81fd4fe-8207-464b-a0e9-580cd3bc6aa3,intento,User,ok,Tove Lo,Tove Lo,Facil
-1655702385,d81fd4fe-8207-464b-a0e9-580cd3bc6aa3,intento,User,error,Daya,Kesha,Facil
-1655702397,d81fd4fe-8207-464b-a0e9-580cd3bc6aa3,intento,User,ok,Travis Scott,Travis Scott,Facil
-1655702403,d81fd4fe-8207-464b-a0e9-580cd3bc6aa3,intento,User,error,Eminem,Ariana Grande,Facil
-1655702405,d81fd4fe-8207-464b-a0e9-580cd3bc6aa3,intento,User,error,Katy Perry,Kesha,Facil
-1655702407,d81fd4fe-8207-464b-a0e9-580cd3bc6aa3,intento,User,finalizada,,,Facil
-1655702412,5d8c6d0b-b414-4b3d-a020-47eed6c09097,inicio_partida,User,,-,,Facil
-1655702414,5d8c6d0b-b414-4b3d-a020-47eed6c09097,intento,User,error,Gesaffelstein,NF,Facil
-1655702416,5d8c6d0b-b414-4b3d-a020-47eed6c09097,intento,User,error,Mustard,Miley Cyrus,Facil
-1655702417,5d8c6d0b-b414-4b3d-a020-47eed6c09097,intento,User,error,Maggie Rogers,David Guetta,Facil
-1655702419,5d8c6d0b-b414-4b3d-a020-47eed6c09097,intento,User,ok,Young Money,Young Money,Facil
-1655702421,5d8c6d0b-b414-4b3d-a020-47eed6c09097,intento,User,error,Calvin Harris,Billie Eilish,Facil
-1655702424,5d8c6d0b-b414-4b3d-a020-47eed6c09097,intento,User,finalizada,,,Facil
-1655702426,1dd33533-35ef-4e21-91d1-d378a48d3a9d,inicio_partida,User,,-,,Facil
-1655702429,1dd33533-35ef-4e21-91d1-d378a48d3a9d,intento,User,error,Labrinth,Enrique Iglesias,Facil
-1655702430,1dd33533-35ef-4e21-91d1-d378a48d3a9d,intento,User,ok,Dan + Shay,Dan + Shay,Facil
-1655702432,1dd33533-35ef-4e21-91d1-d378a48d3a9d,intento,User,error,Ariana Grande,Rudimental,Facil
-1655702433,1dd33533-35ef-4e21-91d1-d378a48d3a9d,intento,User,ok,Kygo,Kygo,Facil
-1655702435,1dd33533-35ef-4e21-91d1-d378a48d3a9d,intento,User,error,Miguel,Zedd,Facil
-1655702437,1dd33533-35ef-4e21-91d1-d378a48d3a9d,intento,User,finalizada,,,Facil
-1655702438,01fa48c0-3817-45d1-b3c7-45a7943feb41,inicio_partida,User,,-,,Facil
-1655702440,01fa48c0-3817-45d1-b3c7-45a7943feb41,intento,User,error,Galantis,Taylor Swift,Facil
-1655702442,01fa48c0-3817-45d1-b3c7-45a7943feb41,intento,User,error,The 1975,Lana Del Rey,Facil
-1655702443,01fa48c0-3817-45d1-b3c7-45a7943feb41,intento,User,error,Miley Cyrus,Rae Sremmurd,Facil
-1655702445,01fa48c0-3817-45d1-b3c7-45a7943feb41,intento,User,ok,XXXTENTACION,XXXTENTACION,Facil
-1655702446,01fa48c0-3817-45d1-b3c7-45a7943feb41,intento,User,ok,Maroon 5,Maroon 5,Facil
-1655702449,01fa48c0-3817-45d1-b3c7-45a7943feb41,intento,User,finalizada,,,Facil
-1655702612,934fce22-69c6-4a5b-9978-129f54861079,inicio_partida,User,,-,,Facil
-1655702616,934fce22-69c6-4a5b-9978-129f54861079,intento,User,ok,Rita Ora,Rita Ora,Facil
-1655702618,934fce22-69c6-4a5b-9978-129f54861079,intento,User,error,Imagine Dragons,SZA,Facil
-1655702620,934fce22-69c6-4a5b-9978-129f54861079,intento,User,error,The Weeknd,Selena Gomez,Facil
-1655702622,934fce22-69c6-4a5b-9978-129f54861079,intento,User,error,B.o.B,MK,Facil
-1655702624,934fce22-69c6-4a5b-9978-129f54861079,intento,User,error,Shawn Mendes,Katy Perry,Facil
-1655702625,934fce22-69c6-4a5b-9978-129f54861079,intento,User,finalizada,,,Facil
-1655856471,33278f44-76b6-4815-865d-d8b2aabb36b4,inicio_partida,User,,-,,Normal
-1655856473,33278f44-76b6-4815-865d-d8b2aabb36b4,intento,User,ok,Cheat Codes,Cheat Codes,Normal
-1655856474,33278f44-76b6-4815-865d-d8b2aabb36b4,intento,User,error,Justin Bieber,Chris Brown,Normal
-1655856476,33278f44-76b6-4815-865d-d8b2aabb36b4,intento,User,error,Post Malone,Playboi Carti,Normal
-1655856477,33278f44-76b6-4815-865d-d8b2aabb36b4,intento,User,error,Post Malone,Jay Sean,Normal
-1655856479,33278f44-76b6-4815-865d-d8b2aabb36b4,intento,User,error,OneRepublic,fun.,Normal
-1655856481,33278f44-76b6-4815-865d-d8b2aabb36b4,intento,User,finalizada,,,Normal
-1655856485,7efd9a47-332a-435b-856f-80e8b87b1320,inicio_partida,User,,-,,Normal
-1655856486,7efd9a47-332a-435b-856f-80e8b87b1320,intento,User,error,Olivia Holt,Katy Perry,Normal
-1655856487,7efd9a47-332a-435b-856f-80e8b87b1320,intento,User,error,Omarion,Lady Gaga,Normal
-1655856488,7efd9a47-332a-435b-856f-80e8b87b1320,intento,User,error,Britney Spears,Icona Pop,Normal
-1655856490,7efd9a47-332a-435b-856f-80e8b87b1320,intento,User,error,The 1975,Nico & Vinz,Normal
-1655856491,7efd9a47-332a-435b-856f-80e8b87b1320,intento,User,error,Bastille,Ed Sheeran,Normal
-1655856492,7efd9a47-332a-435b-856f-80e8b87b1320,intento,User,finalizada,,,Normal
-1655856498,d8f3d936-be9a-4266-85eb-899397278753,inicio_partida,User,,-,,Dificil
-1655856499,d8f3d936-be9a-4266-85eb-899397278753,intento,User,error,XXXTENTACION,Meghan Trainor,Dificil
-1655856500,d8f3d936-be9a-4266-85eb-899397278753,intento,User,ok,Selena Gomez,Selena Gomez,Dificil
-1655856502,d8f3d936-be9a-4266-85eb-899397278753,intento,User,error,Bruno Mars,Kendrick Lamar,Dificil
-1655856503,d8f3d936-be9a-4266-85eb-899397278753,intento,User,error,Bruno Mars,Taylor Swift,Dificil
-1655856504,d8f3d936-be9a-4266-85eb-899397278753,intento,User,error,OneRepublic,Beyoncé,Dificil
-1655856506,d8f3d936-be9a-4266-85eb-899397278753,intento,User,finalizada,,,Dificil
+timestamp,id,evento,usuarie,estado,texto-ingresado,respuesta,nivel,tiempo-partida
+1655929815,000e2a2f-7bf4-4cd9-ac13-bc671444f2d4,inicio_partida,User,,-,-,Facil,
+1655929817,000e2a2f-7bf4-4cd9-ac13-bc671444f2d4,intento,User,error,Frank Ocean,Mann,Facil,
+1655929817,000e2a2f-7bf4-4cd9-ac13-bc671444f2d4,intento,User,error,Sheppard,Ed Sheeran,Facil,
+1655929818,000e2a2f-7bf4-4cd9-ac13-bc671444f2d4,intento,User,error,Bastille,Eric Church,Facil,
+1655929851,000e2a2f-7bf4-4cd9-ac13-bc671444f2d4,intento,User,timeout,-,Arctic Monkeys,Facil,
+1655929852.0530171,000e2a2f-7bf4-4cd9-ac13-bc671444f2d4,cancelada,User,cancelada,-,-,Facil,
+1655929852.1384108,000e2a2f-7bf4-4cd9-ac13-bc671444f2d4,cancelada,User,cancelada,-,-,Facil,
+1655929854,67420b13-5105-463c-aeee-26490e95dba8,inicio_partida,User,,-,-,Facil,
+1655929855,67420b13-5105-463c-aeee-26490e95dba8,intento,User,error,Major Lazer,Imagine Dragons,Facil,
+1655929856,67420b13-5105-463c-aeee-26490e95dba8,intento,User,ok,B.o.B,B.o.B,Facil,
+1655929857,67420b13-5105-463c-aeee-26490e95dba8,intento,User,error,Jennifer Lopez,Regard,Facil,
+1655929858,67420b13-5105-463c-aeee-26490e95dba8,intento,User,error,Kendrick Lamar,Martin Garrix,Facil,
+1655929860.2546592,67420b13-5105-463c-aeee-26490e95dba8,cancelada,User,cancelada,-,-,Facil,
+1655929860.3356652,67420b13-5105-463c-aeee-26490e95dba8,cancelada,User,cancelada,-,-,Facil,
+1655929863,e0535933-d824-407d-a16f-c3de93417ab2,inicio_partida,User,,-,-,Facil,
+1655929864,e0535933-d824-407d-a16f-c3de93417ab2,intento,User,error,Ariana Grande,A Boogie Wit da Hoodie,Facil,
+1655929865,e0535933-d824-407d-a16f-c3de93417ab2,intento,User,error,Pasar >,Bruno Mars,Facil,
+1655929867,e0535933-d824-407d-a16f-c3de93417ab2,intento,User,ok,Meghan Trainor,Meghan Trainor,Facil,
+1655929870,e0535933-d824-407d-a16f-c3de93417ab2,intento,User,error,Tim Berg,Calvin Harris,Facil,
+1655929870,e0535933-d824-407d-a16f-c3de93417ab2,intento,User,error,Justin Bieber,Travis Scott,Facil,
+1655929871,e0535933-d824-407d-a16f-c3de93417ab2,intento,User,finalizada,,,Facil,8
+1655931455,3dbeb537-09aa-467e-afe6-c2d8688b6abc,inicio_partida,User,,-,-,Facil,
+1655931461,3dbeb537-09aa-467e-afe6-c2d8688b6abc,intento,User,error,One Direction,Ella Mai,Facil,
+1655931462,3dbeb537-09aa-467e-afe6-c2d8688b6abc,intento,User,ok,Two Door Cinema Club,Two Door Cinema Club,Facil,
+1655931464.1476955,3dbeb537-09aa-467e-afe6-c2d8688b6abc,cancelada,User,cancelada,-,-,Facil,
+1655931464.2297032,3dbeb537-09aa-467e-afe6-c2d8688b6abc,cancelada,User,cancelada,-,-,Facil,

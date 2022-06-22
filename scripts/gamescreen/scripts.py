@@ -164,10 +164,10 @@ def countdown(window, time_y_punt, config, data, dificultad, img_act, id_partida
         img_act.append(False)
         time_y_punt[2] = data[window_update(window, dificultad)][5]
         time_y_punt[0] = time()
-        guardar_info(int(time()), id_partida, "intento", user, "timeout", "-", time_y_punt[2], dificultad)
+        guardar_info(int(time()), id_partida, "intento", user, "timeout", "-", time_y_punt[2], dificultad, '')
 
 
-def guardar_info(tiempo, id_partida, evento, user, estado, text, respuesta, nivel):
+def guardar_info(tiempo, id_partida, evento, user, estado, text, respuesta, nivel, tiempo_tot):
     """Función que guarda la información de las partidas"""
     try:
         with open(PATH_PARTIDAS, 'r', newline='') as file:
@@ -175,8 +175,9 @@ def guardar_info(tiempo, id_partida, evento, user, estado, text, respuesta, nive
     except FileNotFoundError:
         crear_arch_partidas()
     finally:
+
         dic = {'timestamp': tiempo, 'id': id_partida, 'evento': evento, 'usuarie': user, 'estado': estado,
-               'texto-ingresado': text, 'respuesta': respuesta, 'nivel': nivel}
+               'texto-ingresado': text, 'respuesta': respuesta, 'nivel': nivel, 'tiempo-partida': tiempo_tot}
         with open(PATH_PARTIDAS, 'a', newline='', encoding='utf-8') as file:
             dict_writer = DictWriter(file, fieldnames=dic.keys())
             dict_writer.writerow(dic)
@@ -185,7 +186,7 @@ def guardar_info(tiempo, id_partida, evento, user, estado, text, respuesta, nive
 def crear_arch_partidas():
     with open(PATH_PARTIDAS, 'w', encoding='utf-8', newline='') as file:
         fieldnames = ['timestamp', 'id', 'evento', 'usuarie', 'estado',
-                      'texto-ingresado', 'respuesta', 'nivel']
+                      'texto-ingresado', 'respuesta', 'nivel', 'tiempo-partida']
         wr = csv.DictWriter(file, fieldnames=fieldnames)
         wr.writeheader()
 
