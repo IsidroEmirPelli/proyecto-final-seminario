@@ -1,10 +1,5 @@
-from venv import create
-import PySimpleGUI as sg
-from random import randrange
-from scripts.gamescreen.scripts import *
-from scripts.gamescreen.constant import *
-from time import time
 from uuid import uuid4
+from scripts.gamescreen.scripts import *
 
 
 def build(user, dificultad):
@@ -26,7 +21,7 @@ def build(user, dificultad):
     sg.theme("LightBlue")
 
     # Columna izquierda resultado parcial
-    col_left = create_col_result(csv_selected, user)
+    col_left = create_col_result(csv_selected, user, puntaje)
     col_right = create_right_col(header, data, dificultad, num_carta)
 
     layout = [
@@ -64,6 +59,7 @@ def build(user, dificultad):
                     window[f'-IMG_{len(img_act) + 1}-'].update(PATH_CHECK_PNG)
                     img_act.append(True)
                     time_y_punt[1] += config['Puntaje_sumar']
+                    window['-PUNTAJE-'].update(f'Puntos acumulados: {time_y_punt[1]}')
                     carta_buena = data[window_update(window, dificultad)][5]
                     time_y_punt[0] = time()
 
@@ -73,6 +69,7 @@ def build(user, dificultad):
                     window[f'-IMG_{len(img_act) + 1}-'].update(PATH_NOTCHECK_PNG)
                     img_act.append(False)
                     time_y_punt[1] -= config['Puntaje_restar']
+                    window['-PUNTAJE-'].update(f'Puntos acumulados: {time_y_punt[1]}')
                     carta_buena = data[window_update(window, dificultad)][5]
                     time_y_punt[0] = time()
 
@@ -82,6 +79,6 @@ def build(user, dificultad):
             sg.popup("No puedes seguir jugando", "Puntaje obtenido: ", f'{time_y_punt[1]}')
             guardar_puntaje(user, dificultad, time_y_punt[1])
             guardar_info(int(time()), id_partida, "intento", user, "finalizada", "", "", dificultad,
-                            int(time()-start_time))
+                         int(time() - start_time))
             window.close()
             break

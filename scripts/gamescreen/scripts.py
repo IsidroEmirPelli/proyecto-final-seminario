@@ -35,7 +35,7 @@ def get_card_data():
     return csv_selected, header, data
 
 
-def create_col_result(clave_al, user):
+def create_col_result(clave_al, user, puntaje):
     """ Creacion de columna izquierda(categoria, resultado parcial y abandonar partida) """
 
     config = get_config()
@@ -43,6 +43,7 @@ def create_col_result(clave_al, user):
              range(1, (config['Rondas'] + 1))]
     col_resultado_parcial = [
         [sg.Text(f"{user}")],
+        [sg.Text(f'Puntos acumulados: {puntaje}', key='-PUNTAJE-')],
         [sg.Column(check)],
     ]
 
