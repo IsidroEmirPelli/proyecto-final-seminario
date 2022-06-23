@@ -1,17 +1,14 @@
-[
-    {
-        "Nickname": "User",
+{
+    "Invitado": {
         "Edad": 0,
         "Genero": "Otro"
     },
-    {
-        "Nickname": "Isidro",
+    "Isidro": {
         "Edad": 22,
         "Genero": "Masculino"
     },
-    {
-        "Nickname": "Roberta",
-        "Edad": 82,
-        "Genero": "Femenino"
+    "Juan": {
+        "Edad": 22,
+        "Genero": "Masculino"
     }
-]
+}

@@ -13,10 +13,7 @@ def get_genero(usuarie):
 
     with open(getting_path(), 'r') as user:
         users = json.load(user)
-
-    for user in users:
-        if usuarie == user['Nickname']:
-            return user['Genero']
+    return users[usuarie]['Genero']
 
 
 def get_config():

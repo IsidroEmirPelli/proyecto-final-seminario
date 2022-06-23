@@ -12,17 +12,18 @@ def check_user(user):
 def getting_users():
     with open(os.path.join(os.path.dirname(__file__), '..', 'users', 'users.json'), 'r') as users:
         users_list = json.load(users)
-    return [user['Nickname'] for user in users_list]
+    return [user for user in users_list]
 
 
 def create_user_file():
     """"Crea el archivo de usuarios"""
     default_user = {
-        'Nickname': "Invitado",
-        'Edad': 0,
-        'Genero': 'Otro'}
+        "Invitado": {
+            'Edad': 0,
+            'Genero': 'Otro'}
+    }
     with open(os.path.join(os.path.dirname(__file__), '..', 'users', 'users.json'), 'w') as users:
-        json.dump([default_user], users)
+        json.dump(default_user, users)
     return getting_users()
 
 
@@ -92,26 +93,37 @@ def build():
 
     while True:
         event, values = window.read()
-        if event in (sg.WIN_CLOSED, "-EXIT-"):
-            break
-        elif event == "-GAME-":
-            if check_user(values['-USER-']):
-                sg.popup("Seleccione un usuario o regístrese", title="¡Ups!")
-            elif check_difficulty(values['-DIFFICULTY-']):
-                sg.popup("Seleccione una dificultad para jugar", title="¡Ups!")
-            else:
+
+        match event:
+
+            case sg.WIN_CLOSED:
+                break
+
+            case "-EXIT-":
+                break
+
+            case "-GAME-":
+                if check_user(values['-USER-']):
+                    sg.popup("Seleccione un usuario o regístrese",
+                             title="¡Ups!")
+                elif check_difficulty(values['-DIFFICULTY-']):
+                    sg.popup("Seleccione una dificultad para jugar",
+                             title="¡Ups!")
+                else:
+                    window.hide()
+                    game_screen.build(values["-USER-"], values["-DIFFICULTY-"])
+                    window.un_hide()
+
+            case "-CONFIG-":
                 window.hide()
-                game_screen.build(values["-USER-"], values["-DIFFICULTY-"])
+                config_screen.build()
                 window.un_hide()
-        elif event == "-CONFIG-":
-            window.hide()
-            config_screen.build()
-            window.un_hide()
-        elif event == "-PROFILE-":
-            window.close()
-            profile_screen.build()
-            build()
-        elif event == "-SCORES-":
-            window.hide()
-            scores_screen.build()
-            window.un_hide()
+
+            case "-PROFILE-":
+                window.close()
+                profile_screen.build()
+                build()
+            case "-SCORES-":
+                window.hide()
+                scores_screen.build()
+                window.un_hide()

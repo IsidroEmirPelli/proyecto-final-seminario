@@ -7,49 +7,14 @@ def getting_path():
     return os.path.join(os.getcwd(), 'users', 'users.json')
 
 
-def create_new_user(values):
-    """Recibo los valores del usuario nuevo y lo almaceno en un diccionario"""
-    new_user = {"Nickname": values['-NICK-'], "Edad": values['-EDAD-'], "Genero": values['-GENERO-']}
-    with open(getting_path(), 'r') as users:
-        # Cargo el json
-        users_list = json.load(users)
-    # Y lo agrego a la lista de dicciorios que hay en el json
-    users_list.append(new_user)
-    with open(getting_path(), 'w') as users:
-        # Actualizo el contenido del json
-        json.dump(users_list, users, indent=4)
-
-
-def modify_user(values):
-    with open(getting_path(), 'r') as users:
-        # Abro el json
-        users_list = json.load(users)
-    for elem in users_list:
-        # Obtengo la ubicacion de la lista del usuario que deseo modificar
-        if elem['Nickname'] == values['-NICK-']:
-            # Una vez que lo encuentro reemplazo el contenido con el nuevo
-            elem['Edad'] = values['-EDAD-']
-            elem['Genero'] = values['-GENERO-']
-            break
-    with open(getting_path(), 'w') as users:
-        # Actualizo el contenido del json con la lista modificada
-        json.dump(users_list, users, indent=4)
-
-
-def check_profile(values):
-    with open(getting_path(), 'r') as user:
-        users = json.load(user)
-    found = False
-    for user in users:
-        if values['-NICK-'] == user['Nickname']:
-            found = True
-            break
-    if found:
-        # Si encuentro el usuario lo modifico
-        modify_user(values)
-    else:
-        # Sino lo genero y lo inserto en el json
-        create_new_user(values)
+def modify_users_data(values):
+    with open(getting_path(), 'r') as file:
+        users = json.load(file)
+    users[values['-NICK-']] = {'Edad': values['-EDAD-'],
+                               'Genero': values['-GENERO-']}
+    with open(getting_path(), 'w') as file:
+        # Actualizo el contenido del json con el diccionario modificado
+        json.dump(users, file, indent=4)
 
 
 def build():
@@ -72,8 +37,10 @@ def build():
 
     profile_inputs = [
         [sg.Input(key='-NICK-', size=size_input, pad=padding_text)],
-        [sg.OptionMenu(generos, pad=padding_text, size=(10, 1), key='-GENERO-')],
-        [sg.Spin([i for i in range(1, 110)], initial_value=0, size=(5, 1), pad=padding_text, key='-EDAD-')]
+        [sg.OptionMenu(generos, pad=padding_text,
+                       size=(10, 1), key='-GENERO-')],
+        [sg.Spin([i for i in range(1, 110)], initial_value=0,
+                 size=(5, 1), pad=padding_text, key='-EDAD-')]
     ]
 
     profile_ly = [
@@ -105,17 +72,25 @@ def build():
             # Verifico que los campos no esten vacios.
             try:
                 if values['-NICK-'] == '' or int(values['-EDAD-']) == 0 or values['-GENERO-'] == '':
-                    sg.popup('Por favor complete todos los campos', title='Error')
+                    sg.popup('Por favor complete todos los campos',
+                             title='Error')
                 else:
-                    # Verifico que no sea el valor predeterminado
+                    # Verifico que el que el nick sea valido
                     if values['-NICK-'] == 'Usuarios':
                         sg.popup('Nickname invalido', title='Error')
                         window['-NICK-'].update('')
+                    elif values['-GENERO-'] not in generos:
+                        sg.popup('Genero invalido', title='Error')
+                        window['-GENERO-'].update('')
                     else:
-                        check_profile(values)
+                        modify_users_data(values)
                         sg.popup('Perfil creado/modificado con exito')
+                        window.close()
+
             except ValueError:
-                sg.popup('Por favor ingresa un número para la edad', title='Error')
+                sg.popup('Por favor ingresa un número para la edad',
+                         title='Error')
+
         elif event == '-BORRAR-':
             # Actualizo el contenido de todos los espacios para que no contengan nada.
             window['-NICK-'].update('')
