@@ -1,4 +1,3 @@
-from email.policy import default
 from types import NoneType
 import PySimpleGUI as sg
 import json
@@ -32,16 +31,18 @@ def generate_option_menu():
     try:
         return getting_users()
     except FileNotFoundError or NoneType:
-        return create_user_file() 
+        return create_user_file()
 
 
 def generate_dificulty_menu():
     """"Genera el menu de dificultad desde el json"""
     try:
-        arch = open(os.path.join(os.path.dirname(__file__), '..', 'users', 'config.json'), 'r')
+        arch = open(os.path.join(os.path.dirname(__file__),
+                    '..', 'users', 'config.json'), 'r')
     except FileNotFoundError:
         config_screen.crear_arch_config()
-        arch = open(os.path.join(os.path.dirname(__file__), '..', 'users', 'config.json'), 'r')
+        arch = open(os.path.join(os.path.dirname(__file__),
+                    '..', 'users', 'config.json'), 'r')
     finally:
         config = json.load(arch)
         arch.close()
@@ -58,13 +59,15 @@ def build():
     sg.theme("LightBlue")
     fuente = "Verdana", 11
 
-    path_images = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'assets'))
+    path_images = os.path.abspath(os.path.join(
+        os.path.dirname(__file__), '..', 'assets'))
     path_logo = os.path.join(path_images, 'logo.png')
 
     col_options = [
         [sg.OptionMenu(values=generate_dificulty_menu(),
                        default_value="DIFICULTAD", size=(12, 2), key="-DIFFICULTY-")],
-        [sg.OptionMenu(values=generate_option_menu(), default_value="USUARIO", size=(12, 2), key="-USER-")]
+        [sg.OptionMenu(values=generate_option_menu(),
+                       default_value="USUARIO", size=(12, 2), key="-USER-")]
     ]
 
     layout = [
@@ -72,11 +75,16 @@ def build():
         [sg.VPush()],
         [sg.Image(path_logo)],
         [sg.Text('')],
-        [sg.Button("JUGAR", font=fuente, border_width=2, size=(22, 2), key="-GAME-")],
-        [sg.Button("PERFILES", font=fuente, border_width=2, size=(22, 2), key="-PROFILE-")],
-        [sg.Button("PUNTAJES", font=fuente, border_width=2, size=(22, 2), key="-SCORES-")],
-        [sg.Button("CONFIGURACION", font=fuente, border_width=2, size=(22, 2), key="-CONFIG-")],
-        [sg.Button("SALIR", font=fuente, border_width=2, size=(22, 2), key="-EXIT-")],
+        [sg.Button("JUGAR", font=fuente, border_width=2,
+                   size=(22, 2), key="-GAME-")],
+        [sg.Button("PERFILES", font=fuente, border_width=2,
+                   size=(22, 2), key="-PROFILE-")],
+        [sg.Button("PUNTAJES", font=fuente, border_width=2,
+                   size=(22, 2), key="-SCORES-")],
+        [sg.Button("CONFIGURACION", font=fuente, border_width=2,
+                   size=(22, 2), key="-CONFIG-")],
+        [sg.Button("SALIR", font=fuente, border_width=2,
+                   size=(22, 2), key="-EXIT-")],
         [sg.VPush()]
     ]
     window = sg.Window("FiguRace", layout, resizable=True, size=(600, 640), auto_size_buttons=True,

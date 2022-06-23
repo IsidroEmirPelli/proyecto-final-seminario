@@ -48,11 +48,13 @@ def create_col_result(clave_al, user, puntaje):
     ]
 
     col_left = [
-        [sg.Text(f"-{clave_al}-", key='-TEXTO_DATA-', pad=((65, 0), (0, 0)), font=GEN_FONT)],
+        [sg.Text(f"-{clave_al}-", key='-TEXTO_DATA-',
+                 pad=((65, 0), (0, 0)), font=GEN_FONT)],
         [sg.Image(PATHS[clave_al][1], key='-IMGDATA-')],
         [sg.Frame(f'{"Resultado Parcial"}', [[sg.Column(col_resultado_parcial)]], pad=((22, 0), (0, 0)),
                   font=GEN_FONT)],
-        [sg.Button("Abandonar", font=GEN_FONT, border_width=2, size=(18, 1), key="-VOLVER-")]
+        [sg.Button("Abandonar", font=GEN_FONT, border_width=2,
+                   size=(18, 1), key="-VOLVER-")]
     ]
 
     return col_left
@@ -103,53 +105,61 @@ def create_right_col(header, data, dificultad, num_carta):
         return select_randomly(cards)
 
     box_tarjeta = [
-        [sg.Column(datos_tarjeta(header, data, dificultad, num_carta), size=(800, 150))],  # box de cantidad de pistas
+        [sg.Column(datos_tarjeta(header, data, dificultad, num_carta),
+                   size=(800, 150))],  # box de cantidad de pistas
         [sg.Text(f"{header[5]}: ")],
         [sg.Column(generating_box(data, num_carta))],  # box de pistas
-        [sg.Push(), sg.Button("Pasar >", font=GEN_FONT, border_width=2, size=(10, 0), key="-PASAR-")]
+        [sg.Push(), sg.Button("Pasar >", font=GEN_FONT,
+                              border_width=2, size=(10, 0), key="-PASAR-")]
     ]
 
     col_right = [
-        [sg.Text(f'Nivel: {dificultad}', font=GEN_FONT)],  # -> determinar la dificultad
+        # -> determinar la dificultad
+        [sg.Text(f'Nivel: {dificultad}', font=GEN_FONT)],
         # -> determinar el tiempo segun la dificultad o configuracion
         [sg.Push(), sg.Text("00:00", justification="center", key="-TIMER-", text_color='#ff0055', font=("Verdana", 12)),
          sg.Push()],
-        [sg.Frame(f'Tarjeta {"1"}', [[sg.Column(layout=box_tarjeta)]], font=GEN_FONT)],
+        [sg.Frame(f'Tarjeta {"1"}', [
+                  [sg.Column(layout=box_tarjeta)]], font=GEN_FONT)],
     ]
 
     return col_right
 
 
-def window_update(window, dificultad):
+def window_update(window, dificultad, csv_selected, header, data):
     """ Actualiza la ventana con la información de la carta actual """
 
     config = get_config()
     cant = config['Cant_pistas'][dificultad]
 
-    csv_selected, header, data = get_card_data()
-    num_carta = randrange(len(data) - 1)  # obtengo carta a jugar aleatoriamente
+    # obtengo carta a jugar aleatoriamente
+    print(f"DATA SCRIPT {len(data)}")
+    num_carta = randrange(len(data) - 1)
     otras_cards = otras_cartas(num_carta, data)
 
     # retorna lista con el dato a encontrar
-    cartas = [f'{data[otras_cards[index]][5]}' for index in range(len(otras_cards))]
+    cartas = [f'{data[otras_cards[index]][5]}' for index in range(
+        len(otras_cards))]
     cartas = select_randomly(cartas)
 
     window['-TEXTO_DATA-'].update(f"-{csv_selected}-")
     window['-IMGDATA-'].update(PATHS[csv_selected][1])
     for index in range(cant):
-        window[f'-HINT_{index}-'].update(f"{header[index]}: {data[num_carta][index]}")
+        window[f'-HINT_{index}-'].update(
+            f"{header[index]}: {data[num_carta][index]}")
 
     for index in range(1, 6):
         window[f'-CARTA_{index}-'].update(f'{cartas[index - 1]}')
-
+    print(f"NUM CARTA {num_carta} ")
     return num_carta
 
 
-def countdown(window, time_y_punt, config, data, dificultad, img_act, id_partida, user):
+def countdown(window, time_y_punt, config, data, dificultad, img_act, id_partida, user, genero, csv_selected, header):
     """Controlador del countdown"""
 
     current_time = int(time() - time_y_punt[0])
-    elapsed_time = config['Tiempo'] - current_time  # tiempo restante = inicial -transcurrido
+    # tiempo restante = inicial -transcurrido
+    elapsed_time = config['Tiempo'] - current_time
     if elapsed_time >= 10:
         window['-TIMER-'].update(value=f' {elapsed_time // 60}:{elapsed_time % 60}', font=('verdana', 13),
                                  text_color='#35F64F')
@@ -163,12 +173,14 @@ def countdown(window, time_y_punt, config, data, dificultad, img_act, id_partida
         sg.popup('Tiempo terminado', title='Game Over')
         window[f'-IMG_{len(img_act) + 1}-'].update(PATH_NOTCHECK_PNG)
         img_act.append(False)
-        time_y_punt[2] = data[window_update(window, dificultad)][5]
+        time_y_punt[2] = data[window_update(
+            window, dificultad, csv_selected, header, data)][5]
         time_y_punt[0] = time()
-        guardar_info(int(time()), id_partida, "intento", user, "timeout", "-", time_y_punt[2], dificultad, '')
+        guardar_info(int(time()), id_partida, "intento", user,
+                     "timeout", "-", time_y_punt[2], dificultad, '', genero)
 
 
-def guardar_info(tiempo, id_partida, evento, user, estado, text, respuesta, nivel, tiempo_tot):
+def guardar_info(tiempo, id_partida, evento, user, estado, text, respuesta, nivel, tiempo_tot, genero):
     """Función que guarda la información de las partidas"""
     try:
         with open(PATH_PARTIDAS, 'r', newline='') as file:
@@ -178,7 +190,7 @@ def guardar_info(tiempo, id_partida, evento, user, estado, text, respuesta, nive
     finally:
 
         dic = {'timestamp': tiempo, 'id': id_partida, 'evento': evento, 'usuarie': user, 'estado': estado,
-               'texto-ingresado': text, 'respuesta': respuesta, 'nivel': nivel, 'tiempo-partida': tiempo_tot}
+               'texto-ingresado': text, 'respuesta': respuesta, 'nivel': nivel, 'tiempo-partida': tiempo_tot, 'genero': genero}
         with open(PATH_PARTIDAS, 'a', newline='', encoding='utf-8') as file:
             dict_writer = DictWriter(file, fieldnames=dic.keys())
             dict_writer.writerow(dic)
@@ -213,4 +225,3 @@ def crear_archivo_scores():
         fieldnames = ['usuarie', 'dificultad', 'puntaje']
         wr = csv.DictWriter(file, fieldnames=fieldnames)
         wr.writeheader()
-

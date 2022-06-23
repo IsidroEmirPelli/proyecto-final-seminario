@@ -1,27 +1,55 @@
 timestamp,id,evento,usuarie,estado,texto-ingresado,respuesta,nivel,tiempo-partida
-1655929815,000e2a2f-7bf4-4cd9-ac13-bc671444f2d4,inicio_partida,User,,-,-,Facil,
-1655929817,000e2a2f-7bf4-4cd9-ac13-bc671444f2d4,intento,User,error,Frank Ocean,Mann,Facil,
-1655929817,000e2a2f-7bf4-4cd9-ac13-bc671444f2d4,intento,User,error,Sheppard,Ed Sheeran,Facil,
-1655929818,000e2a2f-7bf4-4cd9-ac13-bc671444f2d4,intento,User,error,Bastille,Eric Church,Facil,
-1655929851,000e2a2f-7bf4-4cd9-ac13-bc671444f2d4,intento,User,timeout,-,Arctic Monkeys,Facil,
-1655929852.0530171,000e2a2f-7bf4-4cd9-ac13-bc671444f2d4,cancelada,User,cancelada,-,-,Facil,
-1655929852.1384108,000e2a2f-7bf4-4cd9-ac13-bc671444f2d4,cancelada,User,cancelada,-,-,Facil,
-1655929854,67420b13-5105-463c-aeee-26490e95dba8,inicio_partida,User,,-,-,Facil,
-1655929855,67420b13-5105-463c-aeee-26490e95dba8,intento,User,error,Major Lazer,Imagine Dragons,Facil,
-1655929856,67420b13-5105-463c-aeee-26490e95dba8,intento,User,ok,B.o.B,B.o.B,Facil,
-1655929857,67420b13-5105-463c-aeee-26490e95dba8,intento,User,error,Jennifer Lopez,Regard,Facil,
-1655929858,67420b13-5105-463c-aeee-26490e95dba8,intento,User,error,Kendrick Lamar,Martin Garrix,Facil,
-1655929860.2546592,67420b13-5105-463c-aeee-26490e95dba8,cancelada,User,cancelada,-,-,Facil,
-1655929860.3356652,67420b13-5105-463c-aeee-26490e95dba8,cancelada,User,cancelada,-,-,Facil,
-1655929863,e0535933-d824-407d-a16f-c3de93417ab2,inicio_partida,User,,-,-,Facil,
-1655929864,e0535933-d824-407d-a16f-c3de93417ab2,intento,User,error,Ariana Grande,A Boogie Wit da Hoodie,Facil,
-1655929865,e0535933-d824-407d-a16f-c3de93417ab2,intento,User,error,Pasar >,Bruno Mars,Facil,
-1655929867,e0535933-d824-407d-a16f-c3de93417ab2,intento,User,ok,Meghan Trainor,Meghan Trainor,Facil,
-1655929870,e0535933-d824-407d-a16f-c3de93417ab2,intento,User,error,Tim Berg,Calvin Harris,Facil,
-1655929870,e0535933-d824-407d-a16f-c3de93417ab2,intento,User,error,Justin Bieber,Travis Scott,Facil,
-1655929871,e0535933-d824-407d-a16f-c3de93417ab2,intento,User,finalizada,,,Facil,8
-1655931455,3dbeb537-09aa-467e-afe6-c2d8688b6abc,inicio_partida,User,,-,-,Facil,
-1655931461,3dbeb537-09aa-467e-afe6-c2d8688b6abc,intento,User,error,One Direction,Ella Mai,Facil,
-1655931462,3dbeb537-09aa-467e-afe6-c2d8688b6abc,intento,User,ok,Two Door Cinema Club,Two Door Cinema Club,Facil,
-1655931464.1476955,3dbeb537-09aa-467e-afe6-c2d8688b6abc,cancelada,User,cancelada,-,-,Facil,
-1655931464.2297032,3dbeb537-09aa-467e-afe6-c2d8688b6abc,cancelada,User,cancelada,-,-,Facil,
+1655958213,ef5961fe-cc2d-4760-9b1f-34465fd193b9,inicio_partida,User,,-,-,Normal,,Spotify
+1655958214,ef5961fe-cc2d-4760-9b1f-34465fd193b9,intento,User,error,Little Mix,Katy Perry,Normal,,Spotify
+1655958215,ef5961fe-cc2d-4760-9b1f-34465fd193b9,intento,User,error,Chip,Ariana Grande,Normal,,Spotify
+1655958216,ef5961fe-cc2d-4760-9b1f-34465fd193b9,intento,User,error,Shawn Mendes,Jessie J,Normal,,Spotify
+1655958216,ef5961fe-cc2d-4760-9b1f-34465fd193b9,intento,User,ok,DJ Khaled,DJ Khaled,Normal,,Spotify
+1655958216,ef5961fe-cc2d-4760-9b1f-34465fd193b9,intento,User,ok,Jay Sean,Jay Sean,Normal,,Spotify
+1655958217,ef5961fe-cc2d-4760-9b1f-34465fd193b9,intento,User,error,Matt Cardle,Taylor Swift,Normal,,Spotify
+1655958218,ef5961fe-cc2d-4760-9b1f-34465fd193b9,intento,User,finalizada,,,Normal,5,Spotify
+1655958230,6880468e-abb8-4ccb-975e-3faf1d32d82e,inicio_partida,User,,-,-,Normal,,Volcanes
+1655958243,6880468e-abb8-4ccb-975e-3faf1d32d82e,intento,User,timeout,-,"Hudson, Cerro (Chile-S)",Normal,,Volcanes
+1655958244,6880468e-abb8-4ccb-975e-3faf1d32d82e,intento,User,error,Awu (Sangihe Is-Indonesia),Liamuiga (W Indies),Normal,,Volcanes
+1655958244,6880468e-abb8-4ccb-975e-3faf1d32d82e,intento,User,error,Asama (Honshu-Japan),Purace (Colombia),Normal,,Volcanes
+1655958245,6880468e-abb8-4ccb-975e-3faf1d32d82e,intento,User,error,Sinabung (Sumatra),Sorikmarapi (Sumatra),Normal,,Volcanes
+1655958245,6880468e-abb8-4ccb-975e-3faf1d32d82e,intento,User,ok,Rabaul (New Britain-SW Pac),Rabaul (New Britain-SW Pac),Normal,,Volcanes
+1655958246,6880468e-abb8-4ccb-975e-3faf1d32d82e,intento,User,error,Etna (Italy),Kelut (Java),Normal,,Volcanes
+1655958248,6880468e-abb8-4ccb-975e-3faf1d32d82e,intento,User,finalizada,,,Normal,17,Volcanes
+1655958264,cea926ec-6caa-481c-944f-fbd0fa55bd4d,inicio_partida,Isidro,,-,-,Normal,,Spotify
+1655958276,cea926ec-6caa-481c-944f-fbd0fa55bd4d,intento,Isidro,timeout,-,Disclosure,Normal,,Spotify
+1655958279,cea926ec-6caa-481c-944f-fbd0fa55bd4d,intento,Isidro,error,Rae Sremmurd,One Direction,Normal,,Spotify
+1655958279,cea926ec-6caa-481c-944f-fbd0fa55bd4d,intento,Isidro,error,Hailee Steinfeld,Cardi B,Normal,,Spotify
+1655958280,cea926ec-6caa-481c-944f-fbd0fa55bd4d,intento,Isidro,error,Sebastian Ingrosso,Jennifer Lopez,Normal,,Spotify
+1655958280,cea926ec-6caa-481c-944f-fbd0fa55bd4d,intento,Isidro,ok,Ariana Grande,Ariana Grande,Normal,,Spotify
+1655958300,cea926ec-6caa-481c-944f-fbd0fa55bd4d,intento,Isidro,timeout,-,Deorro,Normal,,Spotify
+1655958301,cea926ec-6caa-481c-944f-fbd0fa55bd4d,intento,Isidro,finalizada,,,Normal,37,Spotify
+1655959668,2615b30f-d8da-4c79-8990-d8735f66a74c,inicio_partida,Isidro,,-,-,Dificil,,FIFA
+1655959670,2615b30f-d8da-4c79-8990-d8735f66a74c,intento,Isidro,ok,Pál Dárdai,Pál Dárdai,Dificil,,FIFA
+1655959670,2615b30f-d8da-4c79-8990-d8735f66a74c,intento,Isidro,error,Fabián Ramos,Hayden Coulson,Dificil,,FIFA
+1655959670,2615b30f-d8da-4c79-8990-d8735f66a74c,intento,Isidro,error,Cameron Jerome,Jorge Teixeira,Dificil,,FIFA
+1655959671,2615b30f-d8da-4c79-8990-d8735f66a74c,intento,Isidro,error,Maic Sema,Ryan Leonard,Dificil,,FIFA
+1655959671,2615b30f-d8da-4c79-8990-d8735f66a74c,intento,Isidro,ok,Artem Rebrov,Artem Rebrov,Dificil,,FIFA
+1655959671,2615b30f-d8da-4c79-8990-d8735f66a74c,intento,Isidro,error,Juan Raúl Neira,Rodri,Dificil,,FIFA
+1655959672,2615b30f-d8da-4c79-8990-d8735f66a74c,intento,Isidro,finalizada,,,Dificil,3,FIFA
+1655959676,44685277-111e-4329-9a15-a12a3b8d6e9c,inicio_partida,User,,-,-,Facil,,FIFA
+1655959677,44685277-111e-4329-9a15-a12a3b8d6e9c,intento,User,error,Joni Montiel,Kim Jungya,Facil,,FIFA
+1655959678,44685277-111e-4329-9a15-a12a3b8d6e9c,intento,User,ok,Thibang Phete,Thibang Phete,Facil,,FIFA
+1655959678,44685277-111e-4329-9a15-a12a3b8d6e9c,intento,User,error,Pirulo,Lass Bangoura,Facil,,FIFA
+1655959678,44685277-111e-4329-9a15-a12a3b8d6e9c,intento,User,error,Pichu Atienza,Juan Manuel Olivera,Facil,,FIFA
+1655959678,44685277-111e-4329-9a15-a12a3b8d6e9c,intento,User,ok,Kevin Cannavò,Kevin Cannavò,Facil,,FIFA
+1655959678,44685277-111e-4329-9a15-a12a3b8d6e9c,intento,User,ok,Alan Lithgow,Alan Lithgow,Facil,,FIFA
+1655959679,44685277-111e-4329-9a15-a12a3b8d6e9c,intento,User,finalizada,,,Facil,3,FIFA
+1655959684,c0a6f28c-1c25-49f4-a802-2e05e7447046,inicio_partida,User,,-,-,Facil,,FIFA
+1655959686.1040566,c0a6f28c-1c25-49f4-a802-2e05e7447046,cancelada,User,cancelada,-,-,Facil,,
+1655959686.2230833,c0a6f28c-1c25-49f4-a802-2e05e7447046,cancelada,User,cancelada,-,-,Facil,,
+1655959687,18b49b12-0a9d-410b-8785-b6d7093a27f7,inicio_partida,User,,-,-,Facil,,FIFA
+1655959689.5179029,18b49b12-0a9d-410b-8785-b6d7093a27f7,cancelada,User,cancelada,-,-,Facil,,
+1655959689.6539836,18b49b12-0a9d-410b-8785-b6d7093a27f7,cancelada,User,cancelada,-,-,Facil,,
+1655959691,4bd8e22d-43fb-4bd9-ac68-982ea25cf97c,inicio_partida,User,,-,-,Facil,,Volcanes
+1655959692,4bd8e22d-43fb-4bd9-ac68-982ea25cf97c,intento,User,error,Manam (New Guinea-NE of),Pinatubo (Luzon-Philippines),Facil,,Volcanes
+1655959693,4bd8e22d-43fb-4bd9-ac68-982ea25cf97c,intento,User,error,Akita-Yake-yama (Honshu-Japan),Kuwae (Vanuatu-SW Pacific),Facil,,Volcanes
+1655959693,4bd8e22d-43fb-4bd9-ac68-982ea25cf97c,intento,User,error,On-take (Honshu-Japan),Marapi (Sumatra),Facil,,Volcanes
+1655959693,4bd8e22d-43fb-4bd9-ac68-982ea25cf97c,intento,User,error,Nyamuragira (Africa-C),Asama (Honshu-Japan),Facil,,Volcanes
+1655959694,4bd8e22d-43fb-4bd9-ac68-982ea25cf97c,intento,User,error,Etna (Italy),Hekla (Iceland-S),Facil,,Volcanes
+1655959694,4bd8e22d-43fb-4bd9-ac68-982ea25cf97c,intento,User,error,Merapi (Java),Pelee (W Indies),Facil,,Volcanes
+1655959695,4bd8e22d-43fb-4bd9-ac68-982ea25cf97c,intento,User,finalizada,,,Facil,3,Volcanes

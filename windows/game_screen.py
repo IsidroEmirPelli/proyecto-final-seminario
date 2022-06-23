@@ -26,59 +26,70 @@ def build(user, dificultad):
 
     layout = [
         [sg.VPush()],
-        [sg.Push(), sg.Column(col_left), sg.Push(), sg.Column(col_right), sg.Push()],
+        [sg.Push(), sg.Column(col_left), sg.Push(),
+         sg.Column(col_right), sg.Push()],
         [sg.VPush()]
     ]
 
-    window = sg.Window("FiguRace *-* ¡A jugar!", layout, resizable=True, size=(700, 640), auto_size_buttons=True)
+    window = sg.Window("FiguRace *-* ¡A jugar!", layout,
+                       resizable=True, size=(700, 640), auto_size_buttons=True)
     img_act = []
     carta_buena = data[num_carta][5]
     start_time = time()
     time_y_punt = [start_time, puntaje, carta_buena]
     id_partida = uuid4()
-    guardar_info(int(time()), id_partida, "inicio_partida", user, "", "-", "-", dificultad, '')
+    guardar_info(int(time()), id_partida, "inicio_partida", user,
+                 "", "-", "-", dificultad, '', csv_selected)
 
     while True:
 
         if len(img_act) != config['Rondas']:
             event, values = window.read(timeout=250, timeout_key='-TIMEOUT-')
             if event == sg.WIN_CLOSED:
-                guardar_info(time(), id_partida, "cancelada", user, "cancelada", "-", "-", dificultad, '')
+                guardar_info(time(), id_partida, "cancelada", user,
+                             "cancelada", "-", "-", dificultad, '', '')
                 break
             elif event == '-VOLVER-':
-                guardar_info(time(), id_partida, "cancelada", user, "cancelada", "-", "-", dificultad, '')
+                guardar_info(time(), id_partida, "cancelada", user,
+                             "cancelada", "-", "-", dificultad, '', '')
                 window.close()
 
             # countdown
             elif event == '-TIMEOUT-':
-                countdown(window, time_y_punt, config, data, dificultad, img_act, id_partida, user)
+                countdown(window, time_y_punt, config, data,
+                          dificultad, img_act, id_partida, user, csv_selected, csv_selected, header)
             else:
                 if window[event].get_text() == carta_buena:
                     guardar_info(int(time()), id_partida, "intento", user, "ok", window[event].get_text(), carta_buena,
-                                 dificultad, '')
+                                 dificultad, '', csv_selected)
                     window[f'-IMG_{len(img_act) + 1}-'].update(PATH_CHECK_PNG)
                     img_act.append(True)
                     time_y_punt[1] += config['Puntaje_sumar']
-                    window['-PUNTAJE-'].update(f'Puntos acumulados: {time_y_punt[1]}')
-                    carta_buena = data[window_update(window, dificultad)][5]
+                    window['-PUNTAJE-'].update(
+                        f'Puntos acumulados: {time_y_punt[1]}')
+                    carta_buena = data[window_update(
+                        window, dificultad, csv_selected, header, data)][5]
                     time_y_punt[0] = time()
 
                 else:  # si llega aca carta perdida
                     guardar_info(int(time()), id_partida, "intento", user, "error", window[event].get_text(),
-                                 carta_buena, dificultad, '')
+                                 carta_buena, dificultad, '', csv_selected)
                     window[f'-IMG_{len(img_act) + 1}-'].update(PATH_NOTCHECK_PNG)
                     img_act.append(False)
                     time_y_punt[1] -= config['Puntaje_restar']
-                    window['-PUNTAJE-'].update(f'Puntos acumulados: {time_y_punt[1]}')
-                    carta_buena = data[window_update(window, dificultad)][5]
+                    window['-PUNTAJE-'].update(
+                        f'Puntos acumulados: {time_y_punt[1]}')
+                    carta_buena = data[window_update(
+                        window, dificultad, csv_selected, header, data)][5]
                     time_y_punt[0] = time()
 
         else:
             if time_y_punt[1] <= 0:
                 time_y_punt[1] = 0
-            sg.popup("No puedes seguir jugando", "Puntaje obtenido: ", f'{time_y_punt[1]}')
+            sg.popup("No puedes seguir jugando",
+                     "Puntaje obtenido: ", f'{time_y_punt[1]}')
             guardar_puntaje(user, dificultad, time_y_punt[1])
             guardar_info(int(time()), id_partida, "intento", user, "finalizada", "", "", dificultad,
-                         int(time() - start_time))
+                         int(time() - start_time), csv_selected)
             window.close()
             break
