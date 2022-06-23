@@ -8,5 +8,10 @@
         "Nickname": "Isidro",
         "Edad": 22,
         "Genero": "Masculino"
+    },
+    {
+        "Nickname": "Roberta",
+        "Edad": 82,
+        "Genero": "Femenino"
     }
 ]

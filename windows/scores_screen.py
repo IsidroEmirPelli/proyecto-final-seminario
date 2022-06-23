@@ -8,12 +8,13 @@ def build():
     """Construye la ventana de las puntuaciones"""
     sg.theme("LightBlue")
 
-    path_csv = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'users'))
+    path_csv = os.path.abspath(os.path.join(
+        os.path.dirname(__file__), '..', 'users'))
     path_scores = os.path.join(path_csv, 'scores.csv')
 
     scores_dicctionary = {'facil': [], 'normal': [], 'dificil': []}
     headings_array = ["FACIL", "NORMAL", "DIFICIL"]
-   
+
     def load_score_dicctionary():
         """ funcion que lee el archivo csv y devuelve un diccionario con key: dificultad y value: lista de tuplas """
         with open(path_scores, 'r') as csv_file:
@@ -35,7 +36,8 @@ def build():
     def convert_touple_to_string():
         """ funcion que convierte todas las tuplas en strings en el diccionario"""
         for key in scores_dicctionary:
-            scores_dicctionary[key] = [str(tup[0]) + " : " + str(tup[1]) for tup in scores_dicctionary[key]]
+            scores_dicctionary[key] = [
+                str(tup[0]) + " : " + str(tup[1]) for tup in scores_dicctionary[key]]
         return scores_dicctionary
 
     convert_touple_to_string()
@@ -47,7 +49,8 @@ def build():
     result2 = [list(x) for x in zip(*df.values)][0:20]
 
     layout = [
-        [sg.Push(), sg.Button("Volver", font="Verdana 11", border_width=2, size=(10, 1), key="-VOLVER-")],
+        [sg.Push(), sg.Button("Volver", font="Verdana 11",
+                              border_width=2, size=(10, 1), key="-VOLVER-")],
         [sg.Push(), sg.Table(values=result2, headings=headings_array,
                              # background_color='light blue',
                              auto_size_columns=False,
@@ -59,7 +62,8 @@ def build():
                              row_height=35), sg.Push()]
     ]
 
-    window = sg.Window("FiguRace *-* Puntajes", layout, resizable=True, size=(600, 800), auto_size_text=True)
+    window = sg.Window("FiguRace *-* Puntajes", layout,
+                       resizable=True, size=(600, 800), auto_size_text=True)
 
     while True:
         event, values = window.read()

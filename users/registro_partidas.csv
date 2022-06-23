@@ -1,55 +1,57 @@
-timestamp,id,evento,usuarie,estado,texto-ingresado,respuesta,nivel,tiempo-partida
-1655958213,ef5961fe-cc2d-4760-9b1f-34465fd193b9,inicio_partida,User,,-,-,Normal,,Spotify
-1655958214,ef5961fe-cc2d-4760-9b1f-34465fd193b9,intento,User,error,Little Mix,Katy Perry,Normal,,Spotify
-1655958215,ef5961fe-cc2d-4760-9b1f-34465fd193b9,intento,User,error,Chip,Ariana Grande,Normal,,Spotify
-1655958216,ef5961fe-cc2d-4760-9b1f-34465fd193b9,intento,User,error,Shawn Mendes,Jessie J,Normal,,Spotify
-1655958216,ef5961fe-cc2d-4760-9b1f-34465fd193b9,intento,User,ok,DJ Khaled,DJ Khaled,Normal,,Spotify
-1655958216,ef5961fe-cc2d-4760-9b1f-34465fd193b9,intento,User,ok,Jay Sean,Jay Sean,Normal,,Spotify
-1655958217,ef5961fe-cc2d-4760-9b1f-34465fd193b9,intento,User,error,Matt Cardle,Taylor Swift,Normal,,Spotify
-1655958218,ef5961fe-cc2d-4760-9b1f-34465fd193b9,intento,User,finalizada,,,Normal,5,Spotify
-1655958230,6880468e-abb8-4ccb-975e-3faf1d32d82e,inicio_partida,User,,-,-,Normal,,Volcanes
-1655958243,6880468e-abb8-4ccb-975e-3faf1d32d82e,intento,User,timeout,-,"Hudson, Cerro (Chile-S)",Normal,,Volcanes
-1655958244,6880468e-abb8-4ccb-975e-3faf1d32d82e,intento,User,error,Awu (Sangihe Is-Indonesia),Liamuiga (W Indies),Normal,,Volcanes
-1655958244,6880468e-abb8-4ccb-975e-3faf1d32d82e,intento,User,error,Asama (Honshu-Japan),Purace (Colombia),Normal,,Volcanes
-1655958245,6880468e-abb8-4ccb-975e-3faf1d32d82e,intento,User,error,Sinabung (Sumatra),Sorikmarapi (Sumatra),Normal,,Volcanes
-1655958245,6880468e-abb8-4ccb-975e-3faf1d32d82e,intento,User,ok,Rabaul (New Britain-SW Pac),Rabaul (New Britain-SW Pac),Normal,,Volcanes
-1655958246,6880468e-abb8-4ccb-975e-3faf1d32d82e,intento,User,error,Etna (Italy),Kelut (Java),Normal,,Volcanes
-1655958248,6880468e-abb8-4ccb-975e-3faf1d32d82e,intento,User,finalizada,,,Normal,17,Volcanes
-1655958264,cea926ec-6caa-481c-944f-fbd0fa55bd4d,inicio_partida,Isidro,,-,-,Normal,,Spotify
-1655958276,cea926ec-6caa-481c-944f-fbd0fa55bd4d,intento,Isidro,timeout,-,Disclosure,Normal,,Spotify
-1655958279,cea926ec-6caa-481c-944f-fbd0fa55bd4d,intento,Isidro,error,Rae Sremmurd,One Direction,Normal,,Spotify
-1655958279,cea926ec-6caa-481c-944f-fbd0fa55bd4d,intento,Isidro,error,Hailee Steinfeld,Cardi B,Normal,,Spotify
-1655958280,cea926ec-6caa-481c-944f-fbd0fa55bd4d,intento,Isidro,error,Sebastian Ingrosso,Jennifer Lopez,Normal,,Spotify
-1655958280,cea926ec-6caa-481c-944f-fbd0fa55bd4d,intento,Isidro,ok,Ariana Grande,Ariana Grande,Normal,,Spotify
-1655958300,cea926ec-6caa-481c-944f-fbd0fa55bd4d,intento,Isidro,timeout,-,Deorro,Normal,,Spotify
-1655958301,cea926ec-6caa-481c-944f-fbd0fa55bd4d,intento,Isidro,finalizada,,,Normal,37,Spotify
-1655959668,2615b30f-d8da-4c79-8990-d8735f66a74c,inicio_partida,Isidro,,-,-,Dificil,,FIFA
-1655959670,2615b30f-d8da-4c79-8990-d8735f66a74c,intento,Isidro,ok,Pál Dárdai,Pál Dárdai,Dificil,,FIFA
-1655959670,2615b30f-d8da-4c79-8990-d8735f66a74c,intento,Isidro,error,Fabián Ramos,Hayden Coulson,Dificil,,FIFA
-1655959670,2615b30f-d8da-4c79-8990-d8735f66a74c,intento,Isidro,error,Cameron Jerome,Jorge Teixeira,Dificil,,FIFA
-1655959671,2615b30f-d8da-4c79-8990-d8735f66a74c,intento,Isidro,error,Maic Sema,Ryan Leonard,Dificil,,FIFA
-1655959671,2615b30f-d8da-4c79-8990-d8735f66a74c,intento,Isidro,ok,Artem Rebrov,Artem Rebrov,Dificil,,FIFA
-1655959671,2615b30f-d8da-4c79-8990-d8735f66a74c,intento,Isidro,error,Juan Raúl Neira,Rodri,Dificil,,FIFA
-1655959672,2615b30f-d8da-4c79-8990-d8735f66a74c,intento,Isidro,finalizada,,,Dificil,3,FIFA
-1655959676,44685277-111e-4329-9a15-a12a3b8d6e9c,inicio_partida,User,,-,-,Facil,,FIFA
-1655959677,44685277-111e-4329-9a15-a12a3b8d6e9c,intento,User,error,Joni Montiel,Kim Jungya,Facil,,FIFA
-1655959678,44685277-111e-4329-9a15-a12a3b8d6e9c,intento,User,ok,Thibang Phete,Thibang Phete,Facil,,FIFA
-1655959678,44685277-111e-4329-9a15-a12a3b8d6e9c,intento,User,error,Pirulo,Lass Bangoura,Facil,,FIFA
-1655959678,44685277-111e-4329-9a15-a12a3b8d6e9c,intento,User,error,Pichu Atienza,Juan Manuel Olivera,Facil,,FIFA
-1655959678,44685277-111e-4329-9a15-a12a3b8d6e9c,intento,User,ok,Kevin Cannavò,Kevin Cannavò,Facil,,FIFA
-1655959678,44685277-111e-4329-9a15-a12a3b8d6e9c,intento,User,ok,Alan Lithgow,Alan Lithgow,Facil,,FIFA
-1655959679,44685277-111e-4329-9a15-a12a3b8d6e9c,intento,User,finalizada,,,Facil,3,FIFA
-1655959684,c0a6f28c-1c25-49f4-a802-2e05e7447046,inicio_partida,User,,-,-,Facil,,FIFA
-1655959686.1040566,c0a6f28c-1c25-49f4-a802-2e05e7447046,cancelada,User,cancelada,-,-,Facil,,
-1655959686.2230833,c0a6f28c-1c25-49f4-a802-2e05e7447046,cancelada,User,cancelada,-,-,Facil,,
-1655959687,18b49b12-0a9d-410b-8785-b6d7093a27f7,inicio_partida,User,,-,-,Facil,,FIFA
-1655959689.5179029,18b49b12-0a9d-410b-8785-b6d7093a27f7,cancelada,User,cancelada,-,-,Facil,,
-1655959689.6539836,18b49b12-0a9d-410b-8785-b6d7093a27f7,cancelada,User,cancelada,-,-,Facil,,
-1655959691,4bd8e22d-43fb-4bd9-ac68-982ea25cf97c,inicio_partida,User,,-,-,Facil,,Volcanes
-1655959692,4bd8e22d-43fb-4bd9-ac68-982ea25cf97c,intento,User,error,Manam (New Guinea-NE of),Pinatubo (Luzon-Philippines),Facil,,Volcanes
-1655959693,4bd8e22d-43fb-4bd9-ac68-982ea25cf97c,intento,User,error,Akita-Yake-yama (Honshu-Japan),Kuwae (Vanuatu-SW Pacific),Facil,,Volcanes
-1655959693,4bd8e22d-43fb-4bd9-ac68-982ea25cf97c,intento,User,error,On-take (Honshu-Japan),Marapi (Sumatra),Facil,,Volcanes
-1655959693,4bd8e22d-43fb-4bd9-ac68-982ea25cf97c,intento,User,error,Nyamuragira (Africa-C),Asama (Honshu-Japan),Facil,,Volcanes
-1655959694,4bd8e22d-43fb-4bd9-ac68-982ea25cf97c,intento,User,error,Etna (Italy),Hekla (Iceland-S),Facil,,Volcanes
-1655959694,4bd8e22d-43fb-4bd9-ac68-982ea25cf97c,intento,User,error,Merapi (Java),Pelee (W Indies),Facil,,Volcanes
-1655959695,4bd8e22d-43fb-4bd9-ac68-982ea25cf97c,intento,User,finalizada,,,Facil,3,Volcanes
+timestamp,id,evento,usuarie,estado,texto-ingresado,respuesta,nivel,tiempo-partida,genero
+1655999014,a02db774-dd28-413d-9e86-73e2ce723f95,inicio_partida,Isidro,,-,-,Normal,,Masculino
+1655999015,a02db774-dd28-413d-9e86-73e2ce723f95,intento,Isidro,error,Jonas Brix-Damborg,Ramiro Macagno,Normal,,Masculino
+1655999016,a02db774-dd28-413d-9e86-73e2ce723f95,intento,Isidro,error,Markus Schubert,Luis Paz,Normal,,Masculino
+1655999016,a02db774-dd28-413d-9e86-73e2ce723f95,intento,Isidro,error,Zhang Lingfeng,Adam Lallana,Normal,,Masculino
+1655999016,a02db774-dd28-413d-9e86-73e2ce723f95,intento,Isidro,error,Giovanni Zwikstra,Aaron Lewis,Normal,,Masculino
+1655999017,a02db774-dd28-413d-9e86-73e2ce723f95,intento,Isidro,error,Thomas Rogne,Ishak Belfodil,Normal,,Masculino
+1655999017,a02db774-dd28-413d-9e86-73e2ce723f95,intento,Isidro,error,David Henen,Denilson Gonzáles,Normal,,Masculino
+1655999018,a02db774-dd28-413d-9e86-73e2ce723f95,intento,Isidro,finalizada,,,Normal,3,Masculino
+1655999020,0b1aac5c-1187-4d20-8a30-9b0afc5f911d,inicio_partida,Isidro,,-,-,Normal,,Masculino
+1655999021,0b1aac5c-1187-4d20-8a30-9b0afc5f911d,intento,Isidro,error,Serge-Junior Martinsson Ngouali,João Cancelo,Normal,,Masculino
+1655999021,0b1aac5c-1187-4d20-8a30-9b0afc5f911d,intento,Isidro,error,Dominik Stahl,Ryan Clampin,Normal,,Masculino
+1655999022,0b1aac5c-1187-4d20-8a30-9b0afc5f911d,intento,Isidro,error,Dodô,Luke Ivanovic,Normal,,Masculino
+1655999022,0b1aac5c-1187-4d20-8a30-9b0afc5f911d,intento,Isidro,error,Tom Dele-Bashiru,Byron Saavedra,Normal,,Masculino
+1655999023,0b1aac5c-1187-4d20-8a30-9b0afc5f911d,intento,Isidro,error,George Maluleka,Simone Palombi,Normal,,Masculino
+1655999030,0b1aac5c-1187-4d20-8a30-9b0afc5f911d,intento,Isidro,timeout,-,Tsuyoshi Kodama,Normal,,Masculino
+1655999031,0b1aac5c-1187-4d20-8a30-9b0afc5f911d,intento,Isidro,finalizada,,,Normal,10,Masculino
+1655999035,d3e95a65-ef60-4e2d-a6eb-5a37d0e67a14,inicio_partida,Roberta,,-,-,Normal,,Femenino
+1655999036,d3e95a65-ef60-4e2d-a6eb-5a37d0e67a14,intento,Roberta,error,"Tair, Jebel at (Red Sea)",Merapi (Java),Normal,,Femenino
+1655999036,d3e95a65-ef60-4e2d-a6eb-5a37d0e67a14,intento,Roberta,error,Huila (Colombia),Mayon (Luzon-Philippines),Normal,,Femenino
+1655999036,d3e95a65-ef60-4e2d-a6eb-5a37d0e67a14,intento,Roberta,ok,Rabaul (New Britain-SW Pac),Rabaul (New Britain-SW Pac),Normal,,Femenino
+1655999037,d3e95a65-ef60-4e2d-a6eb-5a37d0e67a14,intento,Roberta,error,Mayon (Luzon-Philippines),Kelut (Java),Normal,,Femenino
+1655999037,d3e95a65-ef60-4e2d-a6eb-5a37d0e67a14,intento,Roberta,error,Bulusan (Luzon-Philippines),Manam (New Guinea-NE of),Normal,,Femenino
+1655999038,d3e95a65-ef60-4e2d-a6eb-5a37d0e67a14,intento,Roberta,error,Grimsvotn (Iceland-NE),Semeru (Java),Normal,,Femenino
+1655999039,d3e95a65-ef60-4e2d-a6eb-5a37d0e67a14,intento,Roberta,finalizada,,,Normal,4,Femenino
+1655999041,d31bfdc3-b024-4da2-849a-9d3322a329b2,inicio_partida,Roberta,,-,-,Normal,,Femenino
+1655999042,d31bfdc3-b024-4da2-849a-9d3322a329b2,intento,Roberta,error,FINNEAS,Nicki Minaj,Normal,,Femenino
+1655999043,d31bfdc3-b024-4da2-849a-9d3322a329b2,intento,Roberta,error,Tiësto,Cheat Codes,Normal,,Femenino
+1655999043,d31bfdc3-b024-4da2-849a-9d3322a329b2,intento,Roberta,error,Alexandra Stan,A$AP Ferg,Normal,,Femenino
+1655999043,d31bfdc3-b024-4da2-849a-9d3322a329b2,intento,Roberta,error,Anne-Marie,Lana Del Rey,Normal,,Femenino
+1655999043,d31bfdc3-b024-4da2-849a-9d3322a329b2,intento,Roberta,error,Avicii,James Arthur,Normal,,Femenino
+1655999044,d31bfdc3-b024-4da2-849a-9d3322a329b2,intento,Roberta,error,Travie McCoy,Coldplay,Normal,,Femenino
+1655999045,d31bfdc3-b024-4da2-849a-9d3322a329b2,intento,Roberta,finalizada,,,Normal,3,Femenino
+1655999046,e8b7a41f-a528-4ca7-be75-3be110c0311b,inicio_partida,Roberta,,-,-,Normal,,Femenino
+1655999054,e8b7a41f-a528-4ca7-be75-3be110c0311b,intento,Roberta,timeout,-,Blati Touré,Normal,,Femenino
+1655999062,e8b7a41f-a528-4ca7-be75-3be110c0311b,intento,Roberta,timeout,-,Gökhan Inler,Normal,,Femenino
+1655999062,e8b7a41f-a528-4ca7-be75-3be110c0311b,intento,Roberta,error,Michael Rose,Ryan Johnson Laursen,Normal,,Femenino
+1655999063,e8b7a41f-a528-4ca7-be75-3be110c0311b,intento,Roberta,error,Vi?ar Örn Kjartansson,Adam Bodzek,Normal,,Femenino
+1655999063,e8b7a41f-a528-4ca7-be75-3be110c0311b,intento,Roberta,error,Tobias Sippel,Andrés Pérez,Normal,,Femenino
+1655999064,e8b7a41f-a528-4ca7-be75-3be110c0311b,intento,Roberta,error,Lucas Röser,Davide Merola,Normal,,Femenino
+1655999065,e8b7a41f-a528-4ca7-be75-3be110c0311b,intento,Roberta,finalizada,,,Normal,18,Femenino
+1655999068,393b4590-9aa4-44a8-8b9a-e0e3dc02e7a4,inicio_partida,User,,-,-,Normal,,Otro
+1655999069,393b4590-9aa4-44a8-8b9a-e0e3dc02e7a4,intento,User,error,Fabian Johnson,Roberto Cereceda,Normal,,Otro
+1655999070,393b4590-9aa4-44a8-8b9a-e0e3dc02e7a4,intento,User,error,Rei Matsumoto,Lukas Schöfl,Normal,,Otro
+1655999070,393b4590-9aa4-44a8-8b9a-e0e3dc02e7a4,intento,User,error,Nikolai Alho,Fabiano,Normal,,Otro
+1655999070,393b4590-9aa4-44a8-8b9a-e0e3dc02e7a4,intento,User,ok,Shoya Nakajima,Shoya Nakajima,Normal,,Otro
+1655999070,393b4590-9aa4-44a8-8b9a-e0e3dc02e7a4,intento,User,error,Guaita,Nenad Tomovic,Normal,,Otro
+1655999072,393b4590-9aa4-44a8-8b9a-e0e3dc02e7a4,intento,User,ok,Tim Boss,Tim Boss,Normal,,Otro
+1655999073,393b4590-9aa4-44a8-8b9a-e0e3dc02e7a4,intento,User,finalizada,,,Normal,4,Otro
+1655999074,a14a310f-c36d-45a7-a669-23b067a4b303,inicio_partida,User,,-,-,Normal,,Otro
+1655999086,a14a310f-c36d-45a7-a669-23b067a4b303,intento,User,timeout,-,San Jorge (Azores),Normal,,Otro
+1655999130,a14a310f-c36d-45a7-a669-23b067a4b303,intento,User,timeout,-,Kelut (Java),Normal,,Otro
+1655999131,a14a310f-c36d-45a7-a669-23b067a4b303,intento,User,error,Kelut (Java),Kilauea (Hawaiian Is),Normal,,Otro
+1655999132,a14a310f-c36d-45a7-a669-23b067a4b303,intento,User,error,Kelut (Java),Kaba (Sumatra),Normal,,Otro
+1655999132,a14a310f-c36d-45a7-a669-23b067a4b303,intento,User,ok,Kirishima (Kyushu-Japan),Kirishima (Kyushu-Japan),Normal,,Otro
+1655999132,a14a310f-c36d-45a7-a669-23b067a4b303,intento,User,error,Hakone (Honshu-Japan),Ofu-Olosega (Samoa-SW Pacific),Normal,,Otro
+1655999133,a14a310f-c36d-45a7-a669-23b067a4b303,intento,User,finalizada,,,Normal,58,Otro

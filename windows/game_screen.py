@@ -14,6 +14,7 @@ def build(user, dificultad):
 
     config = get_config()
     csv_selected, header, data = get_card_data()
+    genero = get_genero(user)
     num_carta = randrange(len(data))  # obtengo carta a jugar aleatoriamente
     puntaje = 0
 
@@ -39,7 +40,7 @@ def build(user, dificultad):
     time_y_punt = [start_time, puntaje, carta_buena]
     id_partida = uuid4()
     guardar_info(int(time()), id_partida, "inicio_partida", user,
-                 "", "-", "-", dificultad, '', csv_selected)
+                 "", "-", "-", dificultad, '', genero)
 
     while True:
 
@@ -57,11 +58,11 @@ def build(user, dificultad):
             # countdown
             elif event == '-TIMEOUT-':
                 countdown(window, time_y_punt, config, data,
-                          dificultad, img_act, id_partida, user, csv_selected, csv_selected, header)
+                          dificultad, img_act, id_partida, user, genero, csv_selected, header)
             else:
                 if window[event].get_text() == carta_buena:
                     guardar_info(int(time()), id_partida, "intento", user, "ok", window[event].get_text(), carta_buena,
-                                 dificultad, '', csv_selected)
+                                 dificultad, '', genero)
                     window[f'-IMG_{len(img_act) + 1}-'].update(PATH_CHECK_PNG)
                     img_act.append(True)
                     time_y_punt[1] += config['Puntaje_sumar']
@@ -73,7 +74,7 @@ def build(user, dificultad):
 
                 else:  # si llega aca carta perdida
                     guardar_info(int(time()), id_partida, "intento", user, "error", window[event].get_text(),
-                                 carta_buena, dificultad, '', csv_selected)
+                                 carta_buena, dificultad, '', genero)
                     window[f'-IMG_{len(img_act) + 1}-'].update(PATH_NOTCHECK_PNG)
                     img_act.append(False)
                     time_y_punt[1] -= config['Puntaje_restar']
@@ -90,6 +91,6 @@ def build(user, dificultad):
                      "Puntaje obtenido: ", f'{time_y_punt[1]}')
             guardar_puntaje(user, dificultad, time_y_punt[1])
             guardar_info(int(time()), id_partida, "intento", user, "finalizada", "", "", dificultad,
-                         int(time() - start_time), csv_selected)
+                         int(time() - start_time), genero)
             window.close()
             break

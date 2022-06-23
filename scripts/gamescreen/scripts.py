@@ -5,6 +5,18 @@ from random import choice, randrange
 import PySimpleGUI as sg
 from scripts.gamescreen.constant import *
 from time import time
+from windows.profile_screen import getting_path
+
+
+def get_genero(usuarie):
+    """Obtinene el genero de un usuario"""
+
+    with open(getting_path(), 'r') as user:
+        users = json.load(user)
+
+    for user in users:
+        if usuarie == user['Nickname']:
+            return user['Genero']
 
 
 def get_config():
@@ -133,7 +145,6 @@ def window_update(window, dificultad, csv_selected, header, data):
     cant = config['Cant_pistas'][dificultad]
 
     # obtengo carta a jugar aleatoriamente
-    print(f"DATA SCRIPT {len(data)}")
     num_carta = randrange(len(data) - 1)
     otras_cards = otras_cartas(num_carta, data)
 
@@ -150,7 +161,6 @@ def window_update(window, dificultad, csv_selected, header, data):
 
     for index in range(1, 6):
         window[f'-CARTA_{index}-'].update(f'{cartas[index - 1]}')
-    print(f"NUM CARTA {num_carta} ")
     return num_carta
 
 
@@ -199,7 +209,7 @@ def guardar_info(tiempo, id_partida, evento, user, estado, text, respuesta, nive
 def crear_arch_partidas():
     with open(PATH_PARTIDAS, 'w', encoding='utf-8', newline='') as file:
         fieldnames = ['timestamp', 'id', 'evento', 'usuarie', 'estado',
-                      'texto-ingresado', 'respuesta', 'nivel', 'tiempo-partida']
+                      'texto-ingresado', 'respuesta', 'nivel', 'tiempo-partida', 'genero']
         wr = csv.DictWriter(file, fieldnames=fieldnames)
         wr.writeheader()
 
