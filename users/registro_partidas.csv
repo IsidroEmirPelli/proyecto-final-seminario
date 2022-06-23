@@ -111,3 +111,35 @@ timestamp,id,evento,usuarie,estado,texto-ingresado,respuesta,nivel,tiempo-partid
 1656006467,ef58fa0f-3226-4f65-b804-800071704913,intento,Isidro,error,The Weeknd,Lil Dicky,Dificil,,Masculino
 1656006467,ef58fa0f-3226-4f65-b804-800071704913,intento,Isidro,error,Florida Georgia Line,Trey Songz,Dificil,,Masculino
 1656006468,ef58fa0f-3226-4f65-b804-800071704913,intento,Isidro,finalizada,,,Dificil,12,Masculino
+1656008484,c7a370b6-ff43-4f97-aaad-52109dffd0f5,inicio_partida,Isidro,,-,-,Normal,,Masculino
+1656008490,c7a370b6-ff43-4f97-aaad-52109dffd0f5,intento,Isidro,timeout,-,Nyamuragira (Africa-C),Normal,,Masculino
+1656008495,c7a370b6-ff43-4f97-aaad-52109dffd0f5,intento,Isidro,error,Nyamuragira (Africa-C),"Arhab, Harra of (Arabia-S)",Normal,,Masculino
+1656008496,c7a370b6-ff43-4f97-aaad-52109dffd0f5,intento,Isidro,error,Manam (New Guinea-NE of),Redoubt (Alaska-SW),Normal,,Masculino
+1656008496,c7a370b6-ff43-4f97-aaad-52109dffd0f5,intento,Isidro,error,Okataina (New Zealand),Oku Volc Field (Africa-W),Normal,,Masculino
+1656008496,c7a370b6-ff43-4f97-aaad-52109dffd0f5,intento,Isidro,error,Awu (Sangihe Is-Indonesia),Semeru (Java),Normal,,Masculino
+1656008497,c7a370b6-ff43-4f97-aaad-52109dffd0f5,intento,Isidro,error,Kelut (Java),Etna (Italy),Normal,,Masculino
+1656008498,c7a370b6-ff43-4f97-aaad-52109dffd0f5,intento,Isidro,finalizada,,,Normal,14,Masculino
+1656008963,278a834d-3d1c-4312-b4f8-ac69bf6d146e,inicio_partida,Isidro,,-,-,Normal,,Masculino
+1656008966,278a834d-3d1c-4312-b4f8-ac69bf6d146e,intento,Isidro,ok,XXXTENTACION,XXXTENTACION,Normal,,Masculino
+1656008970,278a834d-3d1c-4312-b4f8-ac69bf6d146e,intento,Isidro,ok,Tinie Tempah,Tinie Tempah,Normal,,Masculino
+1656008971,278a834d-3d1c-4312-b4f8-ac69bf6d146e,intento,Isidro,error,Playboi Carti,Calvin Harris,Normal,,Masculino
+1656008971,278a834d-3d1c-4312-b4f8-ac69bf6d146e,intento,Isidro,error,Marshmello,Ylvis,Normal,,Masculino
+1656008972,278a834d-3d1c-4312-b4f8-ac69bf6d146e,intento,Isidro,error,Jason Derulo,B.o.B,Normal,,Masculino
+1656008972,278a834d-3d1c-4312-b4f8-ac69bf6d146e,intento,Isidro,error,Eliza Doolittle,XXXTENTACION,Normal,,Masculino
+1656008974,278a834d-3d1c-4312-b4f8-ac69bf6d146e,intento,Isidro,finalizada,,,Normal,10,Masculino
+1656008975,9cf9267e-f773-43ad-9e82-6ae95a553359,inicio_partida,Isidro,,-,-,Normal,,Masculino
+1656008983,9cf9267e-f773-43ad-9e82-6ae95a553359,intento,Isidro,timeout,-,Stevie May,Normal,,Masculino
+1656008983,9cf9267e-f773-43ad-9e82-6ae95a553359,intento,Isidro,error,Israel Jiménez,Álvaro,Normal,,Masculino
+1656008984,9cf9267e-f773-43ad-9e82-6ae95a553359,intento,Isidro,error,Harry Kyprianou,Francesco Bardi,Normal,,Masculino
+1656008984,9cf9267e-f773-43ad-9e82-6ae95a553359,intento,Isidro,error,Damian Roßbach,Simeon Jackson,Normal,,Masculino
+1656008984,9cf9267e-f773-43ad-9e82-6ae95a553359,intento,Isidro,error,Emiliano Martínez,Emil Riis,Normal,,Masculino
+1656008985,9cf9267e-f773-43ad-9e82-6ae95a553359,intento,Isidro,error,Leandro Silva,Sean Kavanagh,Normal,,Masculino
+1656008986,9cf9267e-f773-43ad-9e82-6ae95a553359,intento,Isidro,finalizada,,,Normal,10,Masculino
+1656010698,5c0e2746-e814-4eb5-882a-5189e7055554,inicio_partida,Isidro,,-,-,Dificil,,Masculino
+1656010701,5c0e2746-e814-4eb5-882a-5189e7055554,intento,Isidro,error,Tyreece John-Jules,Rémy Descamps,Dificil,,Masculino
+1656010701,5c0e2746-e814-4eb5-882a-5189e7055554,intento,Isidro,ok,Rasmus Lindkvist,Rasmus Lindkvist,Dificil,,Masculino
+1656010702,5c0e2746-e814-4eb5-882a-5189e7055554,intento,Isidro,error,Abdulaziz Al Shahrani,Frederik Rønnow,Dificil,,Masculino
+1656010702,5c0e2746-e814-4eb5-882a-5189e7055554,intento,Isidro,ok,Léo Dubois,Léo Dubois,Dificil,,Masculino
+1656010702,5c0e2746-e814-4eb5-882a-5189e7055554,intento,Isidro,error,Robin Canido,Ben Johnson,Dificil,,Masculino
+1656010703,5c0e2746-e814-4eb5-882a-5189e7055554,intento,Isidro,error,Lucas Hoyos,Alexio Sanctos,Dificil,,Masculino
+1656010705,5c0e2746-e814-4eb5-882a-5189e7055554,intento,Isidro,finalizada,,,Dificil,6,Masculino

@@ -92,7 +92,7 @@ def build():
                          title='Error')
 
         elif event == '-BORRAR-':
-            # Actualizo el contenido de todos los espacios para que no contengan nada.
+            # Actualizo el contenido de todos los espsacios para que no contengan nada.
             window['-NICK-'].update('')
             window['-EDAD-'].update(0)
             window['-GENERO-'].update('')
