@@ -54,6 +54,7 @@ def build(user, dificultad):
                 guardar_info(time(), id_partida, "cancelada", user,
                              "cancelada", "-", "-", dificultad, '', '')
                 window.close()
+                break
 
             # countdown
             elif event == '-TIMEOUT-':
@@ -90,7 +91,7 @@ def build(user, dificultad):
             sg.popup("No puedes seguir jugando",
                      "Puntaje obtenido: ", f'{time_y_punt[1]}')
             guardar_puntaje(user, dificultad, time_y_punt[1])
-            guardar_info(int(time()), id_partida, "intento", user, "finalizada", "", "", dificultad,
+            guardar_info(int(time()), id_partida, "finalizada", user, "finalizada", "", "", dificultad,
                          int(time() - start_time), genero)
             window.close()
             break
