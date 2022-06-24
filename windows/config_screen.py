@@ -67,14 +67,18 @@ def build():
 
     # construcción del área de configuraciones generales
     gen_txt = [
-        [sg.Text('Tiempo límite por ronda (en segundos)', font=fuente, pad=pad_st)],
+        [sg.Text('Tiempo límite por ronda (en segundos)',
+                 font=fuente, pad=pad_st)],
         [sg.Text('Cantidad de rondas por juego', font=fuente, pad=pad_st)],
-        [sg.Text('Puntaje sumado por cada respuesta correcta', font=fuente, pad=pad_st)],
-        [sg.Text('Puntaje restado por cada respuesta incorrecta', font=fuente, pad=pad_st)],
+        [sg.Text('Puntaje sumado por cada respuesta correcta',
+                 font=fuente, pad=pad_st)],
+        [sg.Text('Puntaje restado por cada respuesta incorrecta',
+                 font=fuente, pad=pad_st)],
     ]
 
     gen_opt = [
-        [sg.InputCombo((30, 60, 90), default_value=config['Tiempo'], size=(10, 1), pad=pad_st, key='-TIME-')],
+        [sg.InputCombo((30, 60, 90), default_value=config['Tiempo'],
+                       size=(10, 1), pad=pad_st, key='-TIME-')],
         [sg.OptionMenu((1, 2, 3, 4, 5, 6, 7, 8, 9, 10), default_value=config['Rondas'], size=(7, 1), pad=pad_st,
                        key='-ROUNDS-')],
         [sg.InputCombo([5, 10, 15], default_value=config['Puntaje_sumar'], size=(10, 1), pad=pad_st,
@@ -161,16 +165,16 @@ def build():
                     actualizar_config(values)
                     if verificar_config():
                         sg.popup('Configuración guardada con éxito', title='¡Hecho!', keep_on_top=True,
-                                font=fuente)
+                                 font=fuente)
                         window.close()
                         break
                     else:
                         sg.popup('Por favor verifica tus opciones', title='¡Cuidado!', keep_on_top=True,
-                                font=fuente)
+                                 font=fuente)
                 except ValueError:
                     sg.popup('Por favor ingresa solo números en los campos solicitados.', title='¡Cuidado!',
-                            keep_on_top=True, font=fuente)
-                            
+                             keep_on_top=True, font=fuente)
+
             case '-VOLVER-':
                 window.close()
                 break

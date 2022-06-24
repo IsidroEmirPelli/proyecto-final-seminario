@@ -68,7 +68,6 @@ def build():
     while True:
         # Inicio la ventana
         event, values = window.read()
-<<<<<<< HEAD
         match event:
             case '-ACEPTAR-':
                 # Verifico que los campos no esten vacios.
@@ -89,30 +88,6 @@ def build():
                 except ValueError:
                     sg.popup('Por favor ingresa un número para la edad',
                              title='Error')
-=======
-        if event == '-ACEPTAR-':
-            # Verifico que los campos no esten vacios.
-            try:
-                if values['-NICK-'] == '' or int(values['-EDAD-']) == 0 or values['-GENERO-'] == '':
-                    sg.popup('Por favor complete todos los campos',
-                             title='Error', keep_on_top=True)
-                else:
-                    # Verifico que el que el nick sea valido
-                    if values['-NICK-'] == 'Usuarios':
-                        sg.popup('Nickname invalido', title='Error', keep_on_top=True)
-                        window['-NICK-'].update('')
-                    elif values['-GENERO-'] not in generos:
-                        sg.popup('Genero invalido', title='Error', keep_on_top=True)
-                        window['-GENERO-'].update('')
-                    else:
-                        modify_users_data(values)
-                        sg.popup('Perfil creado/modificado con exito', keep_on_top=True)
-                        window.close()
-
-            except ValueError:
-                sg.popup('Por favor ingresa un número para la edad',
-                         title='Error', keep_on_top=True)
->>>>>>> 6966ea3b4922680669bfe0a434b54479052cfde3
 
             case '-BORRAR-':
                 # Actualizo el contenido de todos los espsacios para que no contengan nada.
