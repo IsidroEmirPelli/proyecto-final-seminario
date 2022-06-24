@@ -46,44 +46,48 @@ def build(user, dificultad):
 
         if len(img_act) != config['Rondas']:
             event, values = window.read(timeout=250, timeout_key='-TIMEOUT-')
-            if event == sg.WIN_CLOSED:
-                guardar_info(time(), id_partida, "cancelada", user,
-                             "cancelada", "-", "-", dificultad, '', '')
-                break
-            elif event == '-VOLVER-':
-                guardar_info(time(), id_partida, "cancelada", user,
-                             "cancelada", "-", "-", dificultad, '', '')
-                window.close()
-                break
+            match event:
 
-            # countdown
-            elif event == '-TIMEOUT-':
-                countdown(window, time_y_punt, config, data,
-                          dificultad, img_act, id_partida, user, genero, csv_selected, header)
-            else:
-                if window[event].get_text() == carta_buena:
-                    guardar_info(int(time()), id_partida, "intento", user, "ok", window[event].get_text(), carta_buena,
-                                 dificultad, '', genero)
-                    window[f'-IMG_{len(img_act) + 1}-'].update(PATH_CHECK_PNG)
-                    img_act.append(True)
-                    time_y_punt[1] += config['Puntaje_sumar']
-                    window['-PUNTAJE-'].update(
-                        f'Puntos acumulados: {time_y_punt[1]}')
-                    carta_buena = data[window_update(
-                        window, dificultad, csv_selected, header, data)][5]
-                    time_y_punt[0] = time()
+                case sg.WIN_CLOSED:
+                    guardar_info(time(), id_partida, "cancelada", user,
+                                 "cancelada", "-", "-", dificultad, '', '')
+                    break
 
-                else:  # si llega aca carta perdida
-                    guardar_info(int(time()), id_partida, "intento", user, "error", window[event].get_text(),
-                                 carta_buena, dificultad, '', genero)
-                    window[f'-IMG_{len(img_act) + 1}-'].update(PATH_NOTCHECK_PNG)
-                    img_act.append(False)
-                    time_y_punt[1] -= config['Puntaje_restar']
-                    window['-PUNTAJE-'].update(
-                        f'Puntos acumulados: {time_y_punt[1]}')
-                    carta_buena = data[window_update(
-                        window, dificultad, csv_selected, header, data)][5]
-                    time_y_punt[0] = time()
+                case '-VOLVER-':
+                    guardar_info(time(), id_partida, "cancelada", user,
+                                 "cancelada", "-", "-", dificultad, '', '')
+                    window.close()
+                    break
+
+                # countdown
+                case '-TIMEOUT-':
+                    countdown(window, time_y_punt, config, data,
+                              dificultad, img_act, id_partida, user, genero, csv_selected, header)
+
+                case _:
+                    if window[event].get_text() == carta_buena:
+                        guardar_info(int(time()), id_partida, "intento", user, "ok", window[event].get_text(), carta_buena,
+                                     dificultad, '', genero)
+                        window[f'-IMG_{len(img_act) + 1}-'].update(PATH_CHECK_PNG)
+                        img_act.append(True)
+                        time_y_punt[1] += config['Puntaje_sumar']
+                        window['-PUNTAJE-'].update(
+                            f'Puntos acumulados: {time_y_punt[1]}')
+                        carta_buena = data[window_update(
+                            window, dificultad, csv_selected, header, data)][5]
+                        time_y_punt[0] = time()
+
+                    else:  # si llega aca carta perdida
+                        guardar_info(int(time()), id_partida, "intento", user, "error", window[event].get_text(),
+                                     carta_buena, dificultad, '', genero)
+                        window[f'-IMG_{len(img_act) + 1}-'].update(PATH_NOTCHECK_PNG)
+                        img_act.append(False)
+                        time_y_punt[1] -= config['Puntaje_restar']
+                        window['-PUNTAJE-'].update(
+                            f'Puntos acumulados: {time_y_punt[1]}')
+                        carta_buena = data[window_update(
+                            window, dificultad, csv_selected, header, data)][5]
+                        time_y_punt[0] = time()
 
         else:
             if time_y_punt[1] <= 0:

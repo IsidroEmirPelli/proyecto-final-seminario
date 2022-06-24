@@ -68,36 +68,37 @@ def build():
     while True:
         # Inicio la ventana
         event, values = window.read()
-        if event == '-ACEPTAR-':
-            # Verifico que los campos no esten vacios.
-            try:
-                if values['-NICK-'] == '' or int(values['-EDAD-']) == 0 or values['-GENERO-'] == '':
-                    sg.popup('Por favor complete todos los campos',
-                             title='Error')
-                else:
-                    # Verifico que el que el nick sea valido
-                    if values['-NICK-'] == 'Usuarios':
-                        sg.popup('Nickname invalido', title='Error')
-                        window['-NICK-'].update('')
-                    elif values['-GENERO-'] not in generos:
-                        sg.popup('Genero invalido', title='Error')
-                        window['-GENERO-'].update('')
+        match event:
+            case '-ACEPTAR-':
+                # Verifico que los campos no esten vacios.
+                try:
+                    if values['-NICK-'] == '' or int(values['-EDAD-']) == 0 or values['-GENERO-'] == '':
+                        sg.popup('Por favor complete todos los campos',
+                                 title='Error')
                     else:
-                        modify_users_data(values)
-                        sg.popup('Perfil creado/modificado con exito')
-                        window.close()
+                        # Verifico que el que el nick sea valido
+                        if values['-NICK-'] == 'Usuarios':
+                            sg.popup('Nickname invalido', title='Error')
+                            window['-NICK-'].update('')
+                        else:
+                            modify_users_data(values)
+                            sg.popup('Perfil creado/modificado con exito')
+                            window.close()
 
-            except ValueError:
-                sg.popup('Por favor ingresa un número para la edad',
-                         title='Error')
+                except ValueError:
+                    sg.popup('Por favor ingresa un número para la edad',
+                             title='Error')
 
-        elif event == '-BORRAR-':
-            # Actualizo el contenido de todos los espsacios para que no contengan nada.
-            window['-NICK-'].update('')
-            window['-EDAD-'].update(0)
-            window['-GENERO-'].update('')
-        elif event == '-VOLVER-':
-            window.close()
-            break
-        elif event == sg.WIN_CLOSED:
-            break
+            case '-BORRAR-':
+                # Actualizo el contenido de todos los espsacios para que no contengan nada.
+                window['-NICK-'].update('')
+                window['-EDAD-'].update(0)
+                window['-GENERO-'].update('')
+
+            case '-VOLVER-':
+                window.close()
+                break
+
+            case sg.WIN_CLOSED:
+                window.close()
+                break

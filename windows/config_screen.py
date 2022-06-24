@@ -150,24 +150,27 @@ def build():
 
     while True:
         event, values = window.read()
+        match event:
 
-        if event == sg.WIN_CLOSED:
-            window.close()
-            break
-        if event == '-OK-':
-            try:
-                actualizar_config(values)
-                if verificar_config():
-                    sg.popup('Configuración guardada con éxito', title='¡Hecho!', keep_on_top=True,
-                             font=fuente)
-                    window.close()
-                    break
-                else:
-                    sg.popup('Por favor verifica tus opciones', title='¡Cuidado!', keep_on_top=True,
-                             font=fuente)
-            except ValueError:
-                sg.popup('Por favor ingresa solo números en los campos solicitados.', title='¡Cuidado!',
-                         keep_on_top=True, font=fuente)
-        elif event == '-VOLVER-':
-            window.close()
-            break
+            case sg.WIN_CLOSED:
+                window.close()
+                break
+
+            case '-OK-':
+                try:
+                    actualizar_config(values)
+                    if verificar_config():
+                        sg.popup('Configuración guardada con éxito', title='¡Hecho!', keep_on_top=True,
+                                font=fuente)
+                        window.close()
+                        break
+                    else:
+                        sg.popup('Por favor verifica tus opciones', title='¡Cuidado!', keep_on_top=True,
+                                font=fuente)
+                except ValueError:
+                    sg.popup('Por favor ingresa solo números en los campos solicitados.', title='¡Cuidado!',
+                            keep_on_top=True, font=fuente)
+                            
+            case '-VOLVER-':
+                window.close()
+                break

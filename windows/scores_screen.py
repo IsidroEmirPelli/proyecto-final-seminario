@@ -89,14 +89,19 @@ def build():
 
     while True:
         event, values = window.read()
-        if event == sg.WIN_CLOSED:
-            break
-        elif event == "-MAXIMOS-":
-            window['-TABLE1-'].update(values=result2)
-            window['-ACTUAL-'].update("PUNTAJES MAXIMOS")
-        elif event == "-PROMEDIO-":
-            window['-TABLE1-'].update(values=result)
-            window['-ACTUAL-'].update("PUNTAJES PROMEDIO")
-        elif event == "-VOLVER-":
-            window.close()
-            break
+        match event:
+
+            case sg.WIN_CLOSED:
+                break
+
+            case "-MAXIMOS-":
+                window['-TABLE1-'].update(values=result2)
+                window['-ACTUAL-'].update("PUNTAJES MAXIMOS")
+
+            case "-PROMEDIO-":
+                window['-TABLE1-'].update(values=result)
+                window['-ACTUAL-'].update("PUNTAJES PROMEDIO")
+
+            case "-VOLVER-":
+                window.close()
+                break
