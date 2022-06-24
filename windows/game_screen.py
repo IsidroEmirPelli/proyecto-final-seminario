@@ -89,9 +89,9 @@ def build(user, dificultad):
             if time_y_punt[1] <= 0:
                 time_y_punt[1] = 0
             sg.popup("No puedes seguir jugando",
-                     "Puntaje obtenido: ", f'{time_y_punt[1]}')
+                     "Puntaje obtenido: ", f'{time_y_punt[1]}', keep_on_top=True)
             guardar_puntaje(user, dificultad, time_y_punt[1])
-            guardar_info(int(time()), id_partida, "finalizada", user, "finalizada", "", "", dificultad,
+            guardar_info(int(time()), id_partida, "fin", user, "finalizada", "", "", dificultad,
                          int(time() - start_time), genero)
             window.close()
             break

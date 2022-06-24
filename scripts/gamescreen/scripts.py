@@ -106,10 +106,10 @@ def create_right_col(header, data, dificultad, num_carta):
 
         other_cards = otras_cartas(num_carta, data)
         other_cards.append(num_carta)
-        cards = [[sg.Push(), sg.Button(f'{data[other_cards[index]][5]}', font=GEN_FONT, border_width=2, size=(20, 0),
+        cards = [[sg.Push(), sg.Button(f'{data[other_cards[index]][5]}', font=GEN_FONT, border_width=2, size=(30, 0),
                                        key=f'-CARTA_{index}-'),
                   sg.Push()] for index in range(1, 5)] + [[sg.Push(), sg.Button(f'{data[num_carta][5]}', font=GEN_FONT,
-                                                                                border_width=2, size=(20, 0),
+                                                                                border_width=2, size=(30, 0),
                                                                                 key='-CARTA_5-'), sg.Push()]]
         return select_randomly(cards)
 
@@ -177,7 +177,7 @@ def countdown(window, time_y_punt, config, data, dificultad, img_act, id_partida
     else:
         # terminar ventana
         time_y_punt[1] -= config['Puntaje_restar']
-        sg.popup('Tiempo terminado', title='Game Over')
+        sg.popup('Tiempo terminado', title='Game Over', keep_on_top=True)
         window[f'-IMG_{len(img_act) + 1}-'].update(PATH_NOTCHECK_PNG)
         img_act.append(False)
         time_y_punt[2] = data[window_update(

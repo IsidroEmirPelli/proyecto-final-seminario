@@ -105,10 +105,10 @@ def build():
             case "-GAME-":
                 if check_user(values['-USER-']):
                     sg.popup("Seleccione un usuario o regístrese",
-                             title="¡Ups!")
+                             title="¡Ups!", keep_on_top=True)
                 elif check_difficulty(values['-DIFFICULTY-']):
                     sg.popup("Seleccione una dificultad para jugar",
-                             title="¡Ups!")
+                             title="¡Ups!", keep_on_top=True)
                 else:
                     window.hide()
                     game_screen.build(values["-USER-"], values["-DIFFICULTY-"])

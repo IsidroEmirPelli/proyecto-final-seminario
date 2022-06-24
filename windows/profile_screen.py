@@ -73,23 +73,23 @@ def build():
             try:
                 if values['-NICK-'] == '' or int(values['-EDAD-']) == 0 or values['-GENERO-'] == '':
                     sg.popup('Por favor complete todos los campos',
-                             title='Error')
+                             title='Error', keep_on_top=True)
                 else:
                     # Verifico que el que el nick sea valido
                     if values['-NICK-'] == 'Usuarios':
-                        sg.popup('Nickname invalido', title='Error')
+                        sg.popup('Nickname invalido', title='Error', keep_on_top=True)
                         window['-NICK-'].update('')
                     elif values['-GENERO-'] not in generos:
-                        sg.popup('Genero invalido', title='Error')
+                        sg.popup('Genero invalido', title='Error', keep_on_top=True)
                         window['-GENERO-'].update('')
                     else:
                         modify_users_data(values)
-                        sg.popup('Perfil creado/modificado con exito')
+                        sg.popup('Perfil creado/modificado con exito', keep_on_top=True)
                         window.close()
 
             except ValueError:
                 sg.popup('Por favor ingresa un número para la edad',
-                         title='Error')
+                         title='Error', keep_on_top=True)
 
         elif event == '-BORRAR-':
             # Actualizo el contenido de todos los espsacios para que no contengan nada.

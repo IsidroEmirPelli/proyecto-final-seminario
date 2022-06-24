@@ -27,7 +27,7 @@ def build():
                     scores_dicctionary[row[1]].append((row[0], row[2]))
             return scores_dicctionary
         except FileNotFoundError:
-            sg.PopupError("No se encontró el archivo de puntuaciones.")
+            sg.popup("Juega algunas partidas para ver puntuaciones aquí ;).", title='¡Ups!', keep_on_top=True)
     load_score_dicctionary()
 
     def sort_scores(dicctionary):

@@ -53,3 +53,19 @@ timestamp,id,evento,usuarie,estado,texto-ingresado,respuesta,nivel,tiempo-partid
 1656078357,f2d1b6d0-742b-41f9-9460-4db4d85af2d0,intento,Isidro,error,Radoslaw Majecki,Lalaïna Nomenjanahary,Facil,,Masculino
 1656078357,f2d1b6d0-742b-41f9-9460-4db4d85af2d0,intento,Isidro,error,Carlos Benavídez,Razvan Marin,Facil,,Masculino
 1656078358,f2d1b6d0-742b-41f9-9460-4db4d85af2d0,intento,Isidro,error,Keisuke Kurokawa,Morgan Ferrier,Facil,,Masculino
+1656083634,923515de-0c8c-4afc-95db-fbace53b2e3c,inicio_partida,Invitado,,-,-,Dificil,,Otro
+1656083635,923515de-0c8c-4afc-95db-fbace53b2e3c,intento,Invitado,ok,Ragang (Mindanao-Philippines),Ragang (Mindanao-Philippines),Dificil,,Otro
+1656083637,923515de-0c8c-4afc-95db-fbace53b2e3c,intento,Invitado,ok,Merapi (Java),Merapi (Java),Dificil,,Otro
+1656083638,923515de-0c8c-4afc-95db-fbace53b2e3c,intento,Invitado,error,Banda Api (Banda Sea),Villarrica (Chile-C),Dificil,,Otro
+1656083639,923515de-0c8c-4afc-95db-fbace53b2e3c,intento,Invitado,error,Camiguin (Mindanao-Philippines),Mayon (Luzon-Philippines),Dificil,,Otro
+1656083641,923515de-0c8c-4afc-95db-fbace53b2e3c,intento,Invitado,error,Bulusan (Luzon-Philippines),Hekla (Iceland-S),Dificil,,Otro
+1656083642,923515de-0c8c-4afc-95db-fbace53b2e3c,intento,Invitado,error,Colima (Mexico),Guntur (Java),Dificil,,Otro
+1656083644,923515de-0c8c-4afc-95db-fbace53b2e3c,fin,Invitado,finalizada,,,Dificil,9,Otro
+1656083647,0a7ef25d-33a0-4937-b741-3fecbfcc03bf,inicio_partida,Invitado,,-,-,Dificil,,Otro
+1656083648,0a7ef25d-33a0-4937-b741-3fecbfcc03bf,intento,Invitado,error,Saweetie,Imagine Dragons,Dificil,,Otro
+1656083649,0a7ef25d-33a0-4937-b741-3fecbfcc03bf,intento,Invitado,ok,A$AP Ferg,A$AP Ferg,Dificil,,Otro
+1656083651,0a7ef25d-33a0-4937-b741-3fecbfcc03bf,intento,Invitado,ok,Khalid,Khalid,Dificil,,Otro
+1656083652,0a7ef25d-33a0-4937-b741-3fecbfcc03bf,intento,Invitado,error,,Usher,Dificil,,Otro
+1656083654,0a7ef25d-33a0-4937-b741-3fecbfcc03bf,intento,Invitado,error,LMFAO,Kanye West,Dificil,,Otro
+1656083655,0a7ef25d-33a0-4937-b741-3fecbfcc03bf,intento,Invitado,ok,Drake,Drake,Dificil,,Otro
+1656083656,0a7ef25d-33a0-4937-b741-3fecbfcc03bf,fin,Invitado,finalizada,,,Dificil,9,Otro
