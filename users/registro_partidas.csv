@@ -1,55 +1,89 @@
-timestamp,id,evento,usuarie,estado,texto-ingresado,respuesta,nivel,tiempo-partida,genero
-1656078294,8e0f1474-5438-4186-8334-cc73d493c363,inicio_partida,Isidro,,-,-,Normal,,Masculino
-1656078296,8e0f1474-5438-4186-8334-cc73d493c363,intento,Isidro,error,DJ Snake,Dua Lipa,Normal,,Masculino
-1656078296,8e0f1474-5438-4186-8334-cc73d493c363,intento,Isidro,error,OneRepublic,Liam Payne,Normal,,Masculino
-1656078297,8e0f1474-5438-4186-8334-cc73d493c363,intento,Isidro,error,Justin Timberlake,Yo Gotti,Normal,,Masculino
-1656078298,8e0f1474-5438-4186-8334-cc73d493c363,intento,Isidro,error,Disclosure,Sam Smith,Normal,,Masculino
-1656078298,8e0f1474-5438-4186-8334-cc73d493c363,intento,Isidro,error,Marshmello,Rich The Kid,Normal,,Masculino
-1656078299,8e0f1474-5438-4186-8334-cc73d493c363,intento,Isidro,error,A Boogie Wit da Hoodie,lovelytheband,Normal,,Masculino
-1656078299,8e0f1474-5438-4186-8334-cc73d493c363,finalizada,Isidro,finalizada,,,Normal,4,Masculino
-1656078301,83374bdc-e612-4cfc-ae31-d38b1686a306,inicio_partida,Isidro,,-,-,Normal,,Masculino
-1656078303,83374bdc-e612-4cfc-ae31-d38b1686a306,intento,Isidro,error,Oliver Casey,Gastón Comas,Normal,,Masculino
-1656078303,83374bdc-e612-4cfc-ae31-d38b1686a306,intento,Isidro,ok,Bjørn Johnsen,Bjørn Johnsen,Normal,,Masculino
-1656078303,83374bdc-e612-4cfc-ae31-d38b1686a306,intento,Isidro,error,Tapish Atwal,Louri Beretta,Normal,,Masculino
-1656078304,83374bdc-e612-4cfc-ae31-d38b1686a306,intento,Isidro,error,Jubal,Ming Tian,Normal,,Masculino
-1656078304,83374bdc-e612-4cfc-ae31-d38b1686a306,intento,Isidro,ok,Cristian Álvarez,Cristian Álvarez,Normal,,Masculino
-1656078305,83374bdc-e612-4cfc-ae31-d38b1686a306,intento,Isidro,error,Borja López,Néstor Camacho,Normal,,Masculino
-1656078306,83374bdc-e612-4cfc-ae31-d38b1686a306,finalizada,Isidro,finalizada,,,Normal,4,Masculino
-1656078311,65930d33-ff1e-411c-8a79-69fe389bb6b7,inicio_partida,Juan,,-,-,Dificil,,Masculino
-1656078312,65930d33-ff1e-411c-8a79-69fe389bb6b7,intento,Juan,ok,Katla (Iceland-S),Katla (Iceland-S),Dificil,,Masculino
-1656078313,65930d33-ff1e-411c-8a79-69fe389bb6b7,intento,Juan,ok,"Chichon, El (Mexico)","Chichon, El (Mexico)",Dificil,,Masculino
-1656078313,65930d33-ff1e-411c-8a79-69fe389bb6b7,intento,Juan,ok,Asama (Honshu-Japan),Asama (Honshu-Japan),Dificil,,Masculino
-1656078314,65930d33-ff1e-411c-8a79-69fe389bb6b7,intento,Juan,error,Kliuchevskoi (Kamchatka),Chaiten (Chile-S),Dificil,,Masculino
-1656078315,65930d33-ff1e-411c-8a79-69fe389bb6b7,intento,Juan,error,Komaga-take (Hokkaido-Japan),Karthala (Indian O-W),Dificil,,Masculino
-1656078315,65930d33-ff1e-411c-8a79-69fe389bb6b7,intento,Juan,error,Irazu (Costa Rica),Miyake-jima (Izu Is-Japan),Dificil,,Masculino
-1656078316,65930d33-ff1e-411c-8a79-69fe389bb6b7,finalizada,Juan,finalizada,,,Dificil,5,Masculino
-1656078318,b1cf8b22-b45a-4a6d-803d-d42ff874409d,inicio_partida,Juan,,-,-,Dificil,,Masculino
-1656078319,b1cf8b22-b45a-4a6d-803d-d42ff874409d,intento,Juan,error,Leonel Nazareno,Kim Min Tae,Dificil,,Masculino
-1656078320,b1cf8b22-b45a-4a6d-803d-d42ff874409d,intento,Juan,error,Lucas Rougeaux,Hady Sangare,Dificil,,Masculino
-1656078320,b1cf8b22-b45a-4a6d-803d-d42ff874409d,intento,Juan,ok,Javier Mascherano,Javier Mascherano,Dificil,,Masculino
-1656078321,b1cf8b22-b45a-4a6d-803d-d42ff874409d,intento,Juan,error,Valentin Henry,Roberto Ovelar,Dificil,,Masculino
-1656078321,b1cf8b22-b45a-4a6d-803d-d42ff874409d,intento,Juan,ok,Xu Xin,Xu Xin,Dificil,,Masculino
-1656078322,b1cf8b22-b45a-4a6d-803d-d42ff874409d,intento,Juan,error,Victor Glaentzlin,Marlon Hairston,Dificil,,Masculino
-1656078323,b1cf8b22-b45a-4a6d-803d-d42ff874409d,finalizada,Juan,finalizada,,,Dificil,5,Masculino
-1656078328,78b69e7b-3eec-4e5a-9af8-4ba13977afdc,inicio_partida,Invitado,,-,-,Facil,,Otro
-1656078329,78b69e7b-3eec-4e5a-9af8-4ba13977afdc,intento,Invitado,error,The Chainsmokers,XXXTENTACION,Facil,,Otro
-1656078330,78b69e7b-3eec-4e5a-9af8-4ba13977afdc,intento,Invitado,error,OneRepublic,The Lumineers,Facil,,Otro
-1656078331,78b69e7b-3eec-4e5a-9af8-4ba13977afdc,intento,Invitado,ok,Azealia Banks,Azealia Banks,Facil,,Otro
-1656078331,78b69e7b-3eec-4e5a-9af8-4ba13977afdc,intento,Invitado,error,Frank Ocean,The Weeknd,Facil,,Otro
-1656078332,78b69e7b-3eec-4e5a-9af8-4ba13977afdc,intento,Invitado,error,SZA,Maroon 5,Facil,,Otro
-1656078332,78b69e7b-3eec-4e5a-9af8-4ba13977afdc,intento,Invitado,error,Ed Sheeran,Of Monsters and Men,Facil,,Otro
-1656078333,78b69e7b-3eec-4e5a-9af8-4ba13977afdc,finalizada,Invitado,finalizada,,,Facil,4,Otro
-1656078337,b9bb279f-4c20-4b7c-a118-ac6580bfc2f1,inicio_partida,Isidro,,-,-,Facil,,Masculino
-1656078338,b9bb279f-4c20-4b7c-a118-ac6580bfc2f1,intento,Isidro,ok,Travie McCoy,Travie McCoy,Facil,,Masculino
-1656078339,b9bb279f-4c20-4b7c-a118-ac6580bfc2f1,intento,Isidro,error,Selena Gomez,Tyga,Facil,,Masculino
-1656078339,b9bb279f-4c20-4b7c-a118-ac6580bfc2f1,intento,Isidro,error,Pitbull,Taylor Swift,Facil,,Masculino
-1656078340,b9bb279f-4c20-4b7c-a118-ac6580bfc2f1,intento,Isidro,error,David Guetta,Sigrid,Facil,,Masculino
-1656078340,b9bb279f-4c20-4b7c-a118-ac6580bfc2f1,intento,Isidro,ok,King Princess,King Princess,Facil,,Masculino
-1656078341,b9bb279f-4c20-4b7c-a118-ac6580bfc2f1,intento,Isidro,error,Kendrick Lamar,Ed Sheeran,Facil,,Masculino
-1656078342,b9bb279f-4c20-4b7c-a118-ac6580bfc2f1,finalizada,Isidro,finalizada,,,Facil,4,Masculino
-1656078345,f2d1b6d0-742b-41f9-9460-4db4d85af2d0,inicio_partida,Isidro,,-,-,Facil,,Masculino
-1656078349,f2d1b6d0-742b-41f9-9460-4db4d85af2d0,intento,Isidro,ok,Diego Mercado,Diego Mercado,Facil,,Masculino
-1656078356,f2d1b6d0-742b-41f9-9460-4db4d85af2d0,intento,Isidro,timeout,-,Caye Quintana,Facil,,Masculino
-1656078357,f2d1b6d0-742b-41f9-9460-4db4d85af2d0,intento,Isidro,error,Radoslaw Majecki,Lalaïna Nomenjanahary,Facil,,Masculino
-1656078357,f2d1b6d0-742b-41f9-9460-4db4d85af2d0,intento,Isidro,error,Carlos Benavídez,Razvan Marin,Facil,,Masculino
-1656078358,f2d1b6d0-742b-41f9-9460-4db4d85af2d0,intento,Isidro,error,Keisuke Kurokawa,Morgan Ferrier,Facil,,Masculino
+timestamp,id,evento,usuarie,estado,texto-ingresado,respuesta,nivel,genero
+1656096472,1f50a5d9-6a8f-494a-a91f-9bba8bd286ff,inicio_partida,Juliana,,-,-,Facil,Femenino
+1656096474,1f50a5d9-6a8f-494a-a91f-9bba8bd286ff,intento,Juliana,error,Rihanna,The Script,Facil,Femenino
+1656096476,1f50a5d9-6a8f-494a-a91f-9bba8bd286ff,intento,Juliana,error,David Guetta,XXXTENTACION,Facil,Femenino
+1656096478,1f50a5d9-6a8f-494a-a91f-9bba8bd286ff,intento,Juliana,error,Bridgit Mendler,Blanco Brown,Facil,Femenino
+1656096479,1f50a5d9-6a8f-494a-a91f-9bba8bd286ff,intento,Juliana,ok,Taylor Swift,Taylor Swift,Facil,Femenino
+1656096487,1f50a5d9-6a8f-494a-a91f-9bba8bd286ff,intento,Juliana,timeout,-,Dynoro,Facil,Femenino
+1656096489,1f50a5d9-6a8f-494a-a91f-9bba8bd286ff,intento,Juliana,error,Wale,Macklemore,Facil,Femenino
+1656096490,1f50a5d9-6a8f-494a-a91f-9bba8bd286ff,fin,Juliana,finalizada,,,Facil,Femenino
+1656096494,91081014-9f13-4a31-9200-aa08c4effb2b,inicio_partida,Juliana,,-,-,Facil,Femenino
+1656096496,91081014-9f13-4a31-9200-aa08c4effb2b,intento,Juliana,error,João Pedro,Ramiro Funes Mori,Facil,Femenino
+1656096497,91081014-9f13-4a31-9200-aa08c4effb2b,intento,Juliana,error,Alexander Grünwald,Lee Seung Gi,Facil,Femenino
+1656096498,91081014-9f13-4a31-9200-aa08c4effb2b,intento,Juliana,error,Tobias Kempe,Braydon Manu,Facil,Femenino
+1656096499,91081014-9f13-4a31-9200-aa08c4effb2b,intento,Juliana,error,Paseka Mako,Helito Caldeira,Facil,Femenino
+1656096501,91081014-9f13-4a31-9200-aa08c4effb2b,intento,Juliana,error,Kristoffer Nordfeldt,David Barbona,Facil,Femenino
+1656096502,91081014-9f13-4a31-9200-aa08c4effb2b,intento,Juliana,error,Pablo Piatti,Mauro Pittón,Facil,Femenino
+1656096505,91081014-9f13-4a31-9200-aa08c4effb2b,fin,Juliana,finalizada,,,Facil,Femenino
+1656096507,995579e9-a1e6-4d0b-af98-65ef4d88cba8,inicio_partida,Juliana,,-,-,Facil,Femenino
+1656096509,995579e9-a1e6-4d0b-af98-65ef4d88cba8,intento,Juliana,error,Merapi (Java),Taal (Luzon-Philippines),Facil,Femenino
+1656096510,995579e9-a1e6-4d0b-af98-65ef4d88cba8,intento,Juliana,error,Bardarbunga (Iceland-NE),Mayon (Luzon-Philippines),Facil,Femenino
+1656096511,995579e9-a1e6-4d0b-af98-65ef4d88cba8,intento,Juliana,ok,Sinabung (Sumatra),Sinabung (Sumatra),Facil,Femenino
+1656096513,995579e9-a1e6-4d0b-af98-65ef4d88cba8,intento,Juliana,ok,Novarupta (Alaska Peninsula),Novarupta (Alaska Peninsula),Facil,Femenino
+1656096516,995579e9-a1e6-4d0b-af98-65ef4d88cba8,intento,Juliana,error,Merapi (Java),Pelee (W Indies),Facil,Femenino
+1656096518,995579e9-a1e6-4d0b-af98-65ef4d88cba8,intento,Juliana,error,Sinarka (Kuril Is),Tolbachik (Kamchatka),Facil,Femenino
+1656096520,995579e9-a1e6-4d0b-af98-65ef4d88cba8,fin,Juliana,finalizada,,,Facil,Femenino
+1656096522,1356d2e0-3142-4a21-a53b-01c83b43d3fb,inicio_partida,Juliana,,-,-,Facil,Femenino
+1656096523,1356d2e0-3142-4a21-a53b-01c83b43d3fb,intento,Juliana,error,Anders Christiansen,Stefan Johansen,Facil,Femenino
+1656096525,1356d2e0-3142-4a21-a53b-01c83b43d3fb,intento,Juliana,error,Alexander Tettey,Andersson Ordóñez,Facil,Femenino
+1656096526,1356d2e0-3142-4a21-a53b-01c83b43d3fb,intento,Juliana,error,Scott High,Christian Nørgaard,Facil,Femenino
+1656096527,1356d2e0-3142-4a21-a53b-01c83b43d3fb,intento,Juliana,error,Kingsley Schindler,Fredrik Ulvestad,Facil,Femenino
+1656096528,1356d2e0-3142-4a21-a53b-01c83b43d3fb,intento,Juliana,error,Juan Villar,Nikola Dovedan,Facil,Femenino
+1656096529,1356d2e0-3142-4a21-a53b-01c83b43d3fb,intento,Juliana,ok,Robert Hernández,Robert Hernández,Facil,Femenino
+1656096531,1356d2e0-3142-4a21-a53b-01c83b43d3fb,fin,Juliana,finalizada,,,Facil,Femenino
+1656096536,48aea3c6-5085-473b-bc67-43fadd8b31a5,inicio_partida,Juliana,,-,-,Normal,Femenino
+1656096540,48aea3c6-5085-473b-bc67-43fadd8b31a5,intento,Juliana,ok,Hotman El Kababri,Hotman El Kababri,Normal,Femenino
+1656096542,48aea3c6-5085-473b-bc67-43fadd8b31a5,intento,Juliana,error,Aron Elís ?rándarson,Niclas Stierlin,Normal,Femenino
+1656096547,48aea3c6-5085-473b-bc67-43fadd8b31a5,intento,Juliana,error,Souleyman Doumbia,Finn Porath,Normal,Femenino
+1656096549,48aea3c6-5085-473b-bc67-43fadd8b31a5,intento,Juliana,ok,Kristoffer Tokstad,Kristoffer Tokstad,Normal,Femenino
+1656096551,48aea3c6-5085-473b-bc67-43fadd8b31a5,intento,Juliana,error,Andrés Ayala,Bradley Wright-Phillips,Normal,Femenino
+1656096552,48aea3c6-5085-473b-bc67-43fadd8b31a5,intento,Juliana,error,Andreas Geipl,Park Gi Dong,Normal,Femenino
+1656096554,48aea3c6-5085-473b-bc67-43fadd8b31a5,fin,Juliana,finalizada,,,Normal,Femenino
+1656096570,aa75d712-66fb-46b6-88e6-c82aa0bfcbb9,inicio_partida,Isidro,,-,-,Normal,Masculino
+1656096572,aa75d712-66fb-46b6-88e6-c82aa0bfcbb9,intento,Isidro,error,Tinakula (Santa Cruz Is-SW Pac),Villarrica (Chile-C),Normal,Masculino
+1656096573,aa75d712-66fb-46b6-88e6-c82aa0bfcbb9,intento,Isidro,error,San Jorge (Azores),Unnamed (Tonga-SW Pacific),Normal,Masculino
+1656096574,aa75d712-66fb-46b6-88e6-c82aa0bfcbb9,intento,Isidro,error,Black Peak (Alaska Peninsula),Kelut (Java),Normal,Masculino
+1656096575,aa75d712-66fb-46b6-88e6-c82aa0bfcbb9,intento,Isidro,ok,Sakura-jima (Kyushu-Japan),Sakura-jima (Kyushu-Japan),Normal,Masculino
+1656096576,aa75d712-66fb-46b6-88e6-c82aa0bfcbb9,intento,Isidro,error,Iwo-Tori-shima (Ryukyu Is),Chokai (Honshu-Japan),Normal,Masculino
+1656096578,aa75d712-66fb-46b6-88e6-c82aa0bfcbb9,intento,Isidro,ok,Sakura-jima (Kyushu-Japan),Sakura-jima (Kyushu-Japan),Normal,Masculino
+1656096579,aa75d712-66fb-46b6-88e6-c82aa0bfcbb9,fin,Isidro,finalizada,,,Normal,Masculino
+1656096582,e37cd4ea-e185-48c1-86ff-4bff70b2d80e,inicio_partida,Isidro,,-,-,Normal,Masculino
+1656096583,e37cd4ea-e185-48c1-86ff-4bff70b2d80e,intento,Isidro,error,Daya,Bingo Players,Normal,Masculino
+1656096584,e37cd4ea-e185-48c1-86ff-4bff70b2d80e,intento,Isidro,error,Wiley,Taylor Swift,Normal,Masculino
+1656096586,e37cd4ea-e185-48c1-86ff-4bff70b2d80e,intento,Isidro,ok,Khalid,Khalid,Normal,Masculino
+1656096587,e37cd4ea-e185-48c1-86ff-4bff70b2d80e,intento,Isidro,error,LMFAO,Khalid,Normal,Masculino
+1656096588,e37cd4ea-e185-48c1-86ff-4bff70b2d80e,intento,Isidro,error,Phillip Phillips,Ariana Grande,Normal,Masculino
+1656096590,e37cd4ea-e185-48c1-86ff-4bff70b2d80e,intento,Isidro,error,Marshmello,DJ Snake,Normal,Masculino
+1656096591,e37cd4ea-e185-48c1-86ff-4bff70b2d80e,fin,Isidro,finalizada,,,Normal,Masculino
+1656096593,d287792a-5993-4115-b161-ceae972bd24b,inicio_partida,Isidro,,-,-,Normal,Masculino
+1656096595,d287792a-5993-4115-b161-ceae972bd24b,intento,Isidro,ok,St. Andrew Strait (Admiralty Is-SW Paci),St. Andrew Strait (Admiralty Is-SW Paci),Normal,Masculino
+1656096596,d287792a-5993-4115-b161-ceae972bd24b,intento,Isidro,error,Kelut (Java),Irazu (Costa Rica),Normal,Masculino
+1656096597,d287792a-5993-4115-b161-ceae972bd24b,intento,Isidro,error,Grimsvotn (Iceland-NE),Gamalama (Halmahera-Indonesia),Normal,Masculino
+1656096598,d287792a-5993-4115-b161-ceae972bd24b,intento,Isidro,error,Gamalama (Halmahera-Indonesia),Kadovar (New Guinea-NE of),Normal,Masculino
+1656096599,d287792a-5993-4115-b161-ceae972bd24b,intento,Isidro,error,Hualalai (Hawaiian Is),Mayon (Luzon-Philippines),Normal,Masculino
+1656096600,d287792a-5993-4115-b161-ceae972bd24b,intento,Isidro,ok,Lewotobi (Lesser Sunda Is),Lewotobi (Lesser Sunda Is),Normal,Masculino
+1656096602,d287792a-5993-4115-b161-ceae972bd24b,fin,Isidro,finalizada,,,Normal,Masculino
+1656096612,5fd279a9-5f66-4a3d-83f2-8acae89391ac,inicio_partida,Juan,,-,-,Dificil,Masculino
+1656096613,5fd279a9-5f66-4a3d-83f2-8acae89391ac,intento,Juan,error,Sam Feldt,Selena Gomez,Dificil,Masculino
+1656096614,5fd279a9-5f66-4a3d-83f2-8acae89391ac,intento,Juan,error,The 1975,DJ Snake,Dificil,Masculino
+1656096618,5fd279a9-5f66-4a3d-83f2-8acae89391ac,intento,Juan,ok,Sech,Sech,Dificil,Masculino
+1656096621,5fd279a9-5f66-4a3d-83f2-8acae89391ac,intento,Juan,error,Lorde,Natalie La Rose,Dificil,Masculino
+1656096624,5fd279a9-5f66-4a3d-83f2-8acae89391ac,intento,Juan,error,Sia,Macklemore & Ryan Lewis,Dificil,Masculino
+1656096625,5fd279a9-5f66-4a3d-83f2-8acae89391ac,intento,Juan,error,OneRepublic,6ix9ine,Dificil,Masculino
+1656096626,5fd279a9-5f66-4a3d-83f2-8acae89391ac,fin,Juan,finalizada,,,Dificil,Masculino
+1656096641,96bf09d4-901e-4c0f-b570-730de4d26d38,inicio_partida,Juan,,-,-,Dificil,Masculino
+1656096643,96bf09d4-901e-4c0f-b570-730de4d26d38,intento,Juan,error,Dave,Jason Derulo,Dificil,Masculino
+1656096645,96bf09d4-901e-4c0f-b570-730de4d26d38,intento,Juan,error,Juice WRLD,DJ Snake,Dificil,Masculino
+1656096647,96bf09d4-901e-4c0f-b570-730de4d26d38,intento,Juan,error,Cardi B,Maroon 5,Dificil,Masculino
+1656096648,96bf09d4-901e-4c0f-b570-730de4d26d38,intento,Juan,error,Calvin Harris,Katy Perry,Dificil,Masculino
+1656096649,96bf09d4-901e-4c0f-b570-730de4d26d38,intento,Juan,error,Mumford & Sons,Mark Ronson,Dificil,Masculino
+1656096650,96bf09d4-901e-4c0f-b570-730de4d26d38,intento,Juan,error,Swedish House Mafia,Childish Gambino,Dificil,Masculino
+1656096652,96bf09d4-901e-4c0f-b570-730de4d26d38,fin,Juan,finalizada,,,Dificil,Masculino
+1656096657,44c6016f-1936-4461-bc3b-4e006d1b139c,inicio_partida,Juan,,-,-,Dificil,Masculino
+1656096663,44c6016f-1936-4461-bc3b-4e006d1b139c,intento,Juan,error,Alpha Dionkou,Bryan Mendoza,Dificil,Masculino
+1656096673,44c6016f-1936-4461-bc3b-4e006d1b139c,intento,Juan,ok,Erlend Tolnes Sørhøy,Erlend Tolnes Sørhøy,Dificil,Masculino
+1656096677,44c6016f-1936-4461-bc3b-4e006d1b139c,intento,Juan,ok,Bubacar Djaló,Bubacar Djaló,Dificil,Masculino
+1656096682,44c6016f-1936-4461-bc3b-4e006d1b139c,intento,Juan,error,Achilléas Poúngouras,Marin Leovac,Dificil,Masculino
+1656096687,44c6016f-1936-4461-bc3b-4e006d1b139c,intento,Juan,error,Miguel Almirón,Ulises Rivas,Dificil,Masculino
+1656096697,44c6016f-1936-4461-bc3b-4e006d1b139c,intento,Juan,error,Arouna Koné,Marius Martac,Dificil,Masculino
+1656096699,44c6016f-1936-4461-bc3b-4e006d1b139c,fin,Juan,finalizada,,,Dificil,Masculino

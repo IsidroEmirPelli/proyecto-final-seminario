@@ -106,10 +106,10 @@ def create_right_col(header, data, dificultad, num_carta):
 
         other_cards = otras_cartas(num_carta, data)
         other_cards.append(num_carta)
-        cards = [[sg.Push(), sg.Button(f'{data[other_cards[index]][5]}', font=GEN_FONT, border_width=2, size=(20, 0),
+        cards = [[sg.Push(), sg.Button(f'{data[other_cards[index]][5]}', font=GEN_FONT, border_width=2, size=(30, 0),
                                        key=f'-CARTA_{index}-'),
                   sg.Push()] for index in range(1, 5)] + [[sg.Push(), sg.Button(f'{data[num_carta][5]}', font=GEN_FONT,
-                                                                                border_width=2, size=(20, 0),
+                                                                                border_width=2, size=(30, 0),
                                                                                 key='-CARTA_5-'), sg.Push()]]
         return select_randomly(cards)
 
@@ -177,17 +177,17 @@ def countdown(window, time_y_punt, config, data, dificultad, img_act, id_partida
     else:
         # terminar ventana
         time_y_punt[1] -= config['Puntaje_restar']
-        sg.popup('Tiempo terminado', title='Game Over')
+        sg.popup('Tiempo terminado', title='Game Over', keep_on_top=True)
         window[f'-IMG_{len(img_act) + 1}-'].update(PATH_NOTCHECK_PNG)
         img_act.append(False)
         time_y_punt[2] = data[window_update(
             window, dificultad, csv_selected, header, data)][5]
         time_y_punt[0] = time()
         guardar_info(int(time()), id_partida, "intento", user,
-                     "timeout", "-", time_y_punt[2], dificultad, '', genero)
+                     "timeout", "-", time_y_punt[2], dificultad, genero)
 
 
-def guardar_info(tiempo, id_partida, evento, user, estado, text, respuesta, nivel, tiempo_tot, genero):
+def guardar_info(tiempo, id_partida, evento, user, estado, text, respuesta, nivel, genero):
     """Función que guarda la información de las partidas"""
     try:
         with open(PATH_PARTIDAS, 'r', newline='') as file:
@@ -197,7 +197,7 @@ def guardar_info(tiempo, id_partida, evento, user, estado, text, respuesta, nive
     finally:
 
         dic = {'timestamp': tiempo, 'id': id_partida, 'evento': evento, 'usuarie': user, 'estado': estado,
-               'texto-ingresado': text, 'respuesta': respuesta, 'nivel': nivel, 'tiempo-partida': tiempo_tot, 'genero': genero}
+               'texto-ingresado': text, 'respuesta': respuesta, 'nivel': nivel, 'genero': genero}
         with open(PATH_PARTIDAS, 'a', newline='', encoding='utf-8') as file:
             dict_writer = DictWriter(file, fieldnames=dic.keys())
             dict_writer.writerow(dic)
@@ -206,7 +206,7 @@ def guardar_info(tiempo, id_partida, evento, user, estado, text, respuesta, nive
 def crear_arch_partidas():
     with open(PATH_PARTIDAS, 'w', encoding='utf-8', newline='') as file:
         fieldnames = ['timestamp', 'id', 'evento', 'usuarie', 'estado',
-                      'texto-ingresado', 'respuesta', 'nivel', 'tiempo-partida', 'genero']
+                      'texto-ingresado', 'respuesta', 'nivel', 'genero']
         wr = csv.DictWriter(file, fieldnames=fieldnames)
         wr.writeheader()
 
