@@ -5,15 +5,20 @@
 </p>
 
 Figurace es un proyecto desarrollado para la materia Seminario de Lenguajes de la Facultad de Informatica opcion Python de la Universidad Nacional de La Plata.
-Este proyecto funciona tanto en Windows como en GNU/Linux y consiste en un juego de tarjetas, en el cual se debe adivinar el nombre de la misma entre varias opciones. Cuenta con tres dificultades y tres temas distintos estos siendo volcanes, musica y futbol.
+
+Este proyecto funciona tanto en Windows como en GNU/Linux donde el jugador puede ingresar como invitado o registrase con sus datos y seleccionar una dificultad para acceder a una partida que consiste en un juego de tarjetas, en el cual se debe adivinar el nombre de la misma entre varias opciones. Cuenta con tres dificultades y tres temas distintos procesados de una serie de datasets; en este juego se usaron volcanes, música y fútbol.
+
+También existe una ventana de configuracion donde se pueden modificar algunos parametros de la partida; otra ventana donde se muestran dos tablas, la primera con los 20 mejores puntajes de cada dificultad y la segunda con los 20 mejores promedios por cada dificultad.
+
+
 
 ## Integrantes del grupo 20
 
 ```text
-Mattei Juliana Edda  
-Cecconato Santiago Andres  
-Montes De Oca Fernando Nahuel  
-Pelli Isidro Emir
+Mattei Juliana Edda            | Legajo ------> 17712/6
+Cecconato Santiago Andres      | Legajo ------> 18340/1
+Montes De Oca Fernando Nahuel  | Legajo ------> 16107/5
+Pelli Isidro Emir              | Legajo ------> 15959/1
 ```
 
 ## Ejecución del juego
@@ -29,7 +34,7 @@ Pelli Isidro Emir
 -Para comenzar a jugar se debe ejecutar el siguiente comando en la terminal:
 
 ```python
-    py figurace.py
+    python3 figurace.py
 ```
 
 -Tambien se dispone de varias jupyter notebooks para poder procesar los distintos datasets.
