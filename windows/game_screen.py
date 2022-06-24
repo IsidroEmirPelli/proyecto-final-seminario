@@ -40,7 +40,7 @@ def build(user, dificultad):
     time_y_punt = [start_time, puntaje, carta_buena]
     id_partida = uuid4()
     guardar_info(int(time()), id_partida, "inicio_partida", user,
-                 "", "-", "-", dificultad, '', genero)
+                 "", "-", "-", dificultad, genero)
 
     while True:
 
@@ -48,11 +48,11 @@ def build(user, dificultad):
             event, values = window.read(timeout=250, timeout_key='-TIMEOUT-')
             if event == sg.WIN_CLOSED:
                 guardar_info(time(), id_partida, "cancelada", user,
-                             "cancelada", "-", "-", dificultad, '', '')
+                             "cancelada", "-", "-", dificultad, '')
                 break
             elif event == '-VOLVER-':
                 guardar_info(time(), id_partida, "cancelada", user,
-                             "cancelada", "-", "-", dificultad, '', '')
+                             "cancelada", "-", "-", dificultad, '')
                 window.close()
                 break
 
@@ -63,7 +63,7 @@ def build(user, dificultad):
             else:
                 if window[event].get_text() == carta_buena:
                     guardar_info(int(time()), id_partida, "intento", user, "ok", window[event].get_text(), carta_buena,
-                                 dificultad, '', genero)
+                                 dificultad, genero)
                     window[f'-IMG_{len(img_act) + 1}-'].update(PATH_CHECK_PNG)
                     img_act.append(True)
                     time_y_punt[1] += config['Puntaje_sumar']
@@ -75,7 +75,7 @@ def build(user, dificultad):
 
                 else:  # si llega aca carta perdida
                     guardar_info(int(time()), id_partida, "intento", user, "error", window[event].get_text(),
-                                 carta_buena, dificultad, '', genero)
+                                 carta_buena, dificultad, genero)
                     window[f'-IMG_{len(img_act) + 1}-'].update(PATH_NOTCHECK_PNG)
                     img_act.append(False)
                     time_y_punt[1] -= config['Puntaje_restar']
@@ -91,7 +91,6 @@ def build(user, dificultad):
             sg.popup("No puedes seguir jugando",
                      "Puntaje obtenido: ", f'{time_y_punt[1]}', keep_on_top=True)
             guardar_puntaje(user, dificultad, time_y_punt[1])
-            guardar_info(int(time()), id_partida, "fin", user, "finalizada", "", "", dificultad,
-                         int(time() - start_time), genero)
+            guardar_info(int(time()), id_partida, "fin", user, "finalizada", "", "", dificultad, genero)
             window.close()
             break
