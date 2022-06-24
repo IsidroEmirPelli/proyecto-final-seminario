@@ -41,6 +41,7 @@ def build():
     averages = {}
 
     def create_averages(dictionary):
+        """ funcion que calcula el promedio de puntajes de cada usuario por dificultad"""
         for difficulty, scores in dictionary.items():
             mapping = {}
             for score in scores:
