@@ -23,3 +23,27 @@ timestamp,id,evento,usuarie,estado,texto-ingresado,respuesta,nivel,genero
 1656110821,fbfd10ee-413b-434c-bfac-ea0b94278a41,intento,Juan,error,Frank Ocean,Zedd,Normal,Masculino
 1656110821,fbfd10ee-413b-434c-bfac-ea0b94278a41,intento,Juan,error,Sebastian Ingrosso,Pitbull,Normal,Masculino
 1656110823,fbfd10ee-413b-434c-bfac-ea0b94278a41,fin,Juan,finalizada,,,Normal,Masculino
+1656122989,acc52a7e-1e84-46d6-bb03-3ba95b4b4297,inicio_partida,Juliana,,-,-,Facil,Femenino
+1656122991,acc52a7e-1e84-46d6-bb03-3ba95b4b4297,intento,Juliana,error,Sui Donglu,Bridge Ndilu,Facil,Femenino
+1656122991,acc52a7e-1e84-46d6-bb03-3ba95b4b4297,intento,Juliana,error,Thomas Sabitzer,Recio,Facil,Femenino
+1656122991,acc52a7e-1e84-46d6-bb03-3ba95b4b4297,intento,Juliana,error,Charles De Ketelaere,Delano van Crooij,Facil,Femenino
+1656122991,acc52a7e-1e84-46d6-bb03-3ba95b4b4297,intento,Juliana,error,Takayoshi Ishihara,Danny Mullen,Facil,Femenino
+1656122992,acc52a7e-1e84-46d6-bb03-3ba95b4b4297,intento,Juliana,ok,Fernando De Paul,Fernando De Paul,Facil,Femenino
+1656122992,acc52a7e-1e84-46d6-bb03-3ba95b4b4297,intento,Juliana,error,Beni Badibanga,Vital Nsimba,Facil,Femenino
+1656122993,acc52a7e-1e84-46d6-bb03-3ba95b4b4297,fin,Juliana,finalizada,,,Facil,Femenino
+1656123005,29f91134-e64a-4395-b231-533ea2e2d7f4,inicio_partida,Invitado,,-,-,Dificil,Otro
+1656123006,29f91134-e64a-4395-b231-533ea2e2d7f4,intento,Invitado,error,Badou Ndiaye,Sebastian Ring,Dificil,Otro
+1656123006,29f91134-e64a-4395-b231-533ea2e2d7f4,intento,Invitado,error,Charles De Ketelaere,Álex Blanco,Dificil,Otro
+1656123006,29f91134-e64a-4395-b231-533ea2e2d7f4,intento,Invitado,ok,Nicolás Filhei,Nicolás Filhei,Dificil,Otro
+1656123007,29f91134-e64a-4395-b231-533ea2e2d7f4,intento,Invitado,error,Miguel Brizuela,Daniel Luxbacher,Dificil,Otro
+1656123007,29f91134-e64a-4395-b231-533ea2e2d7f4,intento,Invitado,error,Marius Grösch,Ivan Oblyakov,Dificil,Otro
+1656123008,29f91134-e64a-4395-b231-533ea2e2d7f4,intento,Invitado,error,Óscar Bagüí,Aaron Taylor-Sinclair,Dificil,Otro
+1656123009,29f91134-e64a-4395-b231-533ea2e2d7f4,fin,Invitado,finalizada,,,Dificil,Otro
+1656123010,2c0195ba-eb66-4009-8f93-3c8effbf89c1,inicio_partida,Invitado,,-,-,Dificil,Otro
+1656123011,2c0195ba-eb66-4009-8f93-3c8effbf89c1,intento,Invitado,error,Merapi (Java),Tokachi (Hokkaido-Japan),Dificil,Otro
+1656123012,2c0195ba-eb66-4009-8f93-3c8effbf89c1,intento,Invitado,error,Katla (Iceland-S),Sarigan (Mariana Is-C Pacific),Dificil,Otro
+1656123013,2c0195ba-eb66-4009-8f93-3c8effbf89c1,intento,Invitado,error,White Island (New Zealand),Oshima (Izu Is-Japan),Dificil,Otro
+1656123014,2c0195ba-eb66-4009-8f93-3c8effbf89c1,intento,Invitado,error,Kliuchevskoi (Kamchatka),Lamongan (Java),Dificil,Otro
+1656123014,2c0195ba-eb66-4009-8f93-3c8effbf89c1,intento,Invitado,ok,Peuet Sague (Sumatra),Peuet Sague (Sumatra),Dificil,Otro
+1656123014,2c0195ba-eb66-4009-8f93-3c8effbf89c1,intento,Invitado,error,Semeru (Java),Karangetang [Api Siau] (Sangihe Is-Indonesia),Dificil,Otro
+1656123015,2c0195ba-eb66-4009-8f93-3c8effbf89c1,fin,Invitado,finalizada,,,Dificil,Otro
