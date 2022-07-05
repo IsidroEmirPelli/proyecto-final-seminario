@@ -15,10 +15,10 @@ También existe una ventana de configuracion donde se pueden modificar algunos p
 ## Integrantes del grupo 20
 
 ```text
-Mattei Juliana Edda            | Legajo ------> 17712/6
-Cecconato Santiago Andres      | Legajo ------> 18340/1
-Montes De Oca Fernando Nahuel  | Legajo ------> 16107/5
-Pelli Isidro Emir              | Legajo ------> 15959/1
+Mattei Juliana Edda            |
+Cecconato Santiago Andres      |
+Montes De Oca Fernando Nahuel  |
+Pelli Isidro Emir              |
 ```
 
 ## Ejecución del juego
